@@ -9,44 +9,52 @@ nav a {
   color: white;
   text-decoration: none;
 }
+
 body {
   font-family: "Avenir", sans-serif;
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
 }
 
 /*-----------Nav Bar-----------*/
 .container {
   overflow: hidden;
 }
-.icon-container{
-  display:flex;
+
+.icon-container {
+  display: flex;
   justify-content: space-around;
-  color:white;
+  color: white;
 }
 
 /* wobble animation */
 .fas:hover {
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
 }
 
 @keyframes shake {
-  10%, 90% {
+
+  10%,
+  90% {
     transform: translate3d(-1px, 0, 0);
   }
-  
-  20%, 80% {
+
+  20%,
+  80% {
     transform: translate3d(2px, 0, 0);
   }
 
-  30%, 50%, 70% {
+  30%,
+  50%,
+  70% {
     transform: translate3d(-4px, 0, 0);
   }
 
-  40%, 60% {
+  40%,
+  60% {
     transform: translate3d(4px, 0, 0);
   }
 }
@@ -55,7 +63,7 @@ nav {
   width: 100%;
   /* height: 50px; */
   position: fixed;
-  
+
   background: #0099CC;
   transition: background 300ms ease;
   z-index: 100;
@@ -71,7 +79,7 @@ nav ul li {
 }
 
 nav ul li a {
-  transition:  200ms ease;
+  transition: 200ms ease;
   display: flex;
   flex-direction: column;
 }
@@ -85,10 +93,12 @@ nav ul li a:after {
   background-color: #ffffff;
   transition: width 0.5s ease, background-color 0.5s ease;
 }
+
 nav ul li a:hover:after {
   background-color: #ffffff;
   width: 100%;
 }
+
 /* in case I want to move to a more traditional navbar */
 /* nav ul .right-align {
   position: absolute;
@@ -103,10 +113,11 @@ nav ul .active:after {
   height: 3px;
   background-color: #ffffff;
 }
+
 /* centered navbar */
-nav ul{
+nav ul {
   float: none;
-  display:flex;
+  display: flex;
   justify-content: center;
   list-style-type: none;
   padding-top: .1em;
@@ -124,6 +135,7 @@ nav ul{
   margin: 0px 5px 0px 10px;
   z-index: 50;
 }
+
 /* finish navbar */
 
 /* HOME */
@@ -134,6 +146,7 @@ section {
   background: #F1F9FF;
   box-sizing: border-box;
 }
+
 section .container {
   margin-top: 35px;
   min-height: 100%;
@@ -150,40 +163,42 @@ section .container {
   text-align: center;
 }
 
-#home .title h1{
+#home .title h1 {
   font-size: 5rem;
 }
-#home .title h2{
+
+#home .title h2 {
   bottom: 20%;
 }
+
 /* fancy light up letters */
-#title-back{
+#title-back {
   background-color: #efefef;
   color: #848484;
 }
 
 
-#home b{
-	text-decoration: none;
+#home b {
+  text-decoration: none;
   /* color: black; */
   font-size: 20vmin;
-	font-weight: 700;
-	letter-spacing: 4px;
-	line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: 4px;
+  line-height: 1.3;
 }
 
 b {
-	text-decoration: none;
-	color: black;
+  text-decoration: none;
+  color: black;
 }
 
 /* how to select this correctly? want to select each individual letter */
-.title-back > b:hover {
-	text-decoration: none;
-	color: #e74c4c;
+.title-back>b:hover {
+  text-decoration: none;
+  color: #e74c4c;
 }
 
-#home img{
+#home img {
   height: 100vh;
   position: absolute;
   top: 40px;
@@ -193,235 +208,246 @@ b {
 
 /* learn more button */
 .learn-more-btn {
-    /* Text color */
-          color: #0099CC; 
-    /* Remove background color */
-          background: transparent; 
-    /* Border thickness, line style, and color */
-          border: 2px solid #0099CC;
-    /* Adds curve to border corners */
-          border-radius: 6px; 
-    /* Make letters uppercase */
-          border: none;
-          color: white;
-          padding: 16px 32px;
-          text-align: center;
-          display: inline-block;
-          font-size: 16px;
-          margin: 4px 2px;
-          -webkit-transition-duration: 0.4s; /* Safari */
-          transition-duration: 0.4s;
-          cursor: pointer;
-          text-decoration: none;
-    }
-    .learn-more-btn1 {
-          background-color: efefef; 
-          color: black; 
-          border: 2px solid #008CBA;
-    }
-    /*button on hover*/
-     .learn-more-btn1:hover {
-          background-color: #008CBA;
-          color: #efefef;
-     }
+  /* Text color */
+  color: #0099CC;
+  /* Remove background color */
+  background: transparent;
+  /* Border thickness, line style, and color */
+  border: 2px solid #0099CC;
+  /* Adds curve to border corners */
+  border-radius: 6px;
+  /* Make letters uppercase */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  text-decoration: none;
+}
 
-.white{
-  color:white;
+.learn-more-btn1 {
+  background-color: efefef;
+  color: black;
+  border: 2px solid #008CBA;
+}
+
+/*button on hover*/
+.learn-more-btn1:hover {
+  background-color: #008CBA;
+  color: #efefef;
+}
+
+.white {
+  color: white;
 }
 
 /* icons */
-.fa-chess{
+.fa-chess {
   font-size: 6rem;
 }
 
-.fa-table-tennis{
+.fa-table-tennis {
   font-size: 6rem;
 }
 
-.fa-database{
+.fa-database {
   font-size: 6rem;
 
 }
 
 #home .learn-more {
-    display: block;
-    position: absolute;
-    text-align: center;
-    line-height: 1.5rem;
-    bottom: 10vh;
-    width: 100px;
-    left: 50%;
-    margin-left: -50px;
-    margin: 0;
-    transition: margin 300ms ease;
-  }
+  display: block;
+  position: absolute;
+  text-align: center;
+  line-height: 1.5rem;
+  bottom: 10vh;
+  width: 100px;
+  left: 50%;
+  margin-left: -50px;
+  margin: 0;
+  transition: margin 300ms ease;
+}
 
-  #home .learn-more:hover {
-    margin: 1.8rem 0;
-  }
+#home .learn-more:hover {
+  margin: 1.8rem 0;
+}
 
 
-  #about{
-    background: #a873d1;
-  }
-  #about .container{
-    padding: 0 20px;
-    justify-content: space-around;
-  }
-  #about p {
-    font-size: 1.5rem;
-    max-width: 600px;
-    margin-top: 15vh;
-    margin-bottom: 15vh;
-    /* transition: all 500ms ease; */
-  }
+#about {
+  background: #a873d1;
+}
 
-  .row {
-    clear: both;
-  }
-  
-  #projects {
-    background-color: #CEFCE8;
-    z-index: 500;
-    padding-top: 80px;
-    border-color:#CEFCE8;
-  }
-  #projects h2 {
-    width: 100%;
-    text-align: center;
-  }
+#about .container {
+  padding: 0 20px;
+  justify-content: space-around;
+}
 
-  /* projects area*/
-  .inner {
-    max-width: 1024px;
-    margin: 0 auto;
-  }
+#about p {
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+  /* transition: all 500ms ease; */
+}
 
-  .tagline {
-    text-align: center;
-    font-family: 'Avenir';
-    letter-spacing: 0.3em;
-    font-weight: 800;
-    padding-bottom: 50px;
-    font-size: 22px;
-    text-transform: uppercase;
-    /* background: #0099CC; */
-  }
+.row {
+  clear: both;
+}
 
-  .tagline h2 {
-    text-align: center;
-    font-family: 'Avenir';
-    letter-spacing: 0.3em;
-    font-weight: 800;
-    padding-bottom: 50px;
-    font-size: 22px;
-    text-transform: uppercase;
-  }
+#projects {
+  background-color: #CEFCE8;
+  z-index: 500;
+  padding-top: 80px;
+  border-color: #CEFCE8;
+}
 
-  .tagline .bottom {
-      /* not sure if needed */
-      background: #0099CC;
-  }
+#projects h2 {
+  width: 100%;
+  text-align: center;
+}
 
-  .portfolio-box {
-    width: 45%;
-    margin: 20px;
-    background-color: white;
-    display: inline-block;
-  }
- 
-  .portfolio-box img {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .portfolio-box p {
-    font-size: 14px;
-    padding: 25px;
-    padding-top: 0px;
-    text-align: left;
-    line-height: 24px;
-  }
-  
-  .portfolio-box a {
-    text-decoration: underline;
-  }
+/* projects area*/
+.inner {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.tagline {
+  text-align: center;
+  font-family: 'Avenir';
+  letter-spacing: 0.3em;
+  font-weight: 800;
+  padding-bottom: 50px;
+  font-size: 22px;
+  text-transform: uppercase;
+  /* background: #0099CC; */
+}
+
+.tagline h2 {
+  text-align: center;
+  font-family: 'Avenir';
+  letter-spacing: 0.3em;
+  font-weight: 800;
+  padding-bottom: 50px;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.tagline .bottom {
+  /* not sure if needed */
+  background: #0099CC;
+}
+
+.portfolio-box {
+  width: 45%;
+  margin: 20px;
+  background-color: white;
+  display: inline-block;
+}
+
+.portfolio-box img {
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio-box p {
+  font-size: 14px;
+  padding: 25px;
+  padding-top: 0px;
+  text-align: left;
+  line-height: 24px;
+}
+
+.portfolio-box a {
+  text-decoration: underline;
+}
 
 /* EXPERIENCE */
 
-  #heading-words{
-    padding-top: 50px;
-    font-size: 2rem;
-  }
+#heading-words {
+  padding-top: 50px;
+  font-size: 2rem;
+}
 
-  #experience{
-    /* padding: 25px; */
-    padding-top: 50px;
-    font-size: 2rem;
-    /* padding-bottom: 50px; */
-  }
-  
-  #contact h2 {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    top: 50%;
-    bottom: 10%;
-    font-size: 2rem;
-  }
+#experience {
+  /* padding: 25px; */
+  padding-top: 50px;
+  font-size: 2rem;
+  /* padding-bottom: 50px; */
+}
 
-  #contact h4 {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    top: 70%;
-    font-size: 1.5rem;
-  }
+#contact h2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  top: 50%;
+  bottom: 10%;
+  font-size: 2rem;
+}
 
-  #contact .icons {
-    /* check if this works */
-    position: relative;
+#contact h4 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  top: 70%;
+  font-size: 1.5rem;
+}
 
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    top: 70%;
-  }
-  #contact .icons a {
-    margin: 0 10px;
-  }
+#contact .icons {
+  /* check if this works */
+  position: relative;
 
-  #contact h4 a {
-    color: #FF8600;
-    /* text-decoration: underline; */
-  }
-  #contact img {
-    height: 70px;
-    transition: transform 200ms;
-  }
-  #contact img:hover {
-    transform: scale(1.2);
-  }
-  #contact{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  /* #contact #contact-words {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  top: 70%;
+}
+
+#contact .icons a {
+  margin: 0 10px;
+}
+
+#contact h4 a {
+  color: #FF8600;
+  /* text-decoration: underline; */
+}
+
+#contact img {
+  height: 70px;
+  transition: transform 200ms;
+}
+
+#contact img:hover {
+  transform: scale(1.2);
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* #contact #contact-words {
     margin-top: 100px; 
     padding-top: 100px; 
   } */
 
-  /* .description{
+/* .description{
     background: #F1F9FF;
   } */
-  /*--------------card (square icons)---------------*/
+/*--------------card (square icons)---------------*/
 .bg-cover {
   width: 100vw;
   height: 100vh;
@@ -430,12 +456,14 @@ b {
   opacity: .75;
   z-index: 1000;
 }
+
 .card {
   background-color: white;
-  box-shadow: 1px 10px 40px rgba(0,0,0,.5);
+  box-shadow: 1px 10px 40px rgba(0, 0, 0, .5);
   transition: all 300ms ease;
   margin: 15px;
 }
+
 .card .preview {
   width: 100%;
   height: 100%;
@@ -447,6 +475,7 @@ b {
   background-color: white;
   transition: opacity 300ms ease;
 }
+
 /* center the cards from left to right */
 .column-center {
   display: flex;
@@ -463,7 +492,7 @@ b {
 
 .card:hover {
   transform: scale(1.1);
-  box-shadow: 6px 15px 20px rgba(0,0,0,.5);
+  box-shadow: 6px 15px 20px rgba(0, 0, 0, .5);
 }
 
 .card:hover .preview {
@@ -476,7 +505,7 @@ b {
 
 
 /* footer yey */
-#footer{
+#footer {
   min-height: 40px;
   font-size: 14px;
   text-align: left;
@@ -484,3 +513,7 @@ b {
   padding-top: 20px;
 }
 
+/* for scaling */
+@-ms-viewport {
+  width: device-width;
+}
