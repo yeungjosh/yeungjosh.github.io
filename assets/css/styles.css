@@ -89,7 +89,7 @@ nav ul li a:hover:after {
   background-color: #ffffff;
   width: 100%;
 }
-/* don't need */
+/* in case I want to move to a more traditional navbar */
 /* nav ul .right-align {
   position: absolute;
   right: 0;
