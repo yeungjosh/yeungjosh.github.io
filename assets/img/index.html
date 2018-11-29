@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Josh Yeung</title>
+    <link href="./yeungjosh.com_files/css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+
+    <script src="assets/scripts/index.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <div class="logo" id="home"></div>
+                <li><a href="#home"><span>Home</span></a></li>
+                <li><a href="#about" class="clickablez"><span>About</span></a></li>
+                <li><a href="#projects" class="">Projects</a></li>
+                <!-- complete this part -->
+                <li><a href="#experience" class="">Experience</a></li>
+                <!-- complete this part -->
+                <!-- <li><a href="http://yeungjosh.com/assets/images/yeungjosh_resume.pdf">Resume</a></li> -->
+                <!-- complete this part -->
+
+                <li><a href="#contact" class="">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section id="home">
+            <div class="title">
+                <!-- <h1>Josh Yeung</h1> -->
+                <div class="title-back">
+                    <b>J</b><b>o</b><b>s</b><b>h</b> <b>Y</b><b>e</b><b>u</b><b>n</b><b>g</b>
+                </div>
+                <h2>Web Developer, Data Analyst, Chess Player </h2>
+            </div>
+            <!-- learn more button -->
+            <a href="#about" class="learn-more-btn learn-more-btn1">
+                More about me<br>
+            </a>
+
+        </section>
+
+        <!-- ideally you want a separate page for this -->
+        <section id="about">
+            <div class="container column-center">
+                <p class="white"> Hi there! I'm Josh, a Computer Science student at UC Berkeley. My
+                    interests lie with the intersection between technology, music and data science. Also, I love
+                    playing table tennis and competitive chess!
+                </p>
+            </div>
+            <div class="container icon-container">
+                <i class="fas fa-database"></i>
+                <i class="fas fa-table-tennis"></i>
+                <i class="fas fa-chess"></i>
+            </div>
+        </section>
+
+        <!-- CHANGE -->
+        <!-- Portfolio -->
+        <div id="projects">
+            <div class="inner">
+                <p class="tagline" id="heading-words">Some things I made</p>
+
+                <div class="row">
+                    <div class="portfolio-box">
+                        <a class="project-image" href="./assets/img/mazeworld.png"><img src="./assets/img/mazeworld.png"></a>
+                        <p class="description"><b>MazeWorld</b> <br>
+                            Created a game engine for generating explorable tile-based game worlds</p>
+                    </div>
+                    <div class="portfolio-box">
+                        <a class="project-image" href="./assets/img/bearmaps.png"><img src="./assets/img/bearmaps.png"></a>
+                        <p class="description"><b>BearMaps</b> <br>
+                            Wrote the back-end for an image map rasterer inspired by Google Maps and OpenStreetMap</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="portfolio-box">
+                        <a class="project-image" href="./assets/img/tutormatch.png"><img src="./assets/img/tutormatch.png"></a>
+                        <p class="description"><b>Tutor Match App</b> <br>
+                            Created tutor matching web app for UC Berkeley students using MongoDB Stitch
+                        </p>
+                    </div>
+                    <div class="portfolio-box">
+                        <a class="project-image" href="./assets/img/scheme-money-tree.png"><img src="./assets/img/scheme-money-tree.png"></a>
+                        <p class="description"><b>Scheme</b> <br>
+                            Developed an interpreter for Scheme, a functional programming language. Capable of parsing
+                            and executing commands.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="portfolio-box">
+                        <a class="project-image" href="./assets/img/az-lyrics-redesign.png"><img src="./assets/img/az-lyrics-redesign.png"></a>
+                        <p class="description"><b>AZ Lyrics Redesign</b> <br>
+                            Redesigned AZ Lyrics website to be more intuitive and user friendly while increasing
+                            usability. </p>
+                    </div>
+                    <div class="portfolio-box">
+                        <a class="project-image" href="./assets/img/trumpwords.png"><img src="./assets/img/trumpwords.png"></a>
+                        <p class="description"><b>Trump, Twitter and Texts</b> <br>
+                            Analyzing data from the Twitter API to draw conclusions about President Trump’s tweet
+                            behavior.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="tagline bottom">
+            <h2 id='experience'>My Experience</h2>
+            <div class="row-center">
+
+                <div class="card">
+                    <div class="preview">
+                        <h3>Berkeley Institute for Data Science</h3>
+                    </div>
+                    <div class="row-center img">
+                        <img src="./assets/img/bids-logo.png" alt="Image" class="icon">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="preview">
+                        <h3>UC Berkeley IEEE</h3>
+                    </div>
+                    <div class="row-center img">
+                        <img src="./assets/img/ieee-logo.png" alt="Image" class="icon">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="preview">
+                        <h3>CS61B Course Staff</h3>
+                    </div>
+                    <div class="row-center img">
+                        <img src="./assets/img/eecs-logo.png" alt="Image" class="icon">
+                    </div>
+                </div>
+        </section>
+
+        <section id="contact">
+            <div id="contact-words">
+                <h2>Want to get in touch?</h2>
+                <h4>Email me at <br> <a href="mailto:yeungj@berkeley.edu"> yeungj@berkeley.edu</a>, or find me online:</h4>
+                <div class="icons ">
+                    <a href="https://www.facebook.com/orangesandapples"><img src="./facebook-icon.svg" alt="Facebook"></a>
+                    <a href="https://www.linkedin.com/in/yeungjosh"><img src="./linkedin-icon.svg" alt="Linkedin"></a>
+                    <a href="https://www.github.com/yeungjosh"><img src="./github-icon.svg" alt="Github"></a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="./yeungjosh.com_files/index.js"></script>
+
+
+    <div id="footer">
+        <div class="inner"> © 2018 Joshua Yeung. </div>
+    </div>
+
+</body>
+
+</html>
