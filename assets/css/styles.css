@@ -16,6 +16,37 @@ body {
   margin: 0;
 }
 
+.overlay{
+  background-color: white;
+  position: fixed;
+  padding: 1rem;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  /* some big number */
+  z-index: -1000;
+}
+
+.fade-out{
+  animation: fade-out-animation 1500ms;
+  z-index: 1000; 
+}
+
+@keyframes fade-out-animation {
+  0%
+  {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  100%
+  {
+    opacity: 0;
+  }
+}
+
 /*-----------Nav Bar-----------*/
 .container {
   overflow: hidden;
@@ -75,6 +106,8 @@ nav ul li {
   /* flex-grow: 1; */
   margin: 0 3vw;
   padding: 0px 16px 0px 16px;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 nav ul li a {
@@ -119,15 +152,20 @@ nav ul {
   display: flex;
   justify-content: center;
   list-style-type: none;
-  padding-top: .1em;
-  padding-bottom: .1em;
+  margin: 0;
+
 }
 
 .logo {
-  background-image: url(../img/josh_website_logo.png);
+  background: url(../img/jy_logo.svg) center center;
+  background-size: 75%;
   cursor: pointer;
   /* height: 40px;
   width: 40px; */
+  /* height: 72px;
+  width: 72px; */
+  /* padding: 1rem; */
+  padding: 1rem 1.5rem;
   background-repeat: no-repeat;
   vertical-align: middle;
   display: inline-block;
