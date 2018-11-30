@@ -1,4 +1,4 @@
-
+// adds fade in when loading the website
 window.addEventListener("load", function() {
     // hehehe im not using jquery hehehe take dat wdd
     const $overlay = document.querySelector('.overlay')
