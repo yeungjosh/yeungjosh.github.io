@@ -11,7 +11,8 @@ nav a {
 }
 
 body {
-  font-family: "Avenir", sans-serif;
+  /* font-family: "Avenir", sans-serif; */
+  font-family: 'Open Sans', sans-serif;
   padding: 0;
   margin: 0;
 }
@@ -100,7 +101,7 @@ nav {
 }
 
 nav ul li {
-  font-family: "Avenir", sans-serif;
+  /* font-family: "Avenir", sans-serif; */
   /* display: inline-block; */
   text-align: center;
   /* flex-grow: 1; */
@@ -114,6 +115,7 @@ nav ul li a {
   transition: 200ms ease;
   display: flex;
   flex-direction: column;
+  font-weight: 600;
 }
 
 nav ul li a:after {
@@ -354,7 +356,7 @@ source: https://www.w3schools.com/css/css3_buttons.asp
 
 .tagline {
   text-align: center;
-  font-family: 'Avenir';
+  /* font-family: 'Avenir'; */
   letter-spacing: 0.3em;
   font-weight: 800;
   padding-bottom: 50px;
@@ -365,7 +367,7 @@ source: https://www.w3schools.com/css/css3_buttons.asp
 
 .tagline h2 {
   text-align: center;
-  font-family: 'Avenir';
+  /* font-family: 'Avenir'; */
   letter-spacing: 0.3em;
   font-weight: 800;
   padding-bottom: 50px;
@@ -407,6 +409,8 @@ source: https://www.w3schools.com/css/css3_buttons.asp
 #heading-words {
   padding-top: 50px;
   font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
+
 }
 
 #experience {

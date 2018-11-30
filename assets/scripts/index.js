@@ -7,3 +7,11 @@ window.addEventListener("load", function() {
         $overlay.classList.remove('fade-out')
     }, 1500)
 })
+
+// import TypeIt from 'typeit';
+
+new TypeIt('#typeit', {
+    strings: ["Web Developer", "Data Analyst", "Chess Player "],
+    speed: 50,
+    autoStart: false
+  });
