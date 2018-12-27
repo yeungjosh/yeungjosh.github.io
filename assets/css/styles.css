@@ -337,10 +337,10 @@ source: https://www.w3schools.com/css/css3_buttons.asp
 }
 
 #projects {
-  background-color: #CEFCE8;
+  background-color: #F5F5F5;
   z-index: 500;
   padding-top: 80px;
-  border-color: #CEFCE8;
+  border-color: #F5F5F5;
 }
 
 #projects h2 {
