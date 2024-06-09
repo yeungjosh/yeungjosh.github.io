@@ -15,6 +15,7 @@ To read more about using these font, please visit the Next.js documentation:
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import Image from 'next/image';
 
 export function Component() {
   return (
@@ -43,7 +44,7 @@ export function Component() {
         <section className="w-full py-12 md:py-24 lg:py-32 bg-[#f1f8e9]" id="about">
           <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
             <div className="rounded-full w-[300px] h-[300px] mx-auto overflow-hidden">
-              <img
+              <Image
                 alt="Profile"
                 className="object-cover"
                 height="300"
@@ -58,10 +59,10 @@ export function Component() {
             <div className="space-y-4">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-6xl/none text-[#1b5e20]">
-                  Hi, I'm Josh Yeung
+                  Hi, my name is Josh Yeung.
                 </h1>
                 <p className="max-w-[600px] text-[#388e3c] md:text-xl">
-                  I'm a software engineer at Google with a passion for matcha and building beautiful, functional web
+                  I am a software engineer at Google with a passion for matcha and building beautiful, functional web
                   applications.
                 </p>
               </div>
@@ -90,7 +91,7 @@ export function Component() {
                   Work Experience
                 </h2>
                 <p className="max-w-[900px] text-[#388e3c] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-[#c8e6c9]">
-                  I've had the privilege of working at some of the top technology companies, where I've honed my skills
+                  I have had the privilege of working at some of the top technology companies, where I have honed my skills
                   as a software engineer.
                 </p>
               </div>
@@ -119,7 +120,7 @@ export function Component() {
                   </p>
                 </div>
               </div>
-              <img
+              <Image
                 alt="Work"
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
                 height="310"
@@ -135,7 +136,7 @@ export function Component() {
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-[#1b5e20]">My Projects</h2>
                 <p className="max-w-[900px] text-[#388e3c] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Check out some of the projects I've worked on in my spare time.
+                  Check out some of the projects I have worked on in my spare time.
                 </p>
               </div>
             </div>
@@ -184,7 +185,7 @@ export function Component() {
                   </div>
                 </div>
               </div>
-              <img
+              <Image
                 alt="Projects"
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-contain object-center sm:w-full"
                 height="510"
@@ -204,13 +205,13 @@ export function Component() {
                     The Benefits of Matcha
                   </h2>
                   <p className="max-w-[900px] text-[#388e3c] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    Matcha is not just a delicious beverage, it's also packed with health benefits. From boosting
-                    metabolism to improving focus, matcha is a superfood that I can't get enough of.
+                    Matcha is not just a delicious beverage, it is also packed with health benefits. From boosting
+                    metabolism to improving focus, matcha is a superfood that I cannot get enough of.
                   </p>
                 </div>
               </div>
               <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
-                <img
+                <Image
                   alt="Matcha Benefits"
                   className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
                   height={310}
@@ -228,8 +229,8 @@ export function Component() {
                   <div className="grid gap-1">
                     <h3 className="text-xl font-bold text-[#1b5e20]">My Favorite Matcha Spots</h3>
                     <p className="text-[#388e3c]">
-                      When I'm not brewing matcha at home, you can find me exploring the best matcha cafes and shops in
-                      the city. From the traditional Japanese tea houses to the modern matcha bars, I've tried them all.
+                      When I am not brewing matcha at home, you can find me exploring the best matcha cafes and shops in
+                      the city. From the traditional Japanese tea houses to the modern matcha bars, I have tried them all.
                     </p>
                   </div>
                   <Button
@@ -260,7 +261,7 @@ export function Component() {
                 className="relative overflow-hidden rounded-xl transition-all after:opacity-0 after:absolute after:inset-0 after:bg-black hover:after:opacity-20 focus:after:opacity-20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1b5e20] dark:focus-visible:ring-[#c8e6c9]"
                 href="#"
               >
-                <img
+                <Image
                   alt="Blog Post"
                   className="object-cover aspect-video"
                   height="310"
