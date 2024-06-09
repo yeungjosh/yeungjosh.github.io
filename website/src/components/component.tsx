@@ -177,7 +177,7 @@ export function Component() {
                 </div>
                 <div className="grid gap-1">
                   <h3 className="text-xl font-bold text-[#1b5e20]">Experimental Bytes Instagram</h3>
-                  <p className="text-[#388e3c]">Welcome to @experimentalbytes where culinary art meets food science! 🌟</p>
+                  <p className="text-[#388e3c]">Check out @experimentalbytes where culinary art meets food science! 🌟</p>
                   <div className="flex items-center gap-2">
                     <Badge className="bg-[#c8e6c9] text-[#1b5e20]" variant="secondary">
                       Awesoming cooking skills
@@ -281,7 +281,7 @@ export function Component() {
   )
 }
 
-function MountainIcon(props) {
+function MountainIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
