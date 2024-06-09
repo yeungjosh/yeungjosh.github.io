@@ -100,7 +100,7 @@ export function Component() {
               <div className="flex flex-col justify-center space-y-4">
                 <div className="grid gap-1">
                   <h3 className="text-xl font-bold text-[#1b5e20] dark:text-[#c8e6c9]">Google</h3>
-                  <p className="text-[#388e3c] dark:text-[#c8e6c9]">Software Engineer, 2020 - Present</p>
+                  <p className="text-[#388e3c] dark:text-[#c8e6c9]">Software Engineer, 2022 - Present</p>
                   <p className="text-[#388e3c] dark:text-[#c8e6c9]">
                     Developed features and resolved critical bugs for Google Assistant, impacting millions of devices.
                   </p>
