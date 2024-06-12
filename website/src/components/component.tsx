@@ -19,7 +19,7 @@ import Image from 'next/image';
 
 export function Component() {
   return (
-    <div className="flex flex-col min-h-[100dvh]">
+    <div className="flex flex-col min-h-[100dvh] justify-center">
       <header className="px-4 lg:px-6 h-14 flex items-center bg-[#1b5e20] text-[#c8e6c9]">
         <Link className="flex items-center justify-center" href="#">
           <MountainIcon className="h-6 w-6 fill-[#c8e6c9]" />
@@ -59,7 +59,7 @@ export function Component() {
             <div className="space-y-4">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-6xl/none text-[#1b5e20]">
-                  Hi, my name is Josh Yeung.
+                  Hi, my name is Josh Yeung!
                 </h1>
                 <p className="max-w-[600px] text-[#388e3c] md:text-xl">
                   I am a software engineer at Google with a passion for matcha and building beautiful, functional web
@@ -259,7 +259,7 @@ export function Component() {
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
               <Link
                 className="relative overflow-hidden rounded-xl transition-all after:opacity-0 after:absolute after:inset-0 after:bg-black hover:after:opacity-20 focus:after:opacity-20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1b5e20] dark:focus-visible:ring-[#c8e6c9]"
-                href="#"
+                href="https://matchaisthebest.w3spaces.com"
               >
                 <Image
                   alt="Blog Post"
