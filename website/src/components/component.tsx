@@ -265,7 +265,7 @@ export function Component() {
                   alt="Blog Post"
                   className="object-cover aspect-video"
                   height="310"
-                  src="/placeholder.svg"
+                  src="/josh_matcha_blog.png"
                   width="550"
                 />
                 <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-6 text-white">
