@@ -191,8 +191,8 @@ export function Component() {
                     <li>• Designed and launched fallbacks for home/work journeys on Google Assistant (~80M daily users), improving query reliability for 8M users and increasing successful directions queries by 22.68%.</li>
                     <li>• Built personalized restaurant recommender using Bard/Gemini, enhancing conversational AI experiences.</li>
                     <li>• Developed suggestion buttons for new Google Assistant on mobile, driving 40M daily impressions and 3M DAUs.</li>
-                    <li>• Integrated 10+ local search features (e.g., "Starbucks hours," "Seattle traffic"), improving navigation capabilities.</li>
-                    <li>• Designed and implemented "Search Along Route" prototype for Google Assistant (1.5M DAUs).</li>
+                    <li>• Integrated 10+ local search features (e.g., &quot;Starbucks hours,&quot; &quot;Seattle traffic&quot;), improving navigation capabilities.</li>
+                    <li>• Designed and implemented &quot;Search Along Route&quot; prototype for Google Assistant (1.5M DAUs).</li>
                     <li>• Increased test coverage for local journeys by 400% through automated parameterized regression tests.</li>
                   </ul>
                   <div className="flex flex-wrap gap-2">
