@@ -31,16 +31,19 @@ export function Component() {
           <span className="sr-only">Josh Yeung</span>
         </Link>
         <nav className="ml-auto flex gap-6 sm:gap-8">
-          <Link className="text-sm font-medium hover:text-green-600 transition-colors" href="#about">
+          <Link className="text-sm font-semibold hover:text-green-600 transition-colors" href="#about">
             About
           </Link>
-          <Link className="text-sm font-medium hover:text-green-600 transition-colors" href="#work">
+          <Link className="text-sm font-semibold hover:text-green-600 transition-colors" href="#work">
             Experience
           </Link>
-          <Link className="text-sm font-medium hover:text-green-600 transition-colors" href="#projects">
+          <Link className="text-sm font-semibold hover:text-green-600 transition-colors" href="#projects">
             Projects
           </Link>
-          <Link className="text-sm font-medium hover:text-green-600 transition-colors" href="#blog">
+          <Link className="text-sm font-semibold hover:text-green-600 transition-colors" href="#skills">
+            Skills
+          </Link>
+          <Link className="text-sm font-semibold hover:text-green-600 transition-colors" href="#blog">
             Blog
           </Link>
         </nav>
@@ -48,7 +51,7 @@ export function Component() {
 
       <main className="flex-1 pt-16">
         {/* Hero Section - Modern & Bold */}
-        <section className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-green-50/30 to-emerald-50/20 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900" id="about">
+        <section className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 dark:from-slate-900 dark:via-emerald-900/20 dark:to-slate-900" id="about">
           <div className="container px-4 md:px-6 py-20">
             <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
               <div className="space-y-8 animate-fade-in">
@@ -63,11 +66,11 @@ export function Component() {
                 </div>
 
                 <div className="space-y-4">
-                  <h1 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
+                  <h1 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl text-slate-900 dark:text-white">
                     Hi, I&apos;m{" "}
                     <span className="gradient-text">Josh Yeung</span>
                   </h1>
-                  <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-2xl">
+                  <p className="text-xl md:text-2xl text-slate-700 dark:text-slate-300 max-w-2xl">
                     Software Engineer at <span className="font-semibold text-slate-900 dark:text-white">Amazon</span> building scalable systems for Amazon Ads and Prime Video. Passionate about LLMs, web applications, and matcha.
                   </p>
                 </div>
@@ -84,7 +87,7 @@ export function Component() {
                     asChild
                     variant="outline"
                     size="lg"
-                    className="border-2 border-slate-200 dark:border-slate-700 hover:border-green-500 dark:hover:border-green-500 rounded-xl h-12 px-8 text-base"
+                    className="border-2 border-slate-900 dark:border-slate-300 bg-white dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700 hover:border-green-600 dark:hover:border-green-400 rounded-xl h-12 px-8 text-base font-semibold"
                   >
                     <Link href="#contact">Get in Touch</Link>
                   </Button>
@@ -123,10 +126,10 @@ export function Component() {
                 <div className="inline-block px-4 py-1.5 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-sm font-medium">
                   Experience
                 </div>
-                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-slate-900 dark:text-white">
                   Where I&apos;ve <span className="gradient-text">Worked</span>
                 </h2>
-                <p className="max-w-2xl text-lg text-slate-600 dark:text-slate-400">
+                <p className="max-w-2xl text-lg text-slate-700 dark:text-slate-300">
                   Building impactful software at leading tech companies
                 </p>
               </div>
@@ -249,109 +252,383 @@ export function Component() {
                 <div className="inline-block px-4 py-1.5 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-sm font-medium">
                   Projects
                 </div>
-                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-slate-900 dark:text-white">
                   Things I&apos;ve <span className="gradient-text">Built</span>
                 </h2>
-                <p className="max-w-2xl text-lg text-slate-600 dark:text-slate-400">
+                <p className="max-w-2xl text-lg text-slate-700 dark:text-slate-300">
                   Side projects and experiments I&apos;ve worked on
                 </p>
               </div>
             </div>
 
             <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-2">
-              {/* Pokemon Classifier */}
+              {/* BrickStyle-Gen */}
               <div className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700">
-                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-green-50 to-emerald-50 dark:from-slate-800 dark:to-slate-900">
-                  <Image
-                    alt="Pokemon Classifier"
-                    className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
-                    fill
-                    src="/pokemon_classifier.jpeg"
-                  />
+                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-red-50 to-yellow-50 dark:from-red-900/20 dark:to-yellow-900/20 flex items-center justify-center">
+                  <div className="text-8xl">🧱</div>
                 </div>
                 <div className="p-6 space-y-4">
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
-                    Pokemon Classifier
+                    BrickStyle-Gen
                   </h3>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                    A web application using ResNet34 and transfer learning to identify Pokemon species with high accuracy.
+                    Text-to-LEGO-style image generator using Stable Diffusion XL with custom LoRA fine-tuning. 10+ curated style presets and adjustable parameters.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Python
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Gradio
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      SDXL
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      PyTorch
+                    </Badge>
+                  </div>
+                  <div className="flex gap-3">
+                    <Button asChild size="sm" className="bg-green-600 hover:bg-green-700 text-white">
+                      <Link href="https://huggingface.co/spaces/joshuajoshy/brickstyle-gen" target="_blank">
+                        Live Demo
+                      </Link>
+                    </Button>
+                    <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                      <Link href="https://github.com/yeungjosh/brickstyle-gen" target="_blank">
+                        GitHub
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Pokemon Team Recommender */}
+              <div className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 md:col-span-2">
+                <div className="md:flex">
+                  <div className="md:w-1/3 aspect-video md:aspect-auto relative overflow-hidden bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 flex items-center justify-center">
+                    <div className="text-8xl">⚡</div>
+                  </div>
+                  <div className="md:w-2/3 p-6 space-y-4">
+                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                      Pokemon Team Recommender
+                    </h3>
+                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                      ML-powered competitive team builder using LightGBM. Trained on 10K synthetic teams with 93% code coverage. Includes validation study comparing synthetic vs. real battle data.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                        Python
+                      </Badge>
+                      <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                        LightGBM
+                      </Badge>
+                      <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                        Gradio
+                      </Badge>
+                      <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                        ML
+                      </Badge>
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-sm font-semibold text-slate-700 dark:text-slate-300">Two Approaches:</p>
+                      <div className="flex flex-wrap gap-2">
+                        <Button asChild size="sm" className="bg-green-600 hover:bg-green-700 text-white">
+                          <Link href="https://huggingface.co/spaces/joshuajoshy/pokemon-team-recommender" target="_blank">
+                            ML-Hybrid Demo
+                          </Link>
+                        </Button>
+                        <Button asChild size="sm" className="bg-green-600 hover:bg-green-700 text-white">
+                          <Link href="https://huggingface.co/spaces/joshuajoshy/pokemon-cf-recommender" target="_blank">
+                            Collaborative Filtering Demo
+                          </Link>
+                        </Button>
+                      </div>
+                      <p className="text-sm font-semibold text-slate-700 dark:text-slate-300 mt-3">Validation Research:</p>
+                      <div className="flex flex-wrap gap-2">
+                        <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                          <Link href="https://github.com/yeungjosh/pokemon-real-data-experiment/blob/main/REPORT.md" target="_blank">
+                            Research Report
+                          </Link>
+                        </Button>
+                        <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                          <Link href="https://github.com/yeungjosh/pokemon-team-recommender" target="_blank">
+                            ML-Hybrid GitHub
+                          </Link>
+                        </Button>
+                        <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                          <Link href="https://github.com/yeungjosh/pokemon-cf-recommender" target="_blank">
+                            CF GitHub
+                          </Link>
+                        </Button>
+                        <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                          <Link href="https://github.com/yeungjosh/pokemon-real-data-experiment" target="_blank">
+                            Experiment GitHub
+                          </Link>
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bible Study App */}
+              <div className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700">
+                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 flex items-center justify-center">
+                  <div className="text-8xl">📖</div>
+                </div>
+                <div className="p-6 space-y-4">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                    Bible Study App
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                    AI-powered cross-platform scripture study app with verse highlighting, note-taking, and chat history management. Built with Capacitor for iOS/Android.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
                       React
                     </Badge>
                     <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      Node.js
+                      TypeScript
                     </Badge>
                     <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      PyTorch
+                      Capacitor
                     </Badge>
                     <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      AWS
+                      AI
                     </Badge>
                   </div>
                 </div>
               </div>
 
-              {/* Matcha Recipes */}
+              {/* System Design Trainer */}
               <div className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700">
-                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 flex items-center justify-center">
-                  <div className="text-8xl">🍵</div>
+                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-indigo-900/20 dark:to-blue-900/20 flex items-center justify-center">
+                  <div className="text-8xl">🎯</div>
                 </div>
                 <div className="p-6 space-y-4">
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
-                    Matcha Recipes
+                    System Design Trainer
                   </h3>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                    A curated collection of delicious matcha-based recipes, from traditional tea to modern culinary creations.
+                    Duolingo-style iOS app for practicing system design interviews. Multiple-choice drills with curated explanations and progress tracking.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      Next.js
+                      Swift
                     </Badge>
                     <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      Prisma
+                      SwiftUI
                     </Badge>
                     <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      PostgreSQL
+                      StoreKit 2
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      iOS
                     </Badge>
                   </div>
                 </div>
               </div>
 
               {/* Experimental Bytes */}
-              <div className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 md:col-span-2">
-                <div className="md:flex">
-                  <div className="md:w-1/2 aspect-video md:aspect-auto relative overflow-hidden bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 flex items-center justify-center">
-                    <div className="text-8xl">🍳</div>
+              <div className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700">
+                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 flex items-center justify-center">
+                  <div className="text-8xl">🍳</div>
+                </div>
+                <div className="p-6 space-y-4">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                    Experimental Bytes
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                    Follow @experimentalbytes where culinary art meets food science! Showcasing creative cooking experiments and delicious recipes.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Food Science
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Photography
+                    </Badge>
                   </div>
-                  <div className="md:w-1/2 p-8 space-y-4 flex flex-col justify-center">
-                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
-                      Experimental Bytes Instagram
-                    </h3>
-                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                      Follow @experimentalbytes where culinary art meets food science! Showcasing creative cooking experiments and delicious recipes.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                        Food Science
-                      </Badge>
-                      <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                        Photography
-                      </Badge>
-                    </div>
-                    <div>
-                      <Button
-                        asChild
-                        variant="outline"
-                        className="border-green-200 dark:border-green-800 hover:bg-green-50 dark:hover:bg-green-900/20"
-                      >
-                        <Link href="https://instagram.com/experimentalbytes" target="_blank">
-                          View on Instagram
-                        </Link>
-                      </Button>
-                    </div>
+                  <div>
+                    <Button
+                      asChild
+                      size="lg"
+                      className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
+                    >
+                      <Link href="https://instagram.com/experimentalbytes" target="_blank">
+                        View on Instagram
+                      </Link>
+                    </Button>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Skills Section */}
+        <section className="w-full py-24 md:py-32 bg-white dark:bg-slate-900" id="skills">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
+              <div className="space-y-3">
+                <div className="inline-block px-4 py-1.5 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-sm font-medium">
+                  Skills & Technologies
+                </div>
+                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-slate-900 dark:text-white">
+                  Technical <span className="gradient-text">Expertise</span>
+                </h2>
+                <p className="max-w-2xl text-lg text-slate-700 dark:text-slate-300">
+                  Technologies and tools I work with across projects
+                </p>
+              </div>
+            </div>
+
+            <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {/* Languages */}
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                  <span className="text-2xl">💻</span> Languages
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Python
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    TypeScript
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    JavaScript
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Swift
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    SQL
+                  </Badge>
+                </div>
+              </div>
+
+              {/* Frontend */}
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                  <span className="text-2xl">🎨</span> Frontend
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    React
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Next.js
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    SwiftUI
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Tailwind CSS
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Vite
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Framer Motion
+                  </Badge>
+                </div>
+              </div>
+
+              {/* ML & AI */}
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                  <span className="text-2xl">🤖</span> ML & AI
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    LightGBM
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    PyTorch
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Stable Diffusion
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    HuggingFace
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    scikit-learn
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    LLMs
+                  </Badge>
+                </div>
+              </div>
+
+              {/* Mobile */}
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                  <span className="text-2xl">📱</span> Mobile
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    iOS
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Capacitor
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    StoreKit 2
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    SPM
+                  </Badge>
+                </div>
+              </div>
+
+              {/* Tools & Platforms */}
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                  <span className="text-2xl">🛠️</span> Tools
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Git
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Docker
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Gradio
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Vercel
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    HF Spaces
+                  </Badge>
+                </div>
+              </div>
+
+              {/* Practices */}
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                  <span className="text-2xl">⚡</span> Practices
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    TDD
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    CI/CD
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    A11y
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Responsive Design
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Research
+                  </Badge>
                 </div>
               </div>
             </div>
@@ -430,10 +707,10 @@ export function Component() {
                 <div className="inline-block px-4 py-1.5 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-sm font-medium">
                   Blog
                 </div>
-                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-slate-900 dark:text-white">
                   Latest <span className="gradient-text">Writings</span>
                 </h2>
-                <p className="max-w-2xl text-lg text-slate-600 dark:text-slate-400">
+                <p className="max-w-2xl text-lg text-slate-700 dark:text-slate-300">
                   Thoughts on software engineering, technology, and matcha
                 </p>
               </div>
