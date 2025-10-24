@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -19,8 +20,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={dmSans.className}>{children}</body>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body className={dmSans.className}>
+        <ThemeProvider defaultTheme="light" storageKey="website-theme">
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

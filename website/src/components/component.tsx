@@ -3,12 +3,21 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, X } from 'lucide-react';
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Component() {
   const [scrolled, setScrolled] = useState(false);
+  const [openProject, setOpenProject] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,22 +39,26 @@ export function Component() {
           </div>
           <span className="sr-only">Josh Yeung</span>
         </Link>
-        <nav className="ml-auto flex gap-6 sm:gap-8">
-          <Link className="text-sm font-semibold hover:text-green-600 transition-colors" href="#about">
+        <nav className="ml-auto flex gap-4 sm:gap-6 items-center">
+          <Link className="text-sm font-semibold hover:text-green-600 dark:hover:text-violet-400 transition-colors" href="#about">
             About
           </Link>
-          <Link className="text-sm font-semibold hover:text-green-600 transition-colors" href="#work">
+          <Link className="text-sm font-semibold hover:text-green-600 dark:hover:text-violet-400 transition-colors" href="#work">
             Experience
           </Link>
-          <Link className="text-sm font-semibold hover:text-green-600 transition-colors" href="#projects">
+          <Link className="text-sm font-semibold hover:text-green-600 dark:hover:text-violet-400 transition-colors" href="#education">
+            Education
+          </Link>
+          <Link className="text-sm font-semibold hover:text-green-600 dark:hover:text-violet-400 transition-colors" href="#projects">
             Projects
           </Link>
-          <Link className="text-sm font-semibold hover:text-green-600 transition-colors" href="#skills">
+          <Link className="text-sm font-semibold hover:text-green-600 dark:hover:text-violet-400 transition-colors" href="#skills">
             Skills
           </Link>
-          <Link className="text-sm font-semibold hover:text-green-600 transition-colors" href="#blog">
+          <Link className="text-sm font-semibold hover:text-green-600 dark:hover:text-violet-400 transition-colors" href="#blog">
             Blog
           </Link>
+          <ThemeToggle />
         </nav>
       </header>
 
@@ -234,6 +247,57 @@ export function Component() {
           </div>
         </section>
 
+        {/* Education Section */}
+        <section className="w-full py-24 md:py-32 bg-white dark:bg-slate-900" id="education">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
+              <div className="space-y-3">
+                <div className="inline-block px-4 py-1.5 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-sm font-medium">
+                  Education
+                </div>
+                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-slate-900 dark:text-white">
+                  Academic <span className="gradient-text">Background</span>
+                </h2>
+              </div>
+            </div>
+
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center text-white font-bold text-2xl flex-shrink-0">
+                    UC
+                  </div>
+                  <div className="flex-1 space-y-3">
+                    <div>
+                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                        University of California, Berkeley
+                      </h3>
+                      <p className="text-lg text-slate-600 dark:text-slate-400 mt-1">
+                        Bachelor&apos;s degree, Computer Science
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap gap-4 text-sm">
+                      <div className="flex items-center gap-2">
+                        <span className="text-slate-600 dark:text-slate-400">GPA:</span>
+                        <span className="font-semibold text-green-600 dark:text-green-400">3.70</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-slate-600 dark:text-slate-400">Years:</span>
+                        <span className="font-semibold text-slate-900 dark:text-white">2017 - 2021</span>
+                      </div>
+                    </div>
+                    <div className="pt-2">
+                      <p className="text-sm text-slate-600 dark:text-slate-400">
+                        <span className="font-semibold">Activities and societies:</span> Upsilon Pi Epsilon (UPE)
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Projects Section - Modern Grid */}
         <section className="w-full py-24 md:py-32 bg-slate-50 dark:bg-slate-800/50" id="projects">
           <div className="container px-4 md:px-6">
@@ -253,7 +317,10 @@ export function Component() {
 
             <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-2">
               {/* BrickStyle-Gen */}
-              <div className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700">
+              <div
+                onClick={() => setOpenProject('brickstyle')}
+                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 cursor-pointer"
+              >
                 <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-red-50 to-yellow-50 dark:from-red-900/20 dark:to-yellow-900/20 flex items-center justify-center">
                   <div className="text-8xl">🧱</div>
                 </div>
@@ -279,12 +346,23 @@ export function Component() {
                     </Badge>
                   </div>
                   <div className="flex gap-3">
-                    <Button asChild size="sm" className="bg-green-600 hover:bg-green-700 text-white">
+                    <Button
+                      asChild
+                      size="sm"
+                      className="bg-green-600 hover:bg-green-700 text-white"
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       <Link href="https://huggingface.co/spaces/joshuajoshy/brickstyle-gen" target="_blank">
                         Live Demo
                       </Link>
                     </Button>
-                    <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                    <Button
+                      asChild
+                      size="sm"
+                      variant="outline"
+                      className="border-2 border-slate-900 dark:border-slate-300 bg-white dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700"
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       <Link href="https://github.com/yeungjosh/brickstyle-gen" target="_blank">
                         GitHub
                       </Link>
@@ -294,7 +372,10 @@ export function Component() {
               </div>
 
               {/* Pokemon Team Recommender */}
-              <div className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 md:col-span-2">
+              <div
+                onClick={() => setOpenProject('pokemon')}
+                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 md:col-span-2 cursor-pointer"
+              >
                 <div className="p-6 space-y-4">
                   <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 flex items-center justify-center rounded-xl mb-4">
                     <div className="text-8xl">⚡</div>
@@ -361,7 +442,10 @@ export function Component() {
               </div>
 
               {/* Bible Study App */}
-              <div className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700">
+              <div
+                onClick={() => setOpenProject('bible')}
+                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 cursor-pointer"
+              >
                 <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 flex items-center justify-center">
                   <div className="text-8xl">📖</div>
                 </div>
@@ -390,7 +474,10 @@ export function Component() {
               </div>
 
               {/* System Design Trainer */}
-              <div className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700">
+              <div
+                onClick={() => setOpenProject('systemdesign')}
+                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 cursor-pointer"
+              >
                 <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-indigo-900/20 dark:to-blue-900/20 flex items-center justify-center">
                   <div className="text-8xl">🎯</div>
                 </div>
@@ -419,7 +506,10 @@ export function Component() {
               </div>
 
               {/* Experimental Bytes */}
-              <div className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700">
+              <div
+                onClick={() => window.open('https://instagram.com/experimentalbytes', '_blank')}
+                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 cursor-pointer"
+              >
                 <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 flex items-center justify-center">
                   <div className="text-8xl">🍳</div>
                 </div>
@@ -731,6 +821,309 @@ export function Component() {
             </div>
           </div>
         </section>
+
+        {/* Project Modals */}
+        {/* BrickStyle-Gen Modal */}
+        <Dialog open={openProject === 'brickstyle'} onOpenChange={() => setOpenProject(null)}>
+          <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="text-3xl font-bold gradient-text">BrickStyle-Gen</DialogTitle>
+              <DialogDescription className="text-lg">
+                Text-to-LEGO-Style Image Generator
+              </DialogDescription>
+            </DialogHeader>
+            <div className="space-y-6">
+              <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-red-50 to-yellow-50 dark:from-red-900/20 dark:to-yellow-900/20 flex items-center justify-center rounded-xl">
+                <div className="text-9xl">🧱</div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Overview</h3>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  A Gradio-based web application that generates LEGO-style images from text prompts using Stable Diffusion XL with custom LoRA fine-tuning.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Key Features</h3>
+                <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                  <li>• Text-to-brick-style image generation using SDXL + LEGO LoRA</li>
+                  <li>• 10+ curated style presets (Minifig Portrait, Micro-City, BrickHeadz, etc.)</li>
+                  <li>• Adjustable parameters (steps, CFG scale, LoRA intensity, batch size)</li>
+                  <li>• CPU/GPU/MPS support for cross-platform compatibility</li>
+                  <li>• Research foundation based on Image2Lego (2021) paper for future 2D→3D conversion</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Technical Highlights</h3>
+                <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                  <li>• Production-ready Gradio web interface with 4 tabs</li>
+                  <li>• Configurable via environment variables (model IDs, safety filters)</li>
+                  <li>• Optional ControlNet (sketch-to-brick) and IP-Adapter (reference styling) support</li>
+                  <li>• Complete project structure with modular pipeline architecture</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Tech Stack</h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge>Python</Badge>
+                  <Badge>Gradio 4.0</Badge>
+                  <Badge>PyTorch</Badge>
+                  <Badge>Stable Diffusion XL</Badge>
+                  <Badge>LEGO LoRA</Badge>
+                  <Badge>HuggingFace Spaces</Badge>
+                </div>
+              </div>
+
+              <div className="flex gap-3">
+                <Button asChild className="bg-green-600 hover:bg-green-700 text-white">
+                  <Link href="https://huggingface.co/spaces/joshuajoshy/brickstyle-gen" target="_blank">
+                    Try Live Demo
+                  </Link>
+                </Button>
+                <Button asChild variant="outline">
+                  <Link href="https://github.com/yeungjosh/brickstyle-gen" target="_blank">
+                    View on GitHub
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
+
+        {/* Pokemon Team Recommender Modal */}
+        <Dialog open={openProject === 'pokemon'} onOpenChange={() => setOpenProject(null)}>
+          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="text-3xl font-bold gradient-text">Pokemon Team Recommender</DialogTitle>
+              <DialogDescription className="text-lg">
+                ML-Powered Competitive Pokemon Team Builder
+              </DialogDescription>
+            </DialogHeader>
+            <div className="space-y-6">
+              <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 flex items-center justify-center rounded-xl">
+                <div className="text-9xl">⚡</div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Overview</h3>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  An ML-driven recommender system that completes competitive Pokemon teams using Gradient Boosting to learn optimal feature weights. Includes comprehensive validation studies comparing synthetic training data vs. real battle outcomes.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Two Approaches</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="border border-slate-200 dark:border-slate-700 rounded-lg p-4">
+                    <h4 className="font-semibold mb-2">ML-Hybrid</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">
+                      Domain knowledge + learned weights using LightGBM
+                    </p>
+                    <Button asChild size="sm" className="w-full">
+                      <Link href="https://huggingface.co/spaces/joshuajoshy/pokemon-team-recommender" target="_blank">
+                        Try Demo
+                      </Link>
+                    </Button>
+                  </div>
+                  <div className="border border-slate-200 dark:border-slate-700 rounded-lg p-4">
+                    <h4 className="font-semibold mb-2">Collaborative Filtering</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">
+                      Pure data-driven approach based on co-occurrence patterns
+                    </p>
+                    <Button asChild size="sm" className="w-full">
+                      <Link href="https://huggingface.co/spaces/joshuajoshy/pokemon-cf-recommender" target="_blank">
+                        Try Demo
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Key Features (ML-Hybrid)</h3>
+                <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                  <li>• LightGBM Gradient Boosting Regressor (100 trees, 76KB model)</li>
+                  <li>• 7 domain-specific features (type coverage, meta matchup, role diversity)</li>
+                  <li>• Trained on 10K synthetic teams with weak supervision</li>
+                  <li>• Inference time: &lt;1.5s for 12-candidate search</li>
+                  <li>• 28 unit tests with 93% code coverage</li>
+                  <li>• Model Performance: Training R²: 0.685, Validation R²: 0.642</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Validation Study</h3>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-3">
+                  Compared synthetic training data against real Pokemon Showdown battle outcomes. Key finding: <strong>Synthetic model overestimated meta importance by 38%!</strong> Real battles prioritize raw stats (bulk + speed = 62%) over strategic factors.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <Button asChild size="sm" variant="outline">
+                    <Link href="https://github.com/yeungjosh/pokemon-real-data-experiment/blob/main/REPORT.md" target="_blank">
+                      Read Research Report
+                    </Link>
+                  </Button>
+                  <Button asChild size="sm" variant="outline">
+                    <Link href="https://github.com/yeungjosh/pokemon-real-data-experiment" target="_blank">
+                      Experiment GitHub
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Tech Stack</h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge>Python</Badge>
+                  <Badge>LightGBM</Badge>
+                  <Badge>Gradio</Badge>
+                  <Badge>scikit-learn</Badge>
+                  <Badge>Pandas</Badge>
+                  <Badge>NumPy</Badge>
+                </div>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
+
+        {/* Bible Study App Modal */}
+        <Dialog open={openProject === 'bible'} onOpenChange={() => setOpenProject(null)}>
+          <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="text-3xl font-bold gradient-text">Bible Study App</DialogTitle>
+              <DialogDescription className="text-lg">
+                AI-Powered Scripture Study Application
+              </DialogDescription>
+            </DialogHeader>
+            <div className="space-y-6">
+              <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 flex items-center justify-center rounded-xl">
+                <div className="text-9xl">📖</div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Overview</h3>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  A cross-platform Bible reading and study application with AI-powered assistance, verse highlighting, note-taking, and chat history management.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Key Features</h3>
+                <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                  <li>• Interactive Bible reader with verse selection and highlighting</li>
+                  <li>• AI chat assistant with verse context awareness</li>
+                  <li>• Multi-session chat history management</li>
+                  <li>• Verse highlighting with color coding</li>
+                  <li>• Note-taking system attached to verse ranges</li>
+                  <li>• Customizable reading settings (density, font scale, verse numbers)</li>
+                  <li>• Dark mode support</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Architecture</h3>
+                <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                  <li>• Centralized state management via Context API + useReducer</li>
+                  <li>• BibleProvider wraps main app with global Bible study state</li>
+                  <li>• Component-driven architecture following shadcn/ui patterns</li>
+                  <li>• localStorage-based authentication system</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Tech Stack</h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge>React 18</Badge>
+                  <Badge>TypeScript</Badge>
+                  <Badge>Vite</Badge>
+                  <Badge>Capacitor 7</Badge>
+                  <Badge>shadcn/ui</Badge>
+                  <Badge>Tailwind CSS</Badge>
+                  <Badge>TanStack Query</Badge>
+                  <Badge>React Router v6</Badge>
+                </div>
+              </div>
+
+              <p className="text-sm text-slate-600 dark:text-slate-400">
+                <strong>Platform:</strong> Web + iOS/Android via Capacitor
+              </p>
+            </div>
+          </DialogContent>
+        </Dialog>
+
+        {/* System Design Trainer Modal */}
+        <Dialog open={openProject === 'systemdesign'} onOpenChange={() => setOpenProject(null)}>
+          <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="text-3xl font-bold gradient-text">System Design Trainer</DialogTitle>
+              <DialogDescription className="text-lg">
+                Duolingo-Style Interview Practice for System Design
+              </DialogDescription>
+            </DialogHeader>
+            <div className="space-y-6">
+              <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-indigo-900/20 dark:to-blue-900/20 flex items-center justify-center rounded-xl">
+                <div className="text-9xl">🎯</div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Overview</h3>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  A SwiftUI iOS application for practicing system design interview concepts through multiple-choice questions with curated explanations.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Key Features</h3>
+                <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                  <li>• Scenario-based question packs (URL Shortener, Twitter Feed, Ride-Share, etc.)</li>
+                  <li>• Multiple-choice drills with immediate feedback</li>
+                  <li>• Detailed explanations for correct and incorrect answers</li>
+                  <li>• Free starter pack + Pro unlock (one-time IAP)</li>
+                  <li>• Progress tracking: accuracy, streaks, weak topics</li>
+                  <li>• Native accessibility support</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Architecture</h3>
+                <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                  <li>• Multi-module SPM structure (SystemDesignContent + SystemDesignTrainerApp)</li>
+                  <li>• Actor-based ContentRepository with SHA256 checksum validation</li>
+                  <li>• Protocol-oriented IAP design (StoreClient protocol, PurchaseManager)</li>
+                  <li>• Composite EntitlementCache (Keychain + UserDefaults sync)</li>
+                  <li>• Spec-driven development with TDD</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Content System</h3>
+                <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                  <li>• JSON-based question packs with manifest validation</li>
+                  <li>• SHA256 integrity checks on all content</li>
+                  <li>• Easy authoring workflow for new packs</li>
+                  <li>• Automatic content validation via unit tests</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Tech Stack</h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge>Swift 5.9+</Badge>
+                  <Badge>SwiftUI</Badge>
+                  <Badge>StoreKit 2</Badge>
+                  <Badge>SPM</Badge>
+                  <Badge>iOS 17+</Badge>
+                </div>
+              </div>
+
+              <p className="text-sm text-slate-600 dark:text-slate-400">
+                <strong>Status:</strong> Active development, MVP in progress
+              </p>
+            </div>
+          </DialogContent>
+        </Dialog>
 
         {/* Footer */}
         <footer className="w-full py-12 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">

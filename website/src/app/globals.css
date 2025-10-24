@@ -25,21 +25,20 @@
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: 15 23 42;
-    --foreground: 248 250 252;
-    --muted: 30 41 59;
-    --muted-foreground: 148 163 184;
-    --card: 30 41 59;
-    --card-foreground: 248 250 252;
-    --border: 51 65 85;
+.dark {
+  /* Vibrant dark theme inspired by ColorHunt palette */
+  --background: 9 0 64; /* Deep navy #090040 */
+  --foreground: 248 250 252;
+  --muted: 71 19 150; /* Deep purple #471396 */
+  --muted-foreground: 203 213 225;
+  --card: 71 19 150; /* Deep purple #471396 */
+  --card-foreground: 248 250 252;
+  --border: 177 59 255; /* Bright violet #B13BFF */
 
-    --primary: 74 222 128;
-    --primary-foreground: 15 23 42;
-    --secondary: 34 139 34;
-    --accent: 20 83 45;
-  }
+  --primary: 177 59 255; /* Bright violet #B13BFF */
+  --primary-foreground: 255 255 255;
+  --secondary: 255 204 0; /* Vibrant yellow #FFCC00 */
+  --accent: 177 59 255; /* Bright violet #B13BFF */
 }
 
 * {
@@ -62,10 +61,9 @@ body {
   -webkit-backdrop-filter: blur(12px);
 }
 
-@media (prefers-color-scheme: dark) {
-  .glass-effect {
-    background: rgba(30, 41, 59, 0.8);
-  }
+.dark .glass-effect {
+  background: rgba(71, 19, 150, 0.6); /* Deep purple with transparency */
+  border: 1px solid rgba(177, 59, 255, 0.3); /* Subtle violet border */
 }
 
 /* Smooth animations */
@@ -87,6 +85,10 @@ body {
 /* Gradient text effect */
 .gradient-text {
   @apply bg-gradient-to-r from-green-600 to-emerald-500 bg-clip-text text-transparent;
+}
+
+.dark .gradient-text {
+  @apply bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent;
 }
 
 @layer utilities {
