@@ -316,61 +316,6 @@ export function Component() {
             </div>
 
             <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-2">
-              {/* BrickStyle-Gen */}
-              <div
-                onClick={() => setOpenProject('brickstyle')}
-                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 cursor-pointer"
-              >
-                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-red-50 to-yellow-50 dark:from-red-900/20 dark:to-yellow-900/20 flex items-center justify-center">
-                  <div className="text-8xl">🧱</div>
-                </div>
-                <div className="p-6 space-y-4">
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
-                    BrickStyle-Gen
-                  </h3>
-                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                    Text-to-LEGO-style image generator using Stable Diffusion XL with custom LoRA fine-tuning. 10+ curated style presets and adjustable parameters.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      Python
-                    </Badge>
-                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      Gradio
-                    </Badge>
-                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      SDXL
-                    </Badge>
-                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      PyTorch
-                    </Badge>
-                  </div>
-                  <div className="flex gap-3">
-                    <Button
-                      asChild
-                      size="sm"
-                      className="bg-green-600 hover:bg-green-700 text-white"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <Link href="https://huggingface.co/spaces/joshuajoshy/brickstyle-gen" target="_blank">
-                        Live Demo
-                      </Link>
-                    </Button>
-                    <Button
-                      asChild
-                      size="sm"
-                      variant="outline"
-                      className="border-2 border-slate-900 dark:border-slate-300 bg-white dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <Link href="https://github.com/yeungjosh/brickstyle-gen" target="_blank">
-                        GitHub
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-
               {/* Pokemon Team Recommender */}
               <div
                 onClick={() => setOpenProject('pokemon')}
@@ -501,6 +446,61 @@ export function Component() {
                     <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
                       iOS
                     </Badge>
+                  </div>
+                </div>
+              </div>
+
+              {/* BrickStyle-Gen */}
+              <div
+                onClick={() => setOpenProject('brickstyle')}
+                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 cursor-pointer"
+              >
+                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-red-50 to-yellow-50 dark:from-red-900/20 dark:to-yellow-900/20 flex items-center justify-center">
+                  <div className="text-8xl">🧱</div>
+                </div>
+                <div className="p-6 space-y-4">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                    BrickStyle-Gen
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                    Text-to-LEGO-style image generator using Stable Diffusion XL with custom LoRA fine-tuning. 10+ curated style presets and adjustable parameters.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Python
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Gradio
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      SDXL
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      PyTorch
+                    </Badge>
+                  </div>
+                  <div className="flex gap-3">
+                    <Button
+                      asChild
+                      size="sm"
+                      className="bg-green-600 hover:bg-green-700 text-white"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Link href="https://huggingface.co/spaces/joshuajoshy/brickstyle-gen" target="_blank">
+                        Live Demo
+                      </Link>
+                    </Button>
+                    <Button
+                      asChild
+                      size="sm"
+                      variant="outline"
+                      className="border-2 border-slate-900 dark:border-slate-300 bg-white dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Link href="https://github.com/yeungjosh/brickstyle-gen" target="_blank">
+                        GitHub
+                      </Link>
+                    </Button>
                   </div>
                 </div>
               </div>
