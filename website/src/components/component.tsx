@@ -156,7 +156,7 @@ export function Component() {
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-1">Amazon</h3>
-                      <p className="text-lg font-semibold text-green-600 dark:text-green-400">Software Development Engineer II</p>
+                      <p className="text-lg font-semibold text-green-600 dark:text-green-400">Software Development Engineer II & Machine Learning Engineer</p>
                       <p className="text-slate-600 dark:text-slate-400">Amazon Ads, Prime Video</p>
                     </div>
                     <div className="text-right">
