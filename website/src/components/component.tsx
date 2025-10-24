@@ -143,7 +143,7 @@ export function Component() {
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-1">Amazon</h3>
-                      <p className="text-lg font-semibold text-green-600 dark:text-green-400">Software Engineer II</p>
+                      <p className="text-lg font-semibold text-green-600 dark:text-green-400">Software Development Engineer II</p>
                       <p className="text-slate-600 dark:text-slate-400">Amazon Ads, Prime Video</p>
                     </div>
                     <div className="text-right">
@@ -151,9 +151,11 @@ export function Component() {
                       <p className="text-xs text-slate-400 dark:text-slate-500">Seattle, WA</p>
                     </div>
                   </div>
-                  <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-                    Building scalable systems and features for Amazon&apos;s advertising platform and Prime Video, impacting millions of users globally.
-                  </p>
+                  <ul className="space-y-2 text-slate-700 dark:text-slate-300 leading-relaxed">
+                    <li>• Designed and implemented an optimized caching architecture for search query understanding, reducing unnecessary ad sourcing queries with low shopping intent. Resulted in a 16.24% increase in Return on Ad Spend (RoAS).</li>
+                    <li>• Architected and led end-to-end redesign of visual sourcing multimodal embeddings pipeline, cutting storage costs by 75% and reducing image processing volume by 85.27% (5M to 750K daily), saving $6,600+ monthly.</li>
+                    <li>• Developed and deployed internal AI assistant based on secure RAG-powered knowledge base leveraging multiple LLMs via Amazon Bedrock, streamlining team workflows.</li>
+                  </ul>
                 </div>
               </div>
 
@@ -169,18 +171,26 @@ export function Component() {
                     </div>
                     <div className="text-right">
                       <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Sep 2022 - Apr 2024</p>
-                      <p className="text-xs text-slate-400 dark:text-slate-500">Kirkland, WA</p>
+                      <p className="text-xs text-slate-400 dark:text-slate-500">Seattle, WA</p>
                     </div>
                   </div>
-                  <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-3">
-                    Developed features and resolved critical bugs for Google Assistant using Large Language Models, impacting millions of devices worldwide.
-                  </p>
+                  <ul className="space-y-2 text-slate-700 dark:text-slate-300 leading-relaxed mb-3">
+                    <li>• Designed and launched fallbacks for home/work journeys on Google Assistant (~80M daily users), improving query reliability for 8M users and increasing successful directions queries by 22.68%.</li>
+                    <li>• Built personalized restaurant recommender using Bard/Gemini, enhancing conversational AI experiences.</li>
+                    <li>• Developed suggestion buttons for new Google Assistant on mobile, driving 40M daily impressions and 3M DAUs.</li>
+                    <li>• Integrated 10+ local search features (e.g., "Starbucks hours," "Seattle traffic"), improving navigation capabilities.</li>
+                    <li>• Designed and implemented "Search Along Route" prototype for Google Assistant (1.5M DAUs).</li>
+                    <li>• Increased test coverage for local journeys by 400% through automated parameterized regression tests.</li>
+                  </ul>
                   <div className="flex flex-wrap gap-2">
                     <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300 hover:bg-green-200 dark:hover:bg-green-900/50">
                       LLM
                     </Badge>
                     <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300 hover:bg-green-200 dark:hover:bg-green-900/50">
-                      Software Development
+                      Conversational AI
+                    </Badge>
+                    <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300 hover:bg-green-200 dark:hover:bg-green-900/50">
+                      Google Assistant
                     </Badge>
                   </div>
                 </div>
@@ -193,7 +203,7 @@ export function Component() {
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-1">Qualtrics</h3>
-                      <p className="text-lg font-semibold text-green-600 dark:text-green-400">NLP Research Science Intern</p>
+                      <p className="text-lg font-semibold text-green-600 dark:text-green-400">Research Engineer Intern</p>
                       <p className="text-slate-600 dark:text-slate-400">Qualtrics IQ</p>
                     </div>
                     <div className="text-right">
@@ -201,30 +211,10 @@ export function Component() {
                       <p className="text-xs text-slate-400 dark:text-slate-500">Seattle, WA</p>
                     </div>
                   </div>
-                  <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-                    Developed methods for fine-grained aspect and opinion-based sentiment analysis, and researched weak supervision techniques to improve Qualtrics IQ&apos;s text analysis capabilities.
-                  </p>
-                </div>
-              </div>
-
-              {/* Qualtrics - Software */}
-              <div className="group relative bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-800/50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="relative">
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-1">Qualtrics</h3>
-                      <p className="text-lg font-semibold text-green-600 dark:text-green-400">Software Engineer Intern</p>
-                      <p className="text-slate-600 dark:text-slate-400">DevOps Team</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Summer 2020</p>
-                      <p className="text-xs text-slate-400 dark:text-slate-500">Seattle, WA</p>
-                    </div>
-                  </div>
-                  <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-                    Contributed to the development of DevOps tools and infrastructure improvements.
-                  </p>
+                  <ul className="space-y-2 text-slate-700 dark:text-slate-300 leading-relaxed">
+                    <li>• Improved Qualtrics IQ&apos;s text analysis capabilities using NLP, leading to more reliable experimental results.</li>
+                    <li>• Optimized NLP model deployment on AWS SageMaker and internal platform. Achieved 80% data reduction for Qualtrics dataset inference while maintaining high accuracy (58% F1 score) in aspect opinion tagging.</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -346,22 +336,22 @@ export function Component() {
                       </div>
                       <p className="text-sm font-semibold text-slate-700 dark:text-slate-300 mt-3">Validation Research:</p>
                       <div className="flex flex-wrap gap-2">
-                        <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                        <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300 bg-white dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700">
                           <Link href="https://github.com/yeungjosh/pokemon-real-data-experiment/blob/main/REPORT.md" target="_blank">
                             Research Report
                           </Link>
                         </Button>
-                        <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                        <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300 bg-white dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700">
                           <Link href="https://github.com/yeungjosh/pokemon-team-recommender" target="_blank">
                             ML-Hybrid GitHub
                           </Link>
                         </Button>
-                        <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                        <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300 bg-white dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700">
                           <Link href="https://github.com/yeungjosh/pokemon-cf-recommender" target="_blank">
                             CF GitHub
                           </Link>
                         </Button>
-                        <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                        <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300 bg-white dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700">
                           <Link href="https://github.com/yeungjosh/pokemon-real-data-experiment" target="_blank">
                             Experiment GitHub
                           </Link>
