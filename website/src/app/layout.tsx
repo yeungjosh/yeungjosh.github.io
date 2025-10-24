@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={dmSans.className}>
-        <ThemeProvider defaultTheme="light" storageKey="website-theme">
+        <ThemeProvider defaultTheme="dark" storageKey="website-theme">
           {children}
         </ThemeProvider>
       </body>
