@@ -295,17 +295,16 @@ export function Component() {
 
               {/* Pokemon Team Recommender */}
               <div className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 md:col-span-2">
-                <div className="md:flex">
-                  <div className="md:w-1/3 aspect-video md:aspect-auto relative overflow-hidden bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 flex items-center justify-center">
+                <div className="p-6 space-y-4">
+                  <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 flex items-center justify-center rounded-xl mb-4">
                     <div className="text-8xl">⚡</div>
                   </div>
-                  <div className="md:w-2/3 p-6 space-y-4">
-                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
-                      Pokemon Team Recommender
-                    </h3>
-                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                      ML-powered competitive team builder using LightGBM. Trained on 10K synthetic teams with 93% code coverage. Includes validation study comparing synthetic vs. real battle data.
-                    </p>
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                    Pokemon Team Recommender
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                    ML-powered competitive team builder using LightGBM. Trained on 10K synthetic teams with 93% code coverage. Includes validation study comparing synthetic vs. real battle data.
+                  </p>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
                         Python
@@ -359,7 +358,6 @@ export function Component() {
                       </div>
                     </div>
                   </div>
-                </div>
               </div>
 
               {/* Bible Study App */}
