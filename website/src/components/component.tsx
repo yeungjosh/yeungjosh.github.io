@@ -454,7 +454,7 @@ export function Component() {
                 </div>
               </div>
 
-              {/* Pacman AI Project */}
+              {/* Pacman AI */}
               <div
                 onClick={() => setOpenProject('pacman')}
                 className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 cursor-pointer"
@@ -464,7 +464,7 @@ export function Component() {
                 </div>
                 <div className="p-6 space-y-4">
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
-                    Pacman AI Project
+                    Pacman AI
                   </h3>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                     UC Berkeley CS188 project implementing search algorithms, multi-agent systems, reinforcement learning, and probabilistic inference in the Pacman domain.
@@ -1202,11 +1202,11 @@ export function Component() {
           </DialogContent>
         </Dialog>
 
-        {/* Pacman AI Project Modal */}
+        {/* Pacman AI Modal */}
         <Dialog open={openProject === 'pacman'} onOpenChange={() => setOpenProject(null)}>
           <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
             <DialogHeader>
-              <DialogTitle className="text-3xl font-bold gradient-text">Pacman AI Project</DialogTitle>
+              <DialogTitle className="text-3xl font-bold gradient-text">Pacman AI</DialogTitle>
               <DialogDescription className="text-lg">
                 UC Berkeley CS188: Introduction to Artificial Intelligence
               </DialogDescription>
