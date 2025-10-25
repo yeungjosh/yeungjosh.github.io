@@ -681,16 +681,34 @@ export function Component() {
                     Python
                   </Badge>
                   <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    TypeScript
+                    Java
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Kotlin
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Go
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    C++
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    C
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Dart
                   </Badge>
                   <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
                     JavaScript
                   </Badge>
                   <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Swift
+                    TypeScript
                   </Badge>
                   <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
                     SQL
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Bash
                   </Badge>
                 </div>
               </div>
@@ -722,20 +740,17 @@ export function Component() {
                 </div>
               </div>
 
-              {/* Backend */}
+              {/* Backend & Databases */}
               <div className="space-y-4">
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <span className="text-2xl">⚙️</span> Backend
+                  <span className="text-2xl">⚙️</span> Backend & Databases
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Java
-                  </Badge>
                   <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
                     Node.js
                   </Badge>
                   <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Dart
+                    Flask
                   </Badge>
                   <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
                     Spring Boot
@@ -747,10 +762,19 @@ export function Component() {
                     GraphQL
                   </Badge>
                   <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    gRPC
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    MySQL
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
                     PostgreSQL
                   </Badge>
                   <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
                     MongoDB
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Bigtable
                   </Badge>
                 </div>
               </div>
@@ -762,22 +786,34 @@ export function Component() {
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    LightGBM
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
                     PyTorch
                   </Badge>
                   <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Stable Diffusion
+                    TensorFlow
                   </Badge>
                   <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    HuggingFace
+                    LLMs
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Generative AI
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Prompt Engineering
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    NLP
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    LightGBM
                   </Badge>
                   <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
                     scikit-learn
                   </Badge>
                   <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    LLMs
+                    Pandas
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    NumPy
                   </Badge>
                 </div>
               </div>
@@ -803,50 +839,71 @@ export function Component() {
                 </div>
               </div>
 
-              {/* Tools & Platforms */}
+              {/* Cloud & DevOps */}
               <div className="space-y-4">
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <span className="text-2xl">🛠️</span> Tools
+                  <span className="text-2xl">☁️</span> Cloud & DevOps
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Git
+                    AWS
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    GCP
                   </Badge>
                   <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
                     Docker
                   </Badge>
                   <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Gradio
+                    Kubernetes
                   </Badge>
                   <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Vercel
+                    Linux
                   </Badge>
                   <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    HF Spaces
+                    Unix
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Git
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Mercurial
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    S3
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    MapReduce
                   </Badge>
                 </div>
               </div>
 
-              {/* Practices */}
+              {/* Core Skills & Practices */}
               <div className="space-y-4">
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <span className="text-2xl">⚡</span> Practices
+                  <span className="text-2xl">⚡</span> Core Skills
                 </h3>
                 <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Object-Oriented Design
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Data Structures
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Algorithms
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Operating Systems
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    DevOps
+                  </Badge>
                   <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
                     TDD
                   </Badge>
                   <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
                     CI/CD
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    A11y
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Responsive Design
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Research
                   </Badge>
                 </div>
               </div>
