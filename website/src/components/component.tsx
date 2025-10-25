@@ -390,6 +390,58 @@ export function Component() {
                   </div>
               </div>
 
+              {/* Optimizer Robustness Research */}
+              <div
+                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 md:col-span-2"
+              >
+                <div className="p-6 space-y-4">
+                  <div className="aspect-video relative overflow-hidden rounded-xl mb-4">
+                    <img
+                      src="/optimizer-robustness.png"
+                      alt="Optimizer Robustness Analysis - Test accuracy vs noise level comparison"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                    Neural Network Optimizer Robustness Analysis
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                    Research at UC Berkeley RISELab investigating how optimizer choice (SGD, Adam, AdaHessian) affects model robustness to input perturbations. Adam-trained models showed 2-3x better accuracy under realistic noise compared to SGD.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      PyTorch
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      ResNet
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Research
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      ML Robustness
+                    </Badge>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      <strong>Research conducted at:</strong> <Link href="https://rise.cs.berkeley.edu/" target="_blank" className="text-green-600 dark:text-violet-400 hover:underline">Berkeley RISELab</Link> under <Link href="https://www.stat.berkeley.edu/~mmahoney/" target="_blank" className="text-green-600 dark:text-violet-400 hover:underline">Prof. Michael Mahoney</Link>
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      <Button asChild size="sm" className="bg-green-600 hover:bg-green-700 text-white">
+                        <Link href="/blog/optimizer-robustness">
+                          Read Full Article
+                        </Link>
+                      </Button>
+                      <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300 bg-white dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700">
+                        <Link href="https://github.com/yeungjosh/riselab" target="_blank">
+                          View on GitHub
+                        </Link>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* Bible Study App */}
               <div
                 onClick={() => setOpenProject('bible')}
@@ -1804,8 +1856,8 @@ export function Component() {
                 <Link href="https://linkedin.com/in/yeungjosh" className="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors">
                   LinkedIn
                 </Link>
-                <Link href="mailto:hello@joshyeung.com" className="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors">
-                  Email
+                <Link href="mailto:yeungj@berkeley.edu" className="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors">
+                  yeungj AT berkeley.edu
                 </Link>
               </div>
             </div>
