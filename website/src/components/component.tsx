@@ -649,6 +649,56 @@ export function Component() {
                   </div>
                 </div>
               </div>
+
+              {/* EECS 127 Crash Course */}
+              <div
+                onClick={() => setOpenProject('eecs127')}
+                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 md:col-span-2 cursor-pointer"
+              >
+                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-blue-900/20 dark:via-purple-900/20 dark:to-pink-900/20 flex items-center justify-center">
+                  <div className="text-8xl">📊</div>
+                </div>
+                <div className="p-6 space-y-4">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                    EECS 127 Crash Course for ML/SWE
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                    Comprehensive hands-on crash course covering optimization fundamentals from UC Berkeley&apos;s EECS 127. Seven Jupyter notebooks with implementations of SVD, PCA, recommender systems, LASSO, logistic regression, portfolio optimization, and compressed sensing.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Python
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      NumPy
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      CVXPy
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Optimization
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Machine Learning
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      UC Berkeley
+                    </Badge>
+                  </div>
+                  <div className="flex gap-3">
+                    <Button
+                      asChild
+                      size="sm"
+                      className="bg-green-600 hover:bg-green-700 text-white"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Link href="https://github.com/yeungjosh/eecs127-crash-course" target="_blank">
+                        View on GitHub
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -1574,6 +1624,162 @@ export function Component() {
 
               <p className="text-sm text-slate-600 dark:text-slate-400">
                 <strong>Academic Project:</strong> Completed as part of UC Berkeley&apos;s Introduction to Artificial Intelligence course (CS188)
+              </p>
+            </div>
+          </DialogContent>
+        </Dialog>
+
+        {/* EECS 127 Crash Course Modal */}
+        <Dialog open={openProject === 'eecs127'} onOpenChange={() => setOpenProject(null)}>
+          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="text-3xl font-bold gradient-text">EECS 127 Crash Course for ML/SWE</DialogTitle>
+              <DialogDescription className="text-lg">
+                UC Berkeley&apos;s Optimization Models in Engineering - Hands-On Implementation
+              </DialogDescription>
+            </DialogHeader>
+
+            <div className="space-y-6 text-slate-900 dark:text-slate-100">
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Overview</h3>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  A comprehensive crash course covering key optimization concepts from UC Berkeley&apos;s EECS 127, tailored specifically for Machine Learning Engineers and Software Engineers. Features 7 hands-on Jupyter notebooks with from-scratch implementations, visualizations, and connections to modern ML applications.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Projects Included</h3>
+                <div className="grid gap-4">
+                  <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800">
+                    <h4 className="font-semibold mb-2">1. Image Compression with SVD</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      Low-rank matrix approximation using Singular Value Decomposition. Explore compression-quality tradeoffs and understand the foundation of dimensionality reduction techniques.
+                    </p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800">
+                    <h4 className="font-semibold mb-2">2. PCA for Dimensionality Reduction</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      Implement Principal Component Analysis from scratch using SVD. Apply to MNIST digits with 2D/3D visualization and understand variance-based feature selection.
+                    </p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800">
+                    <h4 className="font-semibold mb-2">3. Recommender System with Matrix Factorization</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      Build Netflix-style collaborative filtering using Alternating Least Squares (ALS) and Stochastic Gradient Descent (SGD). Compare approaches and interpret latent factors.
+                    </p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800">
+                    <h4 className="font-semibold mb-2">4. LASSO Regression & Feature Selection</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      Explore L1 regularization for automatic feature selection. Visualize why L1 induces sparsity, compute regularization paths, and compare with Ridge regression.
+                    </p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800">
+                    <h4 className="font-semibold mb-2">5. Logistic Regression from Scratch</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      Implement gradient descent for binary classification. Compare batch GD vs SGD, visualize decision boundaries, and understand the foundation of deep learning optimizers.
+                    </p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800">
+                    <h4 className="font-semibold mb-2">6. Portfolio Optimization</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      Apply quadratic programming to Markowitz portfolio theory. Compute the efficient frontier, understand risk-return tradeoffs, and handle constraints with CVXPy.
+                    </p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800">
+                    <h4 className="font-semibold mb-2">7. Compressed Sensing for Signal Recovery</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      Recover sparse signals from few measurements using L1 minimization. Break the Nyquist-Shannon theorem and understand applications in MRI and signal processing.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">What Each Notebook Includes</h3>
+                <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                  <li>• <strong>Theory & Intuition:</strong> Mathematical background explained clearly with geometric visualizations</li>
+                  <li>• <strong>From-Scratch Implementation:</strong> Build understanding by coding algorithms yourself</li>
+                  <li>• <strong>Library Comparison:</strong> Verify results against scikit-learn, CVXPy, etc.</li>
+                  <li>• <strong>Visualizations:</strong> Interactive plots showing convergence, decision boundaries, and tradeoffs</li>
+                  <li>• <strong>ML Connections:</strong> How concepts apply to modern machine learning</li>
+                  <li>• <strong>Hands-On Exercises:</strong> Practice problems to deepen understanding</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Key Topics Covered</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Matrix Decompositions (SVD, PCA)</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Convex Optimization</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Gradient Descent Methods</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">L1/L2 Regularization</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Quadratic Programming</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Sparse Optimization</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Matrix Factorization</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Compressed Sensing</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Real-World Applications</h3>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  Each project connects theory to practice: Netflix-style recommender systems, medical imaging (MRI acceleration), portfolio optimization, neural network training foundations, feature selection for high-dimensional data, and signal processing. Perfect for ML engineers wanting to understand the optimization behind their models.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Tech Stack</h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge>Python</Badge>
+                  <Badge>NumPy</Badge>
+                  <Badge>Matplotlib</Badge>
+                  <Badge>CVXPy</Badge>
+                  <Badge>scikit-learn</Badge>
+                  <Badge>Jupyter</Badge>
+                  <Badge>Pandas</Badge>
+                  <Badge>SciPy</Badge>
+                </div>
+              </div>
+
+              <div className="flex gap-3">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-green-600 hover:bg-green-700 text-white"
+                >
+                  <Link href="https://github.com/yeungjosh/eecs127-crash-course" target="_blank">
+                    View on GitHub
+                  </Link>
+                </Button>
+              </div>
+
+              <p className="text-sm text-slate-600 dark:text-slate-400">
+                <strong>Educational Resource:</strong> Comprehensive crash course inspired by UC Berkeley&apos;s EECS 127 (Optimization Models in Engineering), designed for ML/SWE professionals.
               </p>
             </div>
           </DialogContent>
