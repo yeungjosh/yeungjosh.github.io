@@ -454,6 +454,38 @@ export function Component() {
                 </div>
               </div>
 
+              {/* Pacman AI Project */}
+              <div
+                onClick={() => setOpenProject('pacman')}
+                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 cursor-pointer"
+              >
+                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-yellow-50 to-blue-50 dark:from-yellow-900/20 dark:to-blue-900/20 flex items-center justify-center">
+                  <div className="text-8xl">👻</div>
+                </div>
+                <div className="p-6 space-y-4">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                    Pacman AI Project
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                    UC Berkeley CS188 project implementing search algorithms, multi-agent systems, reinforcement learning, and probabilistic inference in the Pacman domain.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Python
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      AI
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Machine Learning
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      UC Berkeley
+                    </Badge>
+                  </div>
+                </div>
+              </div>
+
               {/* BrickStyle-Gen */}
               <div
                 onClick={() => setOpenProject('brickstyle')}
@@ -1165,6 +1197,128 @@ export function Component() {
 
               <p className="text-sm text-slate-600 dark:text-slate-400">
                 <strong>Status:</strong> Active development, MVP in progress
+              </p>
+            </div>
+          </DialogContent>
+        </Dialog>
+
+        {/* Pacman AI Project Modal */}
+        <Dialog open={openProject === 'pacman'} onOpenChange={() => setOpenProject(null)}>
+          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="text-3xl font-bold gradient-text">Pacman AI Project</DialogTitle>
+              <DialogDescription className="text-lg">
+                UC Berkeley CS188: Introduction to Artificial Intelligence
+              </DialogDescription>
+            </DialogHeader>
+            <div className="space-y-6">
+              <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-yellow-50 to-blue-50 dark:from-yellow-900/20 dark:to-blue-900/20 flex items-center justify-center rounded-xl">
+                <div className="text-9xl">👻</div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Overview</h3>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  A comprehensive series of AI projects from UC Berkeley&apos;s CS188 course, implementing core artificial intelligence techniques in the classic Pacman game domain. The projects cover the entire spectrum of AI fundamentals, from basic search to advanced machine learning.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Project Components</h3>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-white mb-2">1. Search Algorithms</h4>
+                    <p className="text-slate-700 dark:text-slate-300 mb-2">
+                      Implemented fundamental search algorithms to help Pacman navigate mazes and find optimal paths:
+                    </p>
+                    <ul className="space-y-1 text-slate-700 dark:text-slate-300 ml-4">
+                      <li>• Depth-First Search (DFS) for maze exploration</li>
+                      <li>• Breadth-First Search (BFS) for shortest path finding</li>
+                      <li>• Uniform Cost Search (UCS) for weighted path optimization</li>
+                      <li>• A* Search with custom heuristics for efficient navigation</li>
+                      <li>• Applied to traveling salesman problems (collecting all food pellets)</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-white mb-2">2. Multi-Agent Search</h4>
+                    <p className="text-slate-700 dark:text-slate-300 mb-2">
+                      Modeled Pacman as an adversarial game with intelligent ghost opponents:
+                    </p>
+                    <ul className="space-y-1 text-slate-700 dark:text-slate-300 ml-4">
+                      <li>• Minimax algorithm for optimal play against adversarial agents</li>
+                      <li>• Alpha-Beta pruning for efficient game tree search</li>
+                      <li>• Expectimax for handling stochastic ghost behaviors</li>
+                      <li>• Custom evaluation functions for state assessment</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-white mb-2">3. Reinforcement Learning</h4>
+                    <p className="text-slate-700 dark:text-slate-300 mb-2">
+                      Trained agents to learn optimal policies through trial and error:
+                    </p>
+                    <ul className="space-y-1 text-slate-700 dark:text-slate-300 ml-4">
+                      <li>• Value Iteration for computing optimal value functions</li>
+                      <li>• Q-Learning for model-free reinforcement learning</li>
+                      <li>• Approximate Q-Learning with feature extraction</li>
+                      <li>• Applied to both Pacman and crawler agents</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-white mb-2">4. Probabilistic Inference</h4>
+                    <p className="text-slate-700 dark:text-slate-300 mb-2">
+                      Used probabilistic reasoning to locate ghosts with noisy sensors:
+                    </p>
+                    <ul className="space-y-1 text-slate-700 dark:text-slate-300 ml-4">
+                      <li>• Bayes Nets for representing probabilistic dependencies</li>
+                      <li>• Exact inference using variable elimination</li>
+                      <li>• Hidden Markov Models (HMM) with the forward algorithm</li>
+                      <li>• Particle filtering for approximate inference</li>
+                      <li>• Ghost tracking with noisy distance readings</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-white mb-2">5. Machine Learning</h4>
+                    <p className="text-slate-700 dark:text-slate-300 mb-2">
+                      Applied supervised learning techniques to classification tasks:
+                    </p>
+                    <ul className="space-y-1 text-slate-700 dark:text-slate-300 ml-4">
+                      <li>• Perceptron algorithm for binary classification</li>
+                      <li>• Multi-layer neural networks with backpropagation</li>
+                      <li>• Digit classification (MNIST-style dataset)</li>
+                      <li>• Language identification from text features</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Key Learnings</h3>
+                <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                  <li>• Understanding trade-offs between optimality, completeness, and computational efficiency</li>
+                  <li>• Designing effective heuristics for informed search algorithms</li>
+                  <li>• Modeling uncertainty and making decisions under incomplete information</li>
+                  <li>• Balancing exploration vs. exploitation in reinforcement learning</li>
+                  <li>• Feature engineering for approximate learning methods</li>
+                  <li>• Debugging complex AI systems with emergent behaviors</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Tech Stack</h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge>Python 3.6+</Badge>
+                  <Badge>NumPy</Badge>
+                  <Badge>Algorithm Design</Badge>
+                  <Badge>UC Berkeley CS188</Badge>
+                </div>
+              </div>
+
+              <p className="text-sm text-slate-600 dark:text-slate-400">
+                <strong>Academic Project:</strong> Completed as part of UC Berkeley&apos;s Introduction to Artificial Intelligence course (CS188)
               </p>
             </div>
           </DialogContent>
