@@ -454,33 +454,65 @@ export function Component() {
                 </div>
               </div>
 
-              {/* Pacman AI */}
+              {/* Restaurant Recommender */}
               <div
-                onClick={() => setOpenProject('pacman')}
+                onClick={() => setOpenProject('restaurant')}
                 className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 cursor-pointer"
               >
-                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-yellow-50 to-blue-50 dark:from-yellow-900/20 dark:to-blue-900/20 flex items-center justify-center">
-                  <div className="text-8xl">👻</div>
+                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 flex items-center justify-center">
+                  <div className="text-8xl">🍽️</div>
                 </div>
                 <div className="p-6 space-y-4">
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
-                    Pacman AI
+                    Personalized Restaurant Recommender System
                   </h3>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                    UC Berkeley CS188 project implementing search algorithms, multi-agent systems, reinforcement learning, and probabilistic inference in the Pacman domain.
+                    Conversational AI for Google Assistant providing personalized restaurant recommendations based on cuisine preferences, dietary restrictions, and location.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      Python
+                      Bard/Gemini
                     </Badge>
                     <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      AI
+                      Google Cloud Platform
                     </Badge>
                     <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      Machine Learning
+                      Conversational AI
                     </Badge>
                     <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      UC Berkeley
+                      Google Assistant
+                    </Badge>
+                  </div>
+                </div>
+              </div>
+
+              {/* Pokemon Classifier */}
+              <div
+                onClick={() => setOpenProject('pokemonclassifier')}
+                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 cursor-pointer"
+              >
+                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 flex items-center justify-center">
+                  <div className="text-8xl">🔍</div>
+                </div>
+                <div className="p-6 space-y-4">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                    Pokemon Classifier via Resnet
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                    Fine-tuned Resnet34 for Pokemon identification achieving 94% accuracy. Deployed as a public web application on AWS Elastic Beanstalk.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      PyTorch
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      ResNet34
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      AWS Elastic Beanstalk
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Computer Vision
                     </Badge>
                   </div>
                 </div>
@@ -582,6 +614,38 @@ export function Component() {
                         View on Instagram
                       </Link>
                     </Button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Pacman AI */}
+              <div
+                onClick={() => setOpenProject('pacman')}
+                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 cursor-pointer"
+              >
+                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-yellow-50 to-blue-50 dark:from-yellow-900/20 dark:to-blue-900/20 flex items-center justify-center">
+                  <div className="text-8xl">👻</div>
+                </div>
+                <div className="p-6 space-y-4">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                    Pacman AI
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                    UC Berkeley CS188 project implementing search algorithms, multi-agent systems, reinforcement learning, and probabilistic inference in the Pacman domain.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Python
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      AI
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Machine Learning
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      UC Berkeley
+                    </Badge>
                   </div>
                 </div>
               </div>
@@ -1197,6 +1261,140 @@ export function Component() {
 
               <p className="text-sm text-slate-600 dark:text-slate-400">
                 <strong>Status:</strong> Active development, MVP in progress
+              </p>
+            </div>
+          </DialogContent>
+        </Dialog>
+
+        {/* Restaurant Recommender Modal */}
+        <Dialog open={openProject === 'restaurant'} onOpenChange={() => setOpenProject(null)}>
+          <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="text-3xl font-bold gradient-text">Personalized Restaurant Recommender System</DialogTitle>
+              <DialogDescription className="text-lg">
+                Conversational AI for Google Assistant
+              </DialogDescription>
+            </DialogHeader>
+            <div className="space-y-6">
+              <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 flex items-center justify-center rounded-xl">
+                <div className="text-9xl">🍽️</div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Overview</h3>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  Developed a conversational AI system integrated with Google Assistant that provides personalized restaurant recommendations. The system transforms the generic search results into engaging, customized spoken suggestions based on user preferences.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Key Features</h3>
+                <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                  <li>• Natural language understanding for user preferences</li>
+                  <li>• Personalized recommendations based on cuisine type</li>
+                  <li>• Dietary restriction filtering (vegetarian, vegan, gluten-free, etc.)</li>
+                  <li>• Location-based restaurant discovery</li>
+                  <li>• Conversational interface with spoken responses</li>
+                  <li>• Enhanced UX over traditional list-based results</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Technical Implementation</h3>
+                <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                  <li>• Powered by Google Bard/Gemini for natural language processing</li>
+                  <li>• Deployed on Google Cloud Platform for scalability</li>
+                  <li>• Integrated with Google Assistant Actions</li>
+                  <li>• Real-time preference analysis and filtering</li>
+                  <li>• Custom dialog flows for natural conversation</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Tech Stack</h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge>Bard/Gemini</Badge>
+                  <Badge>Google Cloud Platform</Badge>
+                  <Badge>Google Assistant</Badge>
+                  <Badge>Dialogflow</Badge>
+                  <Badge>NLP</Badge>
+                </div>
+              </div>
+
+              <p className="text-sm text-slate-600 dark:text-slate-400">
+                <strong>Impact:</strong> Transformed generic restaurant listings into personalized, spoken recommendations tailored to individual preferences.
+              </p>
+            </div>
+          </DialogContent>
+        </Dialog>
+
+        {/* Pokemon Classifier Modal */}
+        <Dialog open={openProject === 'pokemonclassifier'} onOpenChange={() => setOpenProject(null)}>
+          <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="text-3xl font-bold gradient-text">Pokemon Classifier via Resnet</DialogTitle>
+              <DialogDescription className="text-lg">
+                Deep Learning Image Classification with PyTorch
+              </DialogDescription>
+            </DialogHeader>
+            <div className="space-y-6">
+              <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 flex items-center justify-center rounded-xl">
+                <div className="text-9xl">🔍</div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Overview</h3>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  Fine-tuned a pre-trained ResNet34 convolutional neural network to identify Pokemon characters with 94% accuracy. The trained model was deployed as a publicly accessible web application on AWS Elastic Beanstalk.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Project Highlights</h3>
+                <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                  <li>• <strong>94% Classification Accuracy</strong> - High precision Pokemon identification</li>
+                  <li>• Transfer Learning - Leveraged pre-trained ResNet34 architecture</li>
+                  <li>• Fine-tuning - Adapted model for Pokemon-specific features</li>
+                  <li>• Production Deployment - Publicly accessible web application</li>
+                  <li>• Cloud Infrastructure - Scalable hosting on AWS Elastic Beanstalk</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Technical Details</h3>
+                <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                  <li>• Built with PyTorch deep learning framework</li>
+                  <li>• Transfer learning from ImageNet pre-trained ResNet34</li>
+                  <li>• Custom dataset preparation and augmentation</li>
+                  <li>• Model optimization and hyperparameter tuning</li>
+                  <li>• Flask/FastAPI web service for inference</li>
+                  <li>• AWS Elastic Beanstalk deployment pipeline</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Key Learnings</h3>
+                <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                  <li>• Transfer learning for specialized classification tasks</li>
+                  <li>• Model deployment and serving best practices</li>
+                  <li>• Cloud infrastructure management on AWS</li>
+                  <li>• End-to-end ML pipeline from training to production</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Tech Stack</h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge>PyTorch</Badge>
+                  <Badge>ResNet34</Badge>
+                  <Badge>AWS Elastic Beanstalk</Badge>
+                  <Badge>Computer Vision</Badge>
+                  <Badge>Transfer Learning</Badge>
+                </div>
+              </div>
+
+              <p className="text-sm text-slate-600 dark:text-slate-400">
+                <strong>Achievement:</strong> Successfully deployed a production-ready deep learning model achieving 94% accuracy on Pokemon classification.
               </p>
             </div>
           </DialogContent>
