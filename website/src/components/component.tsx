@@ -322,8 +322,12 @@ export function Component() {
                 className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 md:col-span-2 cursor-pointer"
               >
                 <div className="p-6 space-y-4">
-                  <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 flex items-center justify-center rounded-xl mb-4">
-                    <div className="text-8xl">⚡</div>
+                  <div className="aspect-video relative overflow-hidden rounded-xl mb-4">
+                    <img
+                      src="/pokemon_team_recommender.png"
+                      alt="Pokemon Team Recommender Interface"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
                     Pokemon Team Recommender
@@ -455,8 +459,12 @@ export function Component() {
                 onClick={() => setOpenProject('brickstyle')}
                 className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 cursor-pointer"
               >
-                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-red-50 to-yellow-50 dark:from-red-900/20 dark:to-yellow-900/20 flex items-center justify-center">
-                  <div className="text-8xl">🧱</div>
+                <div className="aspect-video relative overflow-hidden">
+                  <img
+                    src="/lego.jpg"
+                    alt="LEGO Bricks"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="p-6 space-y-4">
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
@@ -510,8 +518,12 @@ export function Component() {
                 onClick={() => window.open('https://instagram.com/experimentalbytes', '_blank')}
                 className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 cursor-pointer"
               >
-                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 flex items-center justify-center">
-                  <div className="text-8xl">🍳</div>
+                <div className="aspect-video relative overflow-hidden">
+                  <img
+                    src="/elevate-your-food-instagram-pic.png"
+                    alt="Experimental Bytes Food Photography"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="p-6 space-y-4">
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
