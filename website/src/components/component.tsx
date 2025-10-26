@@ -14,6 +14,7 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { ChevronDown, X } from 'lucide-react';
 import { ThemeToggle } from "@/components/theme-toggle";
+import VantaNet from "@/components/vanta-net";
 
 export function Component() {
   const [scrolled, setScrolled] = useState(false);
@@ -67,8 +68,11 @@ export function Component() {
 
       <main className="flex-1 pt-16">
         {/* Hero Section - Modern & Bold */}
-        <section className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 dark:from-slate-900 dark:via-emerald-900/20 dark:to-slate-900" id="about">
-          <div className="container px-4 md:px-6 py-20">
+        <section className="w-full min-h-screen relative overflow-hidden" id="about">
+          <VantaNet>
+            <div className="absolute inset-0 bg-white/80 dark:bg-slate-900/40"></div>
+            <div className="relative w-full min-h-screen flex items-center justify-center">
+              <div className="container px-4 md:px-6 py-20">
             <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
               <div className="space-y-8 animate-fade-in">
                 <div className="inline-block">
@@ -131,7 +135,9 @@ export function Component() {
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
               <ChevronDown className="w-6 h-6 text-slate-400" />
             </div>
-          </div>
+              </div>
+            </div>
+          </VantaNet>
         </section>
 
         {/* Work Experience Section - Card Based */}
