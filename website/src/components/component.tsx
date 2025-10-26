@@ -1013,6 +1013,83 @@ export function Component() {
           </div>
         </section>
 
+        {/* Hobbies Section */}
+        <section className="w-full py-24 md:py-32 bg-slate-50 dark:bg-slate-800/50" id="hobbies">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
+              <div className="space-y-3">
+                <div className="inline-block px-4 py-1.5 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-sm font-medium">
+                  Outside of Work
+                </div>
+                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-slate-900 dark:text-white">
+                  Hobbies & <span className="gradient-text">Interests</span>
+                </h2>
+                <p className="max-w-2xl text-lg text-slate-700 dark:text-slate-300">
+                  When I&apos;m not coding, you&apos;ll find me playing competitive games or enjoying strategic challenges
+                </p>
+              </div>
+            </div>
+
+            <div className="max-w-4xl mx-auto grid gap-6 md:grid-cols-2">
+              {/* Table Tennis */}
+              <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700">
+                <div className="text-5xl mb-4">🏓</div>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                  Table Tennis
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Fast-paced rallies and quick reflexes. Nothing beats a competitive ping pong match!
+                </p>
+              </div>
+
+              {/* Tennis */}
+              <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700">
+                <div className="text-5xl mb-4">🎾</div>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                  Tennis
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Love the strategy and athleticism of tennis. Great way to stay active and competitive.
+                </p>
+              </div>
+
+              {/* Chess */}
+              <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700">
+                <div className="text-5xl mb-4">♟️</div>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                  Chess
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 mb-4">
+                  Strategy, tactics, and endless possibilities. Challenge me online!
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300">
+                    <Link href="https://lichess.org/@/jushy" target="_blank">
+                      Lichess
+                    </Link>
+                  </Button>
+                  <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300">
+                    <Link href="https://www.chess.com/member/foodproduct" target="_blank">
+                      Chess.com
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+
+              {/* Board Games */}
+              <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700">
+                <div className="text-5xl mb-4">🎲</div>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                  Board Games
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400">
+                  From strategy games to party games, I enjoy the social aspect and creative gameplay.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Matcha Passion Section */}
         <section className="w-full py-24 md:py-32 bg-gradient-to-br from-green-50 via-emerald-50/50 to-green-50 dark:from-slate-900 dark:via-green-900/10 dark:to-slate-900" id="matcha">
           <div className="container px-4 md:px-6">
