@@ -55,6 +55,9 @@ export function Component() {
           <Link className="text-sm font-semibold hover:text-green-600 dark:hover:text-violet-400 transition-colors" href="#skills">
             Skills
           </Link>
+          <Link className="text-sm font-semibold hover:text-green-600 dark:hover:text-violet-400 transition-colors" href="#hobbies">
+            Hobbies
+          </Link>
           <Link className="text-sm font-semibold hover:text-green-600 dark:hover:text-violet-400 transition-colors" href="#blog">
             Blog
           </Link>
@@ -424,7 +427,7 @@ export function Component() {
                   </div>
                   <div className="flex flex-col gap-2">
                     <p className="text-sm text-slate-600 dark:text-slate-400">
-                      <strong>Research conducted at:</strong> <Link href="https://rise.cs.berkeley.edu/" target="_blank" className="text-green-600 dark:text-violet-400 hover:underline">Berkeley RISELab</Link> under <Link href="https://www.stat.berkeley.edu/~mmahoney/" target="_blank" className="text-green-600 dark:text-violet-400 hover:underline">Prof. Michael Mahoney</Link>
+                      <strong>Research conducted at:</strong> <Link href="https://rise.cs.berkeley.edu/" target="_blank" className="text-green-600 dark:text-violet-400 hover:underline">Berkeley RISELab</Link> under <Link href="https://www.stat.berkeley.edu/~mmahoney/" target="_blank" className="text-green-600 dark:text-violet-400 hover:underline">Prof. Michael Mahoney</Link> and <Link href="https://www.benerichson.com/" target="_blank" className="text-green-600 dark:text-violet-400 hover:underline">Ben Erichson</Link>
                     </p>
                     <div className="flex flex-wrap gap-2 mt-2">
                       <Button asChild size="sm" className="bg-green-600 hover:bg-green-700 text-white">
@@ -1037,8 +1040,11 @@ export function Component() {
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
                   Table Tennis
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400">
-                  Fast-paced rallies and quick reflexes. Nothing beats a competitive ping pong match!
+                <p className="text-slate-600 dark:text-slate-400 mb-2">
+                  Fast-paced rallies and quick reflexes. Played with the Cal (UC Berkeley) table tennis club in college.
+                </p>
+                <p className="text-sm text-slate-500 dark:text-slate-500 italic">
+                  Nothing beats a competitive ping pong match!
                 </p>
               </div>
 
@@ -1048,8 +1054,11 @@ export function Component() {
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
                   Tennis
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400">
-                  Love the strategy and athleticism of tennis. Great way to stay active and competitive.
+                <p className="text-slate-600 dark:text-slate-400 mb-2">
+                  Love the strategy and athleticism of tennis. Favorite racket: Head Radical Pro. Favorite player: Roger Federer.
+                </p>
+                <p className="text-sm text-slate-500 dark:text-slate-500 italic">
+                  Great way to stay active and competitive!
                 </p>
               </div>
 
@@ -1059,9 +1068,12 @@ export function Component() {
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
                   Chess
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400 mb-4">
+                <p className="text-slate-600 dark:text-slate-400 mb-2">
                   Strategy, tactics, and endless possibilities. Challenge me online!
                 </p>
+                <div className="inline-block px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-sm font-semibold mb-4">
+                  Online Blitz Rating: 1954
+                </div>
                 <div className="flex flex-wrap gap-2">
                   <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300">
                     <Link href="https://lichess.org/@/jushy" target="_blank">
@@ -1082,8 +1094,11 @@ export function Component() {
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
                   Board Games
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400">
+                <p className="text-slate-600 dark:text-slate-400 mb-2">
                   From strategy games to party games, I enjoy the social aspect and creative gameplay.
+                </p>
+                <p className="text-sm text-slate-500 dark:text-slate-500 italic">
+                  Current favorites: Wingspan & Chameleon
                 </p>
               </div>
             </div>
