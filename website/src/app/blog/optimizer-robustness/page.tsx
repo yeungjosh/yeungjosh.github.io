@@ -5,12 +5,12 @@ import { ArrowLeft } from "lucide-react";
 
 export default function OptimizerRobustnessPost() {
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-900">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900">
       {/* Header */}
-      <header className="border-b border-slate-200 dark:border-slate-800">
-        <div className="container mx-auto px-4 py-6">
-          <Button asChild variant="ghost" className="mb-4">
-            <Link href="/#projects" className="flex items-center gap-2">
+      <header className="border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4 max-w-5xl">
+          <Button asChild variant="ghost" size="sm">
+            <Link href="/#projects" className="flex items-center gap-2 hover:gap-3 transition-all">
               <ArrowLeft className="w-4 h-4" />
               Back to Portfolio
             </Link>
@@ -19,31 +19,38 @@ export default function OptimizerRobustnessPost() {
       </header>
 
       {/* Article */}
-      <article className="container mx-auto px-4 py-12 max-w-4xl">
-        <div className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+      <article className="container mx-auto px-6 py-16 max-w-4xl">
+        {/* Title Section */}
+        <div className="mb-16 text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
             Beyond Accuracy: Why Your Optimizer Choice Matters for Real-World ML Deployment
           </h1>
-          <p className="text-xl text-slate-600 dark:text-slate-400 italic mb-6">
+          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 italic mb-8 leading-relaxed max-w-3xl mx-auto">
             A deep dive into how training algorithms affect neural network robustness to noisy inputs
           </p>
-          <div className="flex items-center gap-4 text-sm text-slate-600 dark:text-slate-400">
-            <span>Josh Yeung</span>
-            <span>•</span>
+          <div className="flex flex-wrap items-center justify-center gap-3 text-base text-slate-600 dark:text-slate-400 mb-4">
+            <span className="font-semibold">Josh Yeung</span>
+            <span className="text-slate-300 dark:text-slate-600">•</span>
             <span>UC Berkeley RISELab</span>
-            <span>•</span>
+            <span className="text-slate-300 dark:text-slate-600">•</span>
             <span>2021</span>
           </div>
-          <div className="mt-4">
-            <p className="text-sm text-slate-600 dark:text-slate-400">
-              Research conducted at <Link href="https://rise.cs.berkeley.edu/" target="_blank" className="text-green-600 dark:text-violet-400 hover:underline">Berkeley RISELab</Link> under the supervision of <Link href="https://www.stat.berkeley.edu/~mmahoney/" target="_blank" className="text-green-600 dark:text-violet-400 hover:underline">Prof. Michael Mahoney</Link>
-            </p>
-          </div>
+          <p className="text-sm text-slate-600 dark:text-slate-400">
+            Research conducted at <Link href="https://rise.cs.berkeley.edu/" target="_blank" className="text-green-600 dark:text-violet-400 hover:underline font-medium">Berkeley RISELab</Link> under the supervision of <Link href="https://www.stat.berkeley.edu/~mmahoney/" target="_blank" className="text-green-600 dark:text-violet-400 hover:underline font-medium">Prof. Michael Mahoney</Link> and <Link href="https://www.benerichson.com/" target="_blank" className="text-green-600 dark:text-violet-400 hover:underline font-medium">Ben Erichson</Link>
+          </p>
         </div>
 
-        <hr className="my-8 border-slate-200 dark:border-slate-700" />
+        {/* Content */}
+        <div className="prose prose-lg md:prose-xl dark:prose-invert max-w-none
+                      prose-headings:font-bold prose-headings:text-slate-900 dark:prose-headings:text-white
+                      prose-h2:text-3xl prose-h2:mt-16 prose-h2:mb-6
+                      prose-h3:text-2xl prose-h3:mt-12 prose-h3:mb-4
+                      prose-p:text-slate-700 dark:prose-p:text-slate-300 prose-p:leading-relaxed prose-p:mb-6
+                      prose-a:text-green-600 dark:prose-a:text-violet-400 prose-a:no-underline hover:prose-a:underline
+                      prose-strong:text-slate-900 dark:prose-strong:text-white prose-strong:font-semibold
+                      prose-li:text-slate-700 dark:prose-li:text-slate-300 prose-li:my-2
+                      prose-ul:my-6 prose-ol:my-6">
 
-        <div className="prose prose-lg dark:prose-invert max-w-none">
           <h2>The Hidden Cost of Optimizer Selection</h2>
           <p>
             You&apos;ve trained your neural network. It achieves 99% accuracy on your test set. Champagne corks pop, the model ships to production, and then... it fails catastrophically when users upload slightly blurry images, or sensor data arrives with a bit of noise.
@@ -115,15 +122,15 @@ export default function OptimizerRobustnessPost() {
 
           <h2>The Results: Optimizer Choice Matters—A Lot</h2>
 
-          <div className="my-8 bg-slate-50 dark:bg-slate-800 p-6 rounded-xl">
+          <div className="not-prose my-12 bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700">
             <Image
               src="/optimizer-robustness.png"
               alt="Robustness comparison showing test accuracy vs salt-and-pepper noise intensity for SGD, Adadelta, and Adam optimizers"
               width={800}
               height={600}
-              className="w-full h-auto rounded-lg"
+              className="w-full h-auto rounded-xl"
             />
-            <p className="text-sm text-slate-600 dark:text-slate-400 text-center mt-4 italic">
+            <p className="text-sm text-slate-600 dark:text-slate-400 text-center mt-6 italic leading-relaxed">
               Test accuracy vs. salt-and-pepper noise intensity for models trained with different optimizers.
             </p>
           </div>
@@ -131,26 +138,32 @@ export default function OptimizerRobustnessPost() {
           <h3>What the Data Shows</h3>
           <p>The graph tells a striking story:</p>
 
-          <div className="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-6 my-6 rounded">
-            <p><strong>At 0% noise (clean data):</strong></p>
-            <ul>
-              <li>All three models perform similarly (~99% accuracy)</li>
-              <li>Standard benchmarking wouldn&apos;t reveal any meaningful difference</li>
-            </ul>
+          <div className="not-prose my-8 bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-6 rounded-r-lg space-y-4">
+            <div>
+              <p className="font-semibold text-slate-900 dark:text-white mb-2">At 0% noise (clean data):</p>
+              <ul className="space-y-1 text-slate-700 dark:text-slate-300">
+                <li>• All three models perform similarly (~99% accuracy)</li>
+                <li>• Standard benchmarking wouldn&apos;t reveal any meaningful difference</li>
+              </ul>
+            </div>
 
-            <p><strong>At 10% noise corruption:</strong></p>
-            <ul>
-              <li><strong>Adam:</strong> ~85% accuracy (14% degradation)</li>
-              <li><strong>Adadelta:</strong> ~75% accuracy (24% degradation)</li>
-              <li><strong>SGD:</strong> ~65% accuracy (34% degradation)</li>
-            </ul>
+            <div>
+              <p className="font-semibold text-slate-900 dark:text-white mb-2">At 10% noise corruption:</p>
+              <ul className="space-y-1 text-slate-700 dark:text-slate-300">
+                <li>• <strong>Adam:</strong> ~85% accuracy (14% degradation)</li>
+                <li>• <strong>Adadelta:</strong> ~75% accuracy (24% degradation)</li>
+                <li>• <strong>SGD:</strong> ~65% accuracy (34% degradation)</li>
+              </ul>
+            </div>
 
-            <p><strong>At 20% noise corruption:</strong></p>
-            <ul>
-              <li><strong>Adam:</strong> ~60% accuracy</li>
-              <li><strong>Adadelta:</strong> ~40% accuracy</li>
-              <li><strong>SGD:</strong> ~25% accuracy</li>
-            </ul>
+            <div>
+              <p className="font-semibold text-slate-900 dark:text-white mb-2">At 20% noise corruption:</p>
+              <ul className="space-y-1 text-slate-700 dark:text-slate-300">
+                <li>• <strong>Adam:</strong> ~60% accuracy</li>
+                <li>• <strong>Adadelta:</strong> ~40% accuracy</li>
+                <li>• <strong>SGD:</strong> ~25% accuracy</li>
+              </ul>
+            </div>
           </div>
 
           <p>
@@ -261,12 +274,12 @@ export default function OptimizerRobustnessPost() {
             The next time you reach for SGD because &quot;that&apos;s what the paper used,&quot; remember: the optimizer you choose today determines how your model handles the messy, unpredictable world tomorrow.
           </p>
 
-          <div className="bg-green-50 dark:bg-green-900/20 p-8 rounded-xl mt-8 text-center">
-            <h3 className="text-2xl font-bold mb-4">Code & Reproducibility</h3>
-            <p className="mb-4">
+          <div className="not-prose my-12 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-10 rounded-2xl text-center border border-green-200 dark:border-green-800">
+            <h3 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">Code & Reproducibility</h3>
+            <p className="mb-6 text-slate-700 dark:text-slate-300 text-lg">
               All code, trained models, and experimental notebooks are available on GitHub
             </p>
-            <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 text-white">
+            <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 text-white shadow-lg">
               <Link href="https://github.com/yeungjosh/riselab" target="_blank">
                 View on GitHub
               </Link>
@@ -274,12 +287,15 @@ export default function OptimizerRobustnessPost() {
           </div>
         </div>
 
-        <hr className="my-12 border-slate-200 dark:border-slate-700" />
+        <hr className="my-16 border-slate-200 dark:border-slate-700" />
 
-        <div className="bg-slate-50 dark:bg-slate-800 p-6 rounded-xl">
-          <h3 className="text-xl font-bold mb-2">About the Research</h3>
-          <p className="text-slate-600 dark:text-slate-400">
-            This research was conducted at the <Link href="https://rise.cs.berkeley.edu/" target="_blank" className="text-green-600 dark:text-violet-400 hover:underline">Berkeley RISELab</Link> under the supervision of <Link href="https://www.stat.berkeley.edu/~mmahoney/" target="_blank" className="text-green-600 dark:text-violet-400 hover:underline">Professor Michael Mahoney</Link>. The work investigates the gap between model accuracy and model reliability in real-world deployment scenarios.
+        <div className="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700">
+          <h3 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">About the Research</h3>
+          <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-lg mb-4">
+            This research was conducted at the <Link href="https://rise.cs.berkeley.edu/" target="_blank" className="text-green-600 dark:text-violet-400 hover:underline font-medium">Berkeley RISELab</Link> under the supervision of <Link href="https://www.stat.berkeley.edu/~mmahoney/" target="_blank" className="text-green-600 dark:text-violet-400 hover:underline font-medium">Professor Michael Mahoney</Link> and <Link href="https://www.benerichson.com/" target="_blank" className="text-green-600 dark:text-violet-400 hover:underline font-medium">Ben Erichson</Link>. The work investigates the gap between model accuracy and model reliability in real-world deployment scenarios.
+          </p>
+          <p className="text-slate-600 dark:text-slate-400 text-base">
+            I assembled training scripts into a unified pipeline (resnet_training.py) and later assisted Geoffrey Negiar with Wandb sweep configuration for hyperparameter tuning of sparse models.
           </p>
         </div>
       </article>
