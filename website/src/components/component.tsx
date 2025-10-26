@@ -1094,7 +1094,35 @@ export function Component() {
               </div>
             </div>
 
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-2">
+              {/* Optimizer Robustness Research */}
+              <Link
+                className="group block relative overflow-hidden rounded-3xl transition-all duration-300 hover:shadow-2xl"
+                href="/blog/optimizer-robustness"
+              >
+                <div className="aspect-video relative">
+                  <Image
+                    alt="Optimizer Robustness Research"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    fill
+                    src="/optimizer-robustness.png"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                    <div className="inline-block px-3 py-1 rounded-full bg-green-500/80 text-white text-xs font-medium mb-3">
+                      Research
+                    </div>
+                    <h3 className="text-2xl font-bold mb-2 transform transition-transform group-hover:translate-y-[-4px]">
+                      Beyond Accuracy: Why Your Optimizer Choice Matters for Real-World ML
+                    </h3>
+                    <p className="text-slate-200 text-sm">
+                      Research at UC Berkeley RISELab showing Adam-trained models maintain 2-3x better accuracy under noise
+                    </p>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Matcha Blog */}
               <Link
                 className="group block relative overflow-hidden rounded-3xl transition-all duration-300 hover:shadow-2xl"
                 href="https://matchaisthebest.w3spaces.com"
@@ -1109,7 +1137,10 @@ export function Component() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                    <h3 className="text-3xl font-bold mb-2 transform transition-transform group-hover:translate-y-[-4px]">
+                    <div className="inline-block px-3 py-1 rounded-full bg-green-500/80 text-white text-xs font-medium mb-3">
+                      Lifestyle
+                    </div>
+                    <h3 className="text-2xl font-bold mb-2 transform transition-transform group-hover:translate-y-[-4px]">
                       The Art of Brewing the Perfect Cup of Matcha
                     </h3>
                     <p className="text-slate-200 text-sm">
