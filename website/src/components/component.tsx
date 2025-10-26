@@ -1217,8 +1217,7 @@ export function Component() {
               {/* Matcha Blog */}
               <Link
                 className="group block relative overflow-hidden rounded-3xl transition-all duration-300 hover:shadow-2xl"
-                href="https://matchaisthebest.w3spaces.com"
-                target="_blank"
+                href="/blog/matcha"
               >
                 <div className="aspect-video relative">
                   <Image
