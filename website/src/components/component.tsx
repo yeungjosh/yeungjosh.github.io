@@ -15,6 +15,7 @@ import { useState, useEffect } from 'react';
 import { ChevronDown, X } from 'lucide-react';
 import { ThemeToggle } from "@/components/theme-toggle";
 import VantaNet from "@/components/vanta-net";
+import PlacesGlobeSection from "@/sections/PlacesGlobeSection";
 
 export function Component() {
   const [scrolled, setScrolled] = useState(false);
@@ -58,6 +59,9 @@ export function Component() {
           </Link>
           <Link className="text-sm font-semibold hover:text-green-600 dark:hover:text-violet-400 transition-colors" href="#hobbies">
             Hobbies
+          </Link>
+          <Link className="text-sm font-semibold hover:text-green-600 dark:hover:text-violet-400 transition-colors" href="#places">
+            Places
           </Link>
           <Link className="text-sm font-semibold hover:text-green-600 dark:hover:text-violet-400 transition-colors" href="#blog">
             Blog
@@ -1110,6 +1114,9 @@ export function Component() {
             </div>
           </div>
         </section>
+
+        {/* Places I've Lived Globe Section */}
+        <PlacesGlobeSection />
 
         {/* Matcha Passion Section */}
         <section className="w-full py-24 md:py-32 bg-gradient-to-br from-green-50 via-emerald-50/50 to-green-50 dark:from-slate-900 dark:via-green-900/10 dark:to-slate-900" id="matcha">
