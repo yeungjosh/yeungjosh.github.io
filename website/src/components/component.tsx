@@ -1013,6 +1013,83 @@ export function Component() {
           </div>
         </section>
 
+        {/* Hobbies Section */}
+        <section className="w-full py-24 md:py-32 bg-slate-50 dark:bg-slate-800/50" id="hobbies">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
+              <div className="space-y-3">
+                <div className="inline-block px-4 py-1.5 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-sm font-medium">
+                  Outside of Work
+                </div>
+                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-slate-900 dark:text-white">
+                  Hobbies & <span className="gradient-text">Interests</span>
+                </h2>
+                <p className="max-w-2xl text-lg text-slate-700 dark:text-slate-300">
+                  When I&apos;m not coding, you&apos;ll find me playing competitive games or enjoying strategic challenges
+                </p>
+              </div>
+            </div>
+
+            <div className="max-w-4xl mx-auto grid gap-6 md:grid-cols-2">
+              {/* Table Tennis */}
+              <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700">
+                <div className="text-5xl mb-4">🏓</div>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                  Table Tennis
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Fast-paced rallies and quick reflexes. Nothing beats a competitive ping pong match!
+                </p>
+              </div>
+
+              {/* Tennis */}
+              <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700">
+                <div className="text-5xl mb-4">🎾</div>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                  Tennis
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Love the strategy and athleticism of tennis. Great way to stay active and competitive.
+                </p>
+              </div>
+
+              {/* Chess */}
+              <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700">
+                <div className="text-5xl mb-4">♟️</div>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                  Chess
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 mb-4">
+                  Strategy, tactics, and endless possibilities. Challenge me online!
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300">
+                    <Link href="https://lichess.org/@/jushy" target="_blank">
+                      Lichess
+                    </Link>
+                  </Button>
+                  <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300">
+                    <Link href="https://www.chess.com/member/foodproduct" target="_blank">
+                      Chess.com
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+
+              {/* Board Games */}
+              <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700">
+                <div className="text-5xl mb-4">🎲</div>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                  Board Games
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400">
+                  From strategy games to party games, I enjoy the social aspect and creative gameplay.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Matcha Passion Section */}
         <section className="w-full py-24 md:py-32 bg-gradient-to-br from-green-50 via-emerald-50/50 to-green-50 dark:from-slate-900 dark:via-green-900/10 dark:to-slate-900" id="matcha">
           <div className="container px-4 md:px-6">
@@ -1094,7 +1171,35 @@ export function Component() {
               </div>
             </div>
 
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-2">
+              {/* Optimizer Robustness Research */}
+              <Link
+                className="group block relative overflow-hidden rounded-3xl transition-all duration-300 hover:shadow-2xl"
+                href="/blog/optimizer-robustness"
+              >
+                <div className="aspect-video relative">
+                  <Image
+                    alt="Optimizer Robustness Research"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    fill
+                    src="/optimizer-robustness.png"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                    <div className="inline-block px-3 py-1 rounded-full bg-green-500/80 text-white text-xs font-medium mb-3">
+                      Research
+                    </div>
+                    <h3 className="text-2xl font-bold mb-2 transform transition-transform group-hover:translate-y-[-4px]">
+                      Beyond Accuracy: Why Your Optimizer Choice Matters for Real-World ML
+                    </h3>
+                    <p className="text-slate-200 text-sm">
+                      Research at UC Berkeley RISELab showing Adam-trained models maintain 2-3x better accuracy under noise
+                    </p>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Matcha Blog */}
               <Link
                 className="group block relative overflow-hidden rounded-3xl transition-all duration-300 hover:shadow-2xl"
                 href="https://matchaisthebest.w3spaces.com"
@@ -1109,7 +1214,10 @@ export function Component() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                    <h3 className="text-3xl font-bold mb-2 transform transition-transform group-hover:translate-y-[-4px]">
+                    <div className="inline-block px-3 py-1 rounded-full bg-green-500/80 text-white text-xs font-medium mb-3">
+                      Lifestyle
+                    </div>
+                    <h3 className="text-2xl font-bold mb-2 transform transition-transform group-hover:translate-y-[-4px]">
                       The Art of Brewing the Perfect Cup of Matcha
                     </h3>
                     <p className="text-slate-200 text-sm">
