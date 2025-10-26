@@ -1973,7 +1973,7 @@ export function Component() {
         </Dialog>
 
         {/* Footer */}
-        <footer className="w-full py-12 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+        <footer className="w-full py-12 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800" id="contact">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="flex items-center gap-2">
