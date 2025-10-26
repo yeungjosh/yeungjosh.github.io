@@ -1991,9 +1991,9 @@ export function Component() {
                 <Link href="https://linkedin.com/in/yeungjosh" className="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors">
                   LinkedIn
                 </Link>
-                <Link href="mailto:yeungj@berkeley.edu" className="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors">
+                <span className="text-slate-600 dark:text-slate-400">
                   yeungj AT berkeley.edu
-                </Link>
+                </span>
               </div>
             </div>
           </div>
