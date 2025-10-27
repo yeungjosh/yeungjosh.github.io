@@ -43,8 +43,8 @@ export default function OptimizerRobustnessPost() {
         {/* Content */}
         <div className="prose prose-lg md:prose-xl dark:prose-invert max-w-none
                       prose-headings:font-bold prose-headings:text-slate-900 dark:prose-headings:text-white
-                      prose-h2:text-3xl prose-h2:mt-16 prose-h2:mb-6
-                      prose-h3:text-2xl prose-h3:mt-12 prose-h3:mb-4
+                      prose-h2:text-4xl md:prose-h2:text-5xl prose-h2:mt-20 prose-h2:mb-8
+                      prose-h3:text-2xl md:prose-h3:text-3xl prose-h3:mt-16 prose-h3:mb-6
                       prose-p:text-slate-700 dark:prose-p:text-slate-300 prose-p:leading-relaxed prose-p:mb-6
                       prose-a:text-green-600 dark:prose-a:text-violet-400 prose-a:no-underline hover:prose-a:underline
                       prose-strong:text-slate-900 dark:prose-strong:text-white prose-strong:font-semibold
@@ -52,20 +52,47 @@ export default function OptimizerRobustnessPost() {
                       prose-ul:my-6 prose-ol:my-6">
 
           <h2>The Hidden Cost of Optimizer Selection</h2>
-          <p>
-            You&apos;ve trained your neural network. It achieves 99% accuracy on your test set. Champagne corks pop, the model ships to production, and then... it fails catastrophically when users upload slightly blurry images, or sensor data arrives with a bit of noise.
+
+          <div className="not-prose my-10 bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 border-l-4 border-red-500 p-8 rounded-r-2xl">
+            <div className="flex items-start gap-4">
+              <div className="text-4xl">⚠️</div>
+              <div className="space-y-4">
+                <p className="text-lg text-slate-800 dark:text-slate-200 font-semibold">
+                  The Production Nightmare
+                </p>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  You&apos;ve trained your neural network. It achieves 99% accuracy on your test set. Champagne corks pop, the model ships to production, and then... <strong className="text-red-600 dark:text-red-400">it fails catastrophically</strong> when users upload slightly blurry images, or sensor data arrives with a bit of noise.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-xl">
+            This scenario plays out more often than we&apos;d like to admit. While the machine learning community obsesses over squeezing out those final percentage points of accuracy, we often overlook a critical question:
           </p>
 
-          <p>
-            This scenario plays out more often than we&apos;d like to admit. While the machine learning community obsesses over squeezing out those final percentage points of accuracy, we often overlook a critical question: <strong>How well does our model handle the messy, imperfect data it will inevitably encounter in the real world?</strong>
-          </p>
+          <div className="not-prose my-10 bg-gradient-to-r from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 p-8 rounded-2xl border-2 border-violet-300 dark:border-violet-600">
+            <p className="text-2xl font-bold text-center text-slate-900 dark:text-white leading-relaxed">
+              &ldquo;How well does our model handle the messy, imperfect data it will inevitably encounter in the real world?&rdquo;
+            </p>
+          </div>
 
-          <p>
-            What&apos;s even more surprising? The optimizer you choose during training—SGD, Adam, AdaHessian—doesn&apos;t just affect how fast your model trains or its final accuracy. <strong>It fundamentally changes how robust your model is to input perturbations.</strong>
-          </p>
+          <div className="not-prose my-10 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border-l-4 border-green-500 p-8 rounded-r-2xl">
+            <div className="flex items-start gap-4">
+              <div className="text-4xl">🔍</div>
+              <div className="space-y-4">
+                <p className="text-lg text-slate-800 dark:text-slate-200 font-semibold">
+                  The Surprising Discovery
+                </p>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  What&apos;s even more surprising? The optimizer you choose during training—SGD, Adam, AdaHessian—doesn&apos;t just affect how fast your model trains or its final accuracy. <strong className="text-green-700 dark:text-green-400">It fundamentally changes how robust your model is to input perturbations.</strong>
+                </p>
+              </div>
+            </div>
+          </div>
 
-          <p>
-            In this post, I&apos;ll share findings from my research comparing five popular optimization algorithms (SGD, Adam, Adadelta, AdaHessian, and Frank-Wolfe) and their impact on model robustness. Spoiler alert: the differences are dramatic.
+          <p className="text-xl">
+            In this post, I&apos;ll share findings from my research comparing five popular optimization algorithms (SGD, Adam, Adadelta, AdaHessian, and Frank-Wolfe) and their impact on model robustness. <strong>Spoiler alert: the differences are dramatic.</strong>
           </p>
 
           <h2>The Setup: A Controlled Robustness Experiment</h2>
