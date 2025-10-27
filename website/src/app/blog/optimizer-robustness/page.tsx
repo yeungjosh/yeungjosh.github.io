@@ -78,45 +78,60 @@ export default function OptimizerRobustnessPost() {
           <h3>The Approach</h3>
           <p>I designed a systematic experiment to isolate the effect of optimizer choice:</p>
 
-          <p><strong>1. Model Architecture:</strong> ResNet-20 for CIFAR-10 and ResNet-18 for MNIST</p>
-          <ul>
-            <li>Same architecture across all experiments</li>
-            <li>Same initialization strategy (Kaiming normal)</li>
-            <li>Same basic hyperparameters (weight decay: 5e-4, L2 reg: 3e-4)</li>
-          </ul>
-
-          <p><strong>2. Optimizers Tested:</strong></p>
-          <ul>
-            <li><strong>SGD</strong> - The classic stochastic gradient descent with momentum</li>
-            <li><strong>Adam</strong> - Adaptive learning rates with momentum</li>
-            <li><strong>Adadelta</strong> - Parameter-specific adaptive learning rates</li>
-            <li><strong>AdaHessian</strong> - Second-order optimizer using Hessian information</li>
-            <li><strong>Frank-Wolfe</strong> - Constrained optimization algorithm</li>
-          </ul>
-
-          <p><strong>3. Training Protocol:</strong></p>
-          <ul>
-            <li>110 epochs with learning rate decay at epochs [30, 60, 90]</li>
-            <li>Save the best model based on validation accuracy</li>
-            <li>Ensure all models achieve comparable clean accuracy (~99%)</li>
-          </ul>
-
-          <p><strong>4. Perturbation Testing:</strong></p>
-          <p>Once training completed, I subjected each model to two types of noise:</p>
-          <ul>
-            <li><strong>Salt-and-Pepper Noise:</strong> Randomly corrupt pixels by setting them to 0 or 1
-              <ul>
-                <li>Test range: 0% to 30% pixel corruption</li>
-                <li>Simulates sensor malfunctions, transmission errors</li>
+          <div className="not-prose my-8 space-y-6">
+            <div className="bg-blue-50 dark:bg-blue-900/10 border-l-4 border-blue-500 p-6 rounded-r-lg">
+              <h4 className="font-bold text-lg text-slate-900 dark:text-white mb-3">1. Model Architecture</h4>
+              <p className="text-slate-700 dark:text-slate-300 mb-3">ResNet-20 for CIFAR-10 and ResNet-18 for MNIST</p>
+              <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                <li>• Same architecture across all experiments</li>
+                <li>• Same initialization strategy (Kaiming normal)</li>
+                <li>• Same basic hyperparameters (weight decay: 5e-4, L2 reg: 3e-4)</li>
               </ul>
-            </li>
-            <li><strong>Gaussian Noise:</strong> Add random Gaussian noise to inputs
-              <ul>
-                <li>Test range: σ from 0.0 to 4.0</li>
-                <li>Simulates measurement noise, environmental factors</li>
+            </div>
+
+            <div className="bg-purple-50 dark:bg-purple-900/10 border-l-4 border-purple-500 p-6 rounded-r-lg">
+              <h4 className="font-bold text-lg text-slate-900 dark:text-white mb-3">2. Optimizers Tested</h4>
+              <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                <li>• <strong className="text-slate-900 dark:text-white">SGD</strong> - The classic stochastic gradient descent with momentum</li>
+                <li>• <strong className="text-slate-900 dark:text-white">Adam</strong> - Adaptive learning rates with momentum</li>
+                <li>• <strong className="text-slate-900 dark:text-white">Adadelta</strong> - Parameter-specific adaptive learning rates</li>
+                <li>• <strong className="text-slate-900 dark:text-white">AdaHessian</strong> - Second-order optimizer using Hessian information</li>
+                <li>• <strong className="text-slate-900 dark:text-white">Frank-Wolfe</strong> - Constrained optimization algorithm</li>
               </ul>
-            </li>
-          </ul>
+            </div>
+
+            <div className="bg-amber-50 dark:bg-amber-900/10 border-l-4 border-amber-500 p-6 rounded-r-lg">
+              <h4 className="font-bold text-lg text-slate-900 dark:text-white mb-3">3. Training Protocol</h4>
+              <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                <li>• 110 epochs with learning rate decay at epochs [30, 60, 90]</li>
+                <li>• Save the best model based on validation accuracy</li>
+                <li>• Ensure all models achieve comparable clean accuracy (~99%)</li>
+              </ul>
+            </div>
+
+            <div className="bg-rose-50 dark:bg-rose-900/10 border-l-4 border-rose-500 p-6 rounded-r-lg">
+              <h4 className="font-bold text-lg text-slate-900 dark:text-white mb-3">4. Perturbation Testing</h4>
+              <p className="text-slate-700 dark:text-slate-300 mb-4">Once training completed, I subjected each model to two types of noise:</p>
+              <div className="space-y-4">
+                <div>
+                  <p className="font-semibold text-slate-900 dark:text-white mb-2">Salt-and-Pepper Noise:</p>
+                  <p className="text-slate-700 dark:text-slate-300 mb-2">Randomly corrupt pixels by setting them to 0 or 1</p>
+                  <ul className="space-y-1 text-slate-600 dark:text-slate-400 text-sm">
+                    <li>- Test range: 0% to 30% pixel corruption</li>
+                    <li>- Simulates sensor malfunctions, transmission errors</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-slate-900 dark:text-white mb-2">Gaussian Noise:</p>
+                  <p className="text-slate-700 dark:text-slate-300 mb-2">Add random Gaussian noise to inputs</p>
+                  <ul className="space-y-1 text-slate-600 dark:text-slate-400 text-sm">
+                    <li>- Test range: σ from 0.0 to 4.0</li>
+                    <li>- Simulates measurement noise, environmental factors</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <p>For each noise level, I measured test set accuracy and tracked how performance degraded.</p>
 
@@ -171,87 +186,137 @@ export default function OptimizerRobustnessPost() {
           </p>
 
           <h2>Why Does This Happen?</h2>
-          <p>The robustness differences stem from how each optimizer navigates the loss landscape during training:</p>
+          <p className="text-xl">The robustness differences stem from how each optimizer navigates the loss landscape during training:</p>
 
-          <h3>SGD: Fast but Brittle</h3>
-          <p>SGD uses a fixed learning rate (with momentum) for all parameters. While this simplicity makes it easy to tune, it means:</p>
-          <ul>
-            <li>All parameters update at the same scale</li>
-            <li>The model converges to sharp minima in the loss landscape</li>
-            <li>Sharp minima = high sensitivity to input perturbations</li>
-            <li>Small changes in input → large changes in output</li>
-          </ul>
+          <div className="not-prose my-12 space-y-8">
+            <div className="bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-900/10 dark:to-orange-900/10 border-2 border-red-200 dark:border-red-800 p-8 rounded-2xl">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-3">
+                <span className="text-3xl">⚠️</span>
+                SGD: Fast but Brittle
+              </h3>
+              <p className="text-slate-700 dark:text-slate-300 mb-4">SGD uses a fixed learning rate (with momentum) for all parameters. While this simplicity makes it easy to tune, it means:</p>
+              <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                <li>• All parameters update at the same scale</li>
+                <li>• The model converges to <strong className="text-red-600 dark:text-red-400">sharp minima</strong> in the loss landscape</li>
+                <li>• Sharp minima = high sensitivity to input perturbations</li>
+                <li>• Small changes in input → large changes in output</li>
+              </ul>
+            </div>
 
-          <h3>Adam: Adaptive and Robust</h3>
-          <p>Adam maintains per-parameter adaptive learning rates based on first and second moments of gradients. This leads to:</p>
-          <ul>
-            <li><strong>Adaptive updates:</strong> Parameters with sparse gradients get larger updates</li>
-            <li><strong>Smoother convergence:</strong> The model finds flatter minima</li>
-            <li><strong>Flat minima = robustness:</strong> Small input perturbations don&apos;t drastically change activations</li>
-            <li><strong>Better feature learning:</strong> The model learns representations that generalize across noise levels</li>
-          </ul>
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/10 dark:to-emerald-900/10 border-2 border-green-200 dark:border-green-800 p-8 rounded-2xl">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-3">
+                <span className="text-3xl">✅</span>
+                Adam: Adaptive and Robust
+              </h3>
+              <p className="text-slate-700 dark:text-slate-300 mb-4">Adam maintains per-parameter adaptive learning rates based on first and second moments of gradients. This leads to:</p>
+              <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                <li>• <strong className="text-slate-900 dark:text-white">Adaptive updates:</strong> Parameters with sparse gradients get larger updates</li>
+                <li>• <strong className="text-slate-900 dark:text-white">Smoother convergence:</strong> The model finds <strong className="text-green-600 dark:text-green-400">flatter minima</strong></li>
+                <li>• <strong className="text-slate-900 dark:text-white">Flat minima = robustness:</strong> Small input perturbations don&apos;t drastically change activations</li>
+                <li>• <strong className="text-slate-900 dark:text-white">Better feature learning:</strong> The model learns representations that generalize across noise levels</li>
+              </ul>
+              <div className="mt-6 p-4 bg-white/50 dark:bg-slate-900/50 rounded-lg border border-green-300 dark:border-green-700">
+                <p className="text-slate-700 dark:text-slate-300 italic">
+                  💡 <strong>Think of it like this:</strong> SGD finds a sharp mountain peak (precise but unstable), while Adam finds a broad plateau (slightly less precise but much more stable).
+                </p>
+              </div>
+            </div>
 
-          <p>
-            Think of it like this: SGD finds a sharp mountain peak (precise but unstable), while Adam finds a broad plateau (slightly less precise but much more stable).
-          </p>
-
-          <h3>Adadelta: Middle Ground</h3>
-          <p>
-            Adadelta adapts learning rates without requiring manual tuning, placing it between SGD and Adam in terms of robustness. It lacks Adam&apos;s momentum component, which may explain its intermediate performance.
-          </p>
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/10 dark:to-indigo-900/10 border-2 border-blue-200 dark:border-blue-800 p-8 rounded-2xl">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-3">
+                <span className="text-3xl">⚖️</span>
+                Adadelta: Middle Ground
+              </h3>
+              <p className="text-slate-700 dark:text-slate-300">
+                Adadelta adapts learning rates without requiring manual tuning, placing it between SGD and Adam in terms of robustness. It lacks Adam&apos;s momentum component, which may explain its intermediate performance.
+              </p>
+            </div>
+          </div>
 
           <h2>Real-World Implications</h2>
-          <p>This research isn&apos;t just academic—it has direct implications for production ML systems:</p>
+          <p className="text-xl mb-8">This research isn&apos;t just academic—it has direct implications for production ML systems:</p>
 
-          <h3>1. Medical Imaging</h3>
-          <p>In medical diagnostics, images often suffer from:</p>
-          <ul>
-            <li>Sensor noise from older equipment</li>
-            <li>Compression artifacts from PACS systems</li>
-            <li>Motion blur from patient movement</li>
-          </ul>
-          <p>A 30% improvement in robustness could mean the difference between accurate diagnosis and misclassification.</p>
+          <div className="not-prose my-12 grid md:grid-cols-2 gap-6">
+            <div className="bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 p-6 rounded-2xl hover:shadow-xl transition-shadow">
+              <div className="text-4xl mb-4">🏥</div>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Medical Imaging</h3>
+              <p className="text-slate-700 dark:text-slate-300 mb-3">In medical diagnostics, images often suffer from:</p>
+              <ul className="space-y-1 text-slate-700 dark:text-slate-300 mb-3">
+                <li>• Sensor noise from older equipment</li>
+                <li>• Compression artifacts from PACS systems</li>
+                <li>• Motion blur from patient movement</li>
+              </ul>
+              <p className="text-sm text-slate-600 dark:text-slate-400 italic">
+                A 30% improvement in robustness could mean the difference between accurate diagnosis and misclassification.
+              </p>
+            </div>
 
-          <h3>2. Autonomous Vehicles</h3>
-          <p>Self-driving cars must handle:</p>
-          <ul>
-            <li>Rain, fog, and snow affecting camera inputs</li>
-            <li>Dirt and scratches on sensors</li>
-            <li>Glare and lighting variations</li>
-          </ul>
-          <p>More robust models = safer autonomous systems.</p>
+            <div className="bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 p-6 rounded-2xl hover:shadow-xl transition-shadow">
+              <div className="text-4xl mb-4">🚗</div>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Autonomous Vehicles</h3>
+              <p className="text-slate-700 dark:text-slate-300 mb-3">Self-driving cars must handle:</p>
+              <ul className="space-y-1 text-slate-700 dark:text-slate-300 mb-3">
+                <li>• Rain, fog, and snow affecting camera inputs</li>
+                <li>• Dirt and scratches on sensors</li>
+                <li>• Glare and lighting variations</li>
+              </ul>
+              <p className="text-sm text-slate-600 dark:text-slate-400 italic">
+                More robust models = safer autonomous systems.
+              </p>
+            </div>
 
-          <h3>3. Edge Deployment</h3>
-          <p>When deploying to mobile devices or IoT sensors:</p>
-          <ul>
-            <li>Aggressive image compression saves bandwidth</li>
-            <li>Limited compute forces model quantization</li>
-            <li>Environmental factors introduce noise</li>
-          </ul>
-          <p>Choosing Adam over SGD might eliminate the need for expensive noise-reduction preprocessing.</p>
+            <div className="bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 p-6 rounded-2xl hover:shadow-xl transition-shadow">
+              <div className="text-4xl mb-4">📱</div>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Edge Deployment</h3>
+              <p className="text-slate-700 dark:text-slate-300 mb-3">When deploying to mobile devices or IoT sensors:</p>
+              <ul className="space-y-1 text-slate-700 dark:text-slate-300 mb-3">
+                <li>• Aggressive image compression saves bandwidth</li>
+                <li>• Limited compute forces model quantization</li>
+                <li>• Environmental factors introduce noise</li>
+              </ul>
+              <p className="text-sm text-slate-600 dark:text-slate-400 italic">
+                Choosing Adam over SGD might eliminate the need for expensive noise-reduction preprocessing.
+              </p>
+            </div>
 
-          <h3>4. Adversarial Robustness</h3>
-          <p>
-            While this work focuses on random noise, the principles extend to adversarial examples. Models trained with adaptive optimizers show some inherent resistance to small adversarial perturbations.
-          </p>
+            <div className="bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 p-6 rounded-2xl hover:shadow-xl transition-shadow">
+              <div className="text-4xl mb-4">🛡️</div>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Adversarial Robustness</h3>
+              <p className="text-slate-700 dark:text-slate-300">
+                While this work focuses on random noise, the principles extend to adversarial examples. Models trained with adaptive optimizers show some inherent resistance to small adversarial perturbations.
+              </p>
+            </div>
+          </div>
 
           <h2>Practical Recommendations</h2>
 
-          <h3>For Production ML Engineers:</h3>
-          <ol>
-            <li><strong>Don&apos;t optimize solely for test accuracy</strong> - Evaluate robustness to realistic noise</li>
-            <li><strong>Consider Adam as default</strong> - Unless you have specific reasons to use SGD</li>
-            <li><strong>Test with corrupted inputs</strong> - Add salt-and-pepper/Gaussian noise to your test suite</li>
-            <li><strong>Budget for robustness</strong> - The training time difference is marginal compared to the robustness gain</li>
-          </ol>
+          <div className="not-prose my-12 grid md:grid-cols-2 gap-8">
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 p-8 rounded-2xl border-2 border-blue-300 dark:border-blue-700">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                <span className="text-3xl">👨‍💻</span>
+                For Production ML Engineers
+              </h3>
+              <ol className="space-y-4 text-slate-700 dark:text-slate-300 list-decimal list-inside">
+                <li><strong className="text-slate-900 dark:text-white">Don&apos;t optimize solely for test accuracy</strong> — Evaluate robustness to realistic noise</li>
+                <li><strong className="text-slate-900 dark:text-white">Consider Adam as default</strong> — Unless you have specific reasons to use SGD</li>
+                <li><strong className="text-slate-900 dark:text-white">Test with corrupted inputs</strong> — Add salt-and-pepper/Gaussian noise to your test suite</li>
+                <li><strong className="text-slate-900 dark:text-white">Budget for robustness</strong> — The training time difference is marginal compared to the robustness gain</li>
+              </ol>
+            </div>
 
-          <h3>For ML Researchers:</h3>
-          <ol>
-            <li><strong>Report robustness metrics</strong> - Not just accuracy on clean test sets</li>
-            <li><strong>Benchmark across optimizers</strong> - Don&apos;t assume optimizer choice is neutral</li>
-            <li><strong>Investigate minima sharpness</strong> - Use tools like loss landscape visualization</li>
-            <li><strong>Consider second-order methods</strong> - AdaHessian and others deserve more attention</li>
-          </ol>
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-8 rounded-2xl border-2 border-purple-300 dark:border-purple-700">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                <span className="text-3xl">🔬</span>
+                For ML Researchers
+              </h3>
+              <ol className="space-y-4 text-slate-700 dark:text-slate-300 list-decimal list-inside">
+                <li><strong className="text-slate-900 dark:text-white">Report robustness metrics</strong> — Not just accuracy on clean test sets</li>
+                <li><strong className="text-slate-900 dark:text-white">Benchmark across optimizers</strong> — Don&apos;t assume optimizer choice is neutral</li>
+                <li><strong className="text-slate-900 dark:text-white">Investigate minima sharpness</strong> — Use tools like loss landscape visualization</li>
+                <li><strong className="text-slate-900 dark:text-white">Consider second-order methods</strong> — AdaHessian and others deserve more attention</li>
+              </ol>
+            </div>
+          </div>
 
           <h2>Conclusion</h2>
           <p>
