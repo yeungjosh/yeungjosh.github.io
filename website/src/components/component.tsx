@@ -1257,6 +1257,38 @@ export function Component() {
           </div>
         </section>
 
+        {/* Contact Section */}
+        <section className="w-full py-24 md:py-32 bg-slate-50 dark:bg-slate-800/50" id="contact">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-3">
+                <div className="inline-block px-4 py-1.5 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-sm font-medium">
+                  Get in Touch
+                </div>
+                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-slate-900 dark:text-white">
+                  Let&apos;s <span className="gradient-text">Connect</span>
+                </h2>
+                <p className="max-w-2xl text-lg text-slate-700 dark:text-slate-300">
+                  Interested in collaborating or just want to chat? Feel free to reach out!
+                </p>
+              </div>
+
+              <div className="mt-8 text-2xl font-semibold text-slate-900 dark:text-white">
+                yeungj AT berkeley.edu
+              </div>
+
+              <div className="flex gap-6 mt-8">
+                <Link href="https://github.com/yeungjosh" className="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors text-lg">
+                  GitHub
+                </Link>
+                <Link href="https://linkedin.com/in/yeungjosh" className="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors text-lg">
+                  LinkedIn
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Project Modals */}
         {/* BrickStyle-Gen Modal */}
         <Dialog open={openProject === 'brickstyle'} onOpenChange={() => setOpenProject(null)}>
@@ -1973,7 +2005,7 @@ export function Component() {
         </Dialog>
 
         {/* Footer */}
-        <footer className="w-full py-12 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800" id="contact">
+        <footer className="w-full py-12 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="flex items-center gap-2">
@@ -1991,9 +2023,9 @@ export function Component() {
                 <Link href="https://linkedin.com/in/yeungjosh" className="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors">
                   LinkedIn
                 </Link>
-                <span className="text-slate-600 dark:text-slate-400">
+                <Link href="mailto:yeungj@berkeley.edu" className="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors">
                   yeungj AT berkeley.edu
-                </span>
+                </Link>
               </div>
             </div>
           </div>

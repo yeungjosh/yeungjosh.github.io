@@ -56,9 +56,9 @@ export default function TravelGlobe({
           "w-3 h-3 rounded-full ring-2 ring-white/60 bg-[#0B57D0] shadow cursor-pointer hover:scale-110 transition-transform";
 
         const popupHtml = `
-          <div style="max-width:220px">
-            <div style="font-weight:600; font-size: 15px; margin-bottom: 4px;">${p.name}</div>
-            ${p.notes ? `<p style="margin-top:4px;font-size:13px;opacity:.85;line-height:1.4;">${p.notes}</p>` : ""}
+          <div style="max-width:220px; color: #1e293b;">
+            <div style="font-weight:600; font-size: 15px; margin-bottom: 4px; color: #0f172a;">${p.name}</div>
+            ${p.notes ? `<p style="margin-top:4px;font-size:13px;color:#475569;line-height:1.4;">${p.notes}</p>` : ""}
             ${
               p.photos?.[0]
                 ? `<img src="${p.photos[0]}" alt="${p.name}" style="margin-top:8px;border-radius:8px;width:100%;height:auto"/>`
