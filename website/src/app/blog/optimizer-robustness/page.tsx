@@ -319,25 +319,44 @@ export default function OptimizerRobustnessPost() {
           </div>
 
           <h2>Conclusion</h2>
-          <p>
+
+          <div className="not-prose my-12 bg-gradient-to-br from-slate-900 to-slate-800 dark:from-violet-900/30 dark:to-purple-900/30 p-10 rounded-2xl border-2 border-slate-700 dark:border-violet-500">
+            <div className="text-center mb-8">
+              <div className="text-5xl mb-4">🎯</div>
+              <h3 className="text-3xl font-bold text-white mb-4">The Key Takeaway</h3>
+              <p className="text-xl text-slate-200 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto">
+                <strong className="text-white">Optimizer selection is not just a training-time hyperparameter—it&apos;s a deployment-time decision</strong> that fundamentally affects how your model behaves when things go wrong.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6 mt-8">
+              <div className="bg-white/10 dark:bg-white/5 rounded-xl p-6 border border-white/20">
+                <div className="text-3xl mb-3">📊</div>
+                <p className="text-slate-200 dark:text-slate-300">
+                  <strong className="text-white text-lg">Adam-trained models</strong> maintain <strong className="text-green-400">2-3x better accuracy</strong> under realistic noise compared to SGD
+                </p>
+              </div>
+              <div className="bg-white/10 dark:bg-white/5 rounded-xl p-6 border border-white/20">
+                <div className="text-3xl mb-3">🏭</div>
+                <p className="text-slate-200 dark:text-slate-300">
+                  <strong className="text-white text-lg">In production,</strong> this is the difference between <strong className="text-green-400">a system that works</strong> and one that fails
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-xl leading-relaxed">
             Machine learning model development doesn&apos;t end with hitting your accuracy target on a clean test set. The path from research prototype to production system requires considering robustness, reliability, and real-world performance degradation.
           </p>
 
-          <p>
-            This research demonstrates that <strong>optimizer selection is not just a training-time hyperparameter—it&apos;s a deployment-time decision</strong> that affects how your model behaves when things go wrong. And in production, things always go wrong.
-          </p>
-
-          <p>
-            My experiments show that <strong>Adam-trained models maintain 2-3x better accuracy under realistic noise</strong> compared to SGD-trained models. That&apos;s not a small effect size—it&apos;s the difference between a system that works and a system that fails.
-          </p>
-
-          <p>
+          <p className="text-lg leading-relaxed">
             As ML systems become more critical to real-world infrastructure—from healthcare to autonomous vehicles to industrial automation—we need to move beyond accuracy leaderboards and start optimizing for resilience.
           </p>
 
-          <p>
-            The next time you reach for SGD because &quot;that&apos;s what the paper used,&quot; remember: the optimizer you choose today determines how your model handles the messy, unpredictable world tomorrow.
-          </p>
+          <div className="not-prose my-10 bg-amber-50 dark:bg-amber-900/20 border-l-4 border-amber-500 p-6 rounded-r-xl">
+            <p className="text-lg text-slate-800 dark:text-slate-200 italic">
+              💭 <strong>Remember:</strong> The next time you reach for SGD because &quot;that&apos;s what the paper used,&quot; ask yourself: the optimizer you choose today determines how your model handles the messy, unpredictable world tomorrow.
+            </p>
+          </div>
 
           <div className="not-prose my-12 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-10 rounded-2xl text-center border border-green-200 dark:border-green-800">
             <h3 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">Code & Reproducibility</h3>
