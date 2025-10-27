@@ -36,7 +36,13 @@ export default function TravelGlobe({
       center: [-122.3321, 47.6062], // start around Seattle [lon, lat]
       zoom: 1.8,
       projection: { name: "globe" } as any,
-      antialias: true
+      antialias: true,
+      interactive: true,
+      dragRotate: true,
+      dragPan: true,
+      scrollZoom: true,
+      touchZoomRotate: true,
+      doubleClickZoom: true
     });
     mapInstance.current = map;
 
@@ -78,8 +84,10 @@ export default function TravelGlobe({
       // Gentle auto-rotate (skip on mobile)
       const isMobile = typeof window !== "undefined" && window.matchMedia("(max-width: 768px)").matches;
       if (autoRotate && !isMobile) {
+        let isUserInteracting = false;
+
         const spin = () => {
-          if (!map || document.hidden) {
+          if (!map || document.hidden || isUserInteracting) {
             rotateAnim.current = requestAnimationFrame(spin);
             return;
           }
@@ -88,6 +96,15 @@ export default function TravelGlobe({
           rotateAnim.current = requestAnimationFrame(spin);
         };
         rotateAnim.current = requestAnimationFrame(spin);
+
+        // Stop rotation when user interacts
+        const stopRotation = () => {
+          isUserInteracting = true;
+        };
+
+        map.on("mousedown", stopRotation);
+        map.on("touchstart", stopRotation);
+        map.on("dragstart", stopRotation);
 
         const handleVisibility = () => {
           if (document.hidden && rotateAnim.current) {
@@ -102,6 +119,9 @@ export default function TravelGlobe({
         // Cleanup visibility listener
         return () => {
           document.removeEventListener("visibilitychange", handleVisibility);
+          map.off("mousedown", stopRotation);
+          map.off("touchstart", stopRotation);
+          map.off("dragstart", stopRotation);
         };
       }
     });
