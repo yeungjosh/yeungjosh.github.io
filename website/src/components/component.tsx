@@ -79,16 +79,6 @@ export function Component() {
               <div className="container px-4 md:px-6 py-20">
             <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
               <div className="space-y-8 animate-fade-in">
-                <div className="inline-block">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-sm font-medium">
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                    </span>
-                    Available for opportunities
-                  </div>
-                </div>
-
                 <div className="space-y-4">
                   <h1 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl text-slate-900 dark:text-white">
                     Hi, I&apos;m{" "}
