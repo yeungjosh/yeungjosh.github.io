@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ucb",
+    "school": "University of California, Berkeley",
+    "degree": "Bachelor's degree",
+    "field": "Computer Science",
+    "location": "Berkeley, CA",
+    "startDate": "2017",
+    "endDate": "2021",
+    "gpa": "3.70",
+    "honors": ["Upsilon Pi Epsilon (UPE)"],
+    "description": "Activities and societies: Upsilon Pi Epsilon (UPE)"
+  }
+]

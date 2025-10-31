@@ -1,0 +1,166 @@
+[
+  {
+    "id": "pokemon",
+    "title": "Pokemon Team Recommender",
+    "shortDescription": "ML-powered competitive team builder using LightGBM. Trained on 10K synthetic teams with 93% code coverage. Includes validation study comparing synthetic vs. real battle data.",
+    "emoji": "⚡",
+    "thumbnail": "/pokemon_team_recommender.png",
+    "tags": ["Python", "LightGBM", "Gradio", "Machine Learning"],
+    "links": {
+      "live": "https://huggingface.co/spaces/joshuajoshy/pokemon-team-recommender",
+      "github": "https://github.com/yeungjosh/pokemon-team-recommender"
+    },
+    "modal": {
+      "fullDescription": "An ML-driven recommender system that completes competitive Pokemon teams using Gradient Boosting to learn optimal feature weights. Includes comprehensive validation studies comparing synthetic training data vs. real battle outcomes.",
+      "features": [
+        "LightGBM Gradient Boosting Regressor (100 trees, 76KB model)",
+        "7 domain-specific features (type coverage, meta matchup, role diversity)",
+        "Trained on 10K synthetic teams with weak supervision",
+        "Inference time: <1.5s for 12-candidate search",
+        "28 unit tests with 93% code coverage",
+        "Model Performance: Training R²: 0.685, Validation R²: 0.642"
+      ],
+      "technicalDetails": "Validation Study: Compared synthetic training data against real Pokemon Showdown battle outcomes. Key finding: Synthetic model overestimated meta importance by 38%! Real battles prioritize raw stats (bulk + speed = 62%) over strategic factors.",
+      "technologies": ["Python", "LightGBM", "Gradio", "scikit-learn", "Pandas", "NumPy"]
+    }
+  },
+  {
+    "id": "brickstyle",
+    "title": "BrickStyle-Gen",
+    "shortDescription": "Text-to-LEGO-style image generator using Stable Diffusion XL with custom LoRA fine-tuning. Web interface with 10+ curated presets.",
+    "emoji": "🧱",
+    "tags": ["Python", "Gradio", "PyTorch", "Stable Diffusion XL"],
+    "links": {
+      "live": "https://huggingface.co/spaces/joshuajoshy/brickstyle-gen",
+      "github": "https://github.com/yeungjosh/brickstyle-gen"
+    },
+    "modal": {
+      "fullDescription": "A Gradio-based web application that generates LEGO-style images from text prompts using Stable Diffusion XL with custom LoRA fine-tuning.",
+      "features": [
+        "Text-to-brick-style image generation using SDXL + LEGO LoRA",
+        "10+ curated style presets (Minifig Portrait, Micro-City, BrickHeadz, etc.)",
+        "Adjustable parameters (steps, CFG scale, LoRA intensity, batch size)",
+        "CPU/GPU/MPS support for cross-platform compatibility",
+        "Research foundation based on Image2Lego (2021) paper for future 2D→3D conversion"
+      ],
+      "technicalDetails": "Production-ready Gradio web interface with 4 tabs. Configurable via environment variables (model IDs, safety filters). Optional ControlNet (sketch-to-brick) and IP-Adapter (reference styling) support. Complete project structure with modular pipeline architecture.",
+      "technologies": ["Python", "Gradio 4.0", "PyTorch", "Stable Diffusion XL", "LEGO LoRA", "HuggingFace Spaces"]
+    }
+  },
+  {
+    "id": "optimizer-robustness",
+    "title": "Neural Network Optimizer Robustness Analysis",
+    "shortDescription": "Research at UC Berkeley RISELab investigating how optimizer choice (SGD, Adam, AdaHessian) affects model robustness to input perturbations. Adam-trained models showed 2-3x better accuracy under realistic noise compared to SGD.",
+    "thumbnail": "/optimizer-robustness.png",
+    "tags": ["PyTorch", "ResNet", "Research", "ML Robustness"],
+    "links": {
+      "article": "/blog/optimizer-robustness",
+      "github": "https://github.com/yeungjosh/riselab"
+    },
+    "modal": {
+      "fullDescription": "Research conducted at UC Berkeley RISELab investigating how different optimizers affect neural network robustness to input perturbations.",
+      "technologies": ["PyTorch", "ResNet", "Research", "ML Robustness"],
+      "researchContext": {
+        "institution": "Berkeley RISELab",
+        "institutionUrl": "https://rise.cs.berkeley.edu/",
+        "advisors": [
+          { "name": "Prof. Michael Mahoney", "url": "https://www.stat.berkeley.edu/~mmahoney/" },
+          { "name": "Ben Erichson", "url": "https://www.benerichson.com/" }
+        ]
+      }
+    }
+  },
+  {
+    "id": "bible",
+    "title": "Bible Study App",
+    "shortDescription": "AI-powered cross-platform scripture study app with verse highlighting, note-taking, and chat history management. Built with Capacitor for iOS/Android.",
+    "emoji": "📖",
+    "tags": ["React", "TypeScript", "Capacitor", "AI"],
+    "modal": {
+      "fullDescription": "A cross-platform mobile application for AI-enhanced Bible study with modern UX and offline capabilities.",
+      "features": [
+        "AI-powered scripture analysis and insights",
+        "Verse highlighting and annotations",
+        "Note-taking with cloud sync",
+        "Chat history management",
+        "Cross-platform (iOS/Android) via Capacitor",
+        "Offline-first architecture"
+      ],
+      "technologies": ["React", "TypeScript", "Capacitor", "AI", "Mobile"]
+    }
+  },
+  {
+    "id": "systemdesign",
+    "title": "System Design Trainer",
+    "shortDescription": "Duolingo-style iOS app for practicing system design interviews. Multiple-choice drills with curated explanations and progress tracking.",
+    "emoji": "🎯",
+    "tags": ["Swift", "SwiftUI", "StoreKit 2", "iOS"],
+    "modal": {
+      "fullDescription": "A SwiftUI iOS application for practicing system design interview concepts through multiple-choice questions with curated explanations.",
+      "features": [
+        "Scenario-based question packs (URL Shortener, Twitter Feed, Ride-Share, etc.)",
+        "Multiple-choice drills with immediate feedback",
+        "Detailed explanations for correct and incorrect answers",
+        "Free starter pack + Pro unlock (one-time IAP)",
+        "Progress tracking: accuracy, streaks, weak topics",
+        "Native accessibility support"
+      ],
+      "technicalDetails": "Multi-module SPM structure. Actor-based ContentRepository with SHA256 checksum validation. Protocol-oriented IAP design. Composite EntitlementCache (Keychain + UserDefaults sync). JSON-based question packs with manifest validation.",
+      "technologies": ["Swift 5.9+", "SwiftUI", "StoreKit 2", "SPM", "iOS 17+"]
+    }
+  },
+  {
+    "id": "restaurant",
+    "title": "Personalized Restaurant Recommender System",
+    "shortDescription": "Conversational AI for Google Assistant providing personalized restaurant recommendations based on cuisine preferences, dietary restrictions, and location.",
+    "emoji": "🍽️",
+    "tags": ["Bard/Gemini", "Google Cloud Platform", "Conversational AI", "Google Assistant"],
+    "modal": {
+      "fullDescription": "Developed a conversational AI system integrated with Google Assistant that provides personalized restaurant recommendations. The system transforms the generic search results into engaging, customized spoken suggestions based on user preferences.",
+      "features": [
+        "Natural language understanding for user preferences",
+        "Personalized recommendations based on cuisine type",
+        "Dietary restriction filtering (vegetarian, vegan, gluten-free, etc.)",
+        "Location-based restaurant discovery",
+        "Conversational interface with spoken responses",
+        "Enhanced UX over traditional list-based results"
+      ],
+      "technicalDetails": "Powered by Google Bard/Gemini for natural language processing. Deployed on Google Cloud Platform for scalability. Integrated with Google Assistant Actions. Real-time preference analysis and filtering. Custom dialog flows for natural conversation.",
+      "technologies": ["Bard/Gemini", "Google Cloud Platform", "Google Assistant", "Dialogflow", "NLP"],
+      "impact": "Transformed generic restaurant listings into personalized, spoken recommendations tailored to individual preferences."
+    }
+  },
+  {
+    "id": "pokemonclassifier",
+    "title": "Pokemon Image Classifier",
+    "shortDescription": "Deep learning CNN classifier for Pokemon species recognition trained on custom dataset.",
+    "emoji": "🔍",
+    "tags": ["Python", "TensorFlow", "CNN", "Computer Vision"],
+    "modal": {
+      "fullDescription": "A convolutional neural network trained to classify Pokemon species from images.",
+      "technologies": ["Python", "TensorFlow", "CNN", "Computer Vision"]
+    }
+  },
+  {
+    "id": "pacman",
+    "title": "Pacman AI Agent",
+    "shortDescription": "AI agents for UC Berkeley CS188 Pacman project implementing search algorithms and reinforcement learning.",
+    "emoji": "👻",
+    "tags": ["Python", "AI", "Reinforcement Learning", "Search Algorithms"],
+    "modal": {
+      "fullDescription": "Implementation of various AI techniques for the classic Pacman game including search algorithms, adversarial search, and reinforcement learning.",
+      "technologies": ["Python", "AI", "Reinforcement Learning", "Search Algorithms"]
+    }
+  },
+  {
+    "id": "eecs127",
+    "title": "EECS 127 Optimization Project",
+    "shortDescription": "Convex optimization and numerical linear algebra coursework project.",
+    "emoji": "📊",
+    "tags": ["Python", "Optimization", "Linear Algebra", "NumPy"],
+    "modal": {
+      "fullDescription": "Project focusing on convex optimization techniques and numerical linear algebra algorithms.",
+      "technologies": ["Python", "Optimization", "Linear Algebra", "NumPy"]
+    }
+  }
+]

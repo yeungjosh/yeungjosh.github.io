@@ -1,0 +1,34 @@
+[
+  {
+    "id": "tabletennis",
+    "title": "Table Tennis",
+    "emoji": "🏓",
+    "description": "Fast-paced rallies and quick reflexes. Played with the Cal (UC Berkeley) table tennis club in college.",
+    "details": ["Nothing beats a competitive ping pong match!"]
+  },
+  {
+    "id": "tennis",
+    "title": "Tennis",
+    "emoji": "🎾",
+    "description": "Love the strategy and athleticism of tennis. Favorite racket: Head Radical Pro. Favorite player: Roger Federer.",
+    "details": ["Great way to stay active and competitive!"]
+  },
+  {
+    "id": "chess",
+    "title": "Chess",
+    "emoji": "♟️",
+    "description": "Strategy, tactics, and endless possibilities. Challenge me online!",
+    "details": [
+      "Online Blitz Rating: 1954",
+      "Lichess: https://lichess.org/@/jushy",
+      "Chess.com: https://www.chess.com/member/foodproduct"
+    ]
+  },
+  {
+    "id": "boardgames",
+    "title": "Board Games",
+    "emoji": "🎲",
+    "description": "From strategy games to party games, I enjoy the social aspect and creative gameplay.",
+    "details": ["Current favorites: Wingspan & Chameleon"]
+  }
+]
