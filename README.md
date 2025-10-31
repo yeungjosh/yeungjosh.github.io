@@ -4,6 +4,10 @@ Personal portfolio website showcasing my projects, blog posts, and professional 
 
 Live at: https://yeungjosh.github.io/
 
+## 📢 Forking This Repo?
+
+If you fork or copy this repo for your own site, please give proper credit by linking back to [yeungjosh.github.io](https://yeungjosh.github.io). Refer to [this Quora post](https://www.quora.com/Is-it-bad-to-copy-a-GitHub-project-and-add-it-to-your-own-portfolio) if you're unsure about proper attribution.
+
 ## Tech Stack Summary
 
 ### Core Framework
