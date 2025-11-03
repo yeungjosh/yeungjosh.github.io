@@ -4,14 +4,15 @@ import Link from "next/link";
 import Image from 'next/image';
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from 'lucide-react';
-import VantaNet from "@/components/vanta-net";
 import { PersonalInfo } from "@/types/portfolio";
+import VantaNet from "@/components/vanta-net";
 
 interface HeroSectionProps {
   personal: PersonalInfo;
 }
 
 export default function HeroSection({ personal }: HeroSectionProps) {
+  console.log('HeroSection personal:', personal);
   return (
     <section className="w-full min-h-screen relative overflow-hidden" id="about">
       <VantaNet>
@@ -26,7 +27,7 @@ export default function HeroSection({ personal }: HeroSectionProps) {
                     <span className="gradient-text">{personal.name}</span>
                   </h1>
                   <p className="text-xl md:text-2xl text-slate-700 dark:text-slate-300 max-w-2xl">
-                    {personal.bio}
+                    Software Engineer at <span className="font-semibold text-slate-900 dark:text-white">Amazon</span> building scalable systems for Amazon Ads and Prime Video. Passionate about LLMs, web applications, and matcha.
                   </p>
                 </div>
 

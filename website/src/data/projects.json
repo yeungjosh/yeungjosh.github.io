@@ -1,9 +1,35 @@
 [
   {
+    "id": "pokemonquiz",
+    "title": "Pokemon Personality Quiz",
+    "shortDescription": "Full-stack personality quiz matching users to Pokemon using cosine similarity on 24-dimensional trait vectors. Built with Next.js 15, deployed on Vercel with edge-rendered OG images.",
+    "emoji": "⚡",
+    "thumbnail": "/pokemon-quiz-thumb.png",
+    "tags": ["Next.js 15", "TypeScript", "Vercel", "Vector Similarity"],
+    "links": {
+      "live": "https://pokemon-quiz-gamma.vercel.app",
+      "github": "https://github.com/yeungjosh/pokemon-quiz"
+    },
+    "modal": {
+      "fullDescription": "Interactive personality assessment that maps user responses to Pokemon characters using vector similarity algorithms. Features 10 scenario-based questions, real-time matching, and shareable results with OG image generation.",
+      "features": [
+        "Cosine similarity matching across 24-trait vectors (types, stats, personality)",
+        "Rule-based copy generation producing 3-4 personalized reasons per result",
+        "Deterministic tie-breaking via answer hashing for consistent results",
+        "Edge-rendered OG images for social sharing",
+        "Client-side vector computation (<100ms for 16 candidates)",
+        "Vercel Analytics integration for funnel tracking",
+        "Full accessibility (WCAG AA, keyboard nav, ARIA labels)"
+      ],
+      "technicalDetails": "L2 normalization for fair vector comparison. Sparse vector optimization (only non-zero traits stored). Zero backend—all matching done client-side with Zustand state management. Edge functions for OG image rendering via @vercel/og. Lighthouse score ≥90 with <160KB JS bundle.",
+      "technologies": ["Next.js 15", "TypeScript", "Tailwind CSS", "Zustand", "Framer Motion", "Vercel Edge", "@vercel/og"]
+    }
+  },
+  {
     "id": "pokemon",
     "title": "Pokemon Team Recommender",
     "shortDescription": "ML-powered competitive team builder using LightGBM. Trained on 10K synthetic teams with 93% code coverage. Includes validation study comparing synthetic vs. real battle data.",
-    "emoji": "⚡",
+    "emoji": "🎮",
     "thumbnail": "/pokemon_team_recommender.png",
     "tags": ["Python", "LightGBM", "Gradio", "Machine Learning"],
     "links": {
