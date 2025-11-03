@@ -395,7 +395,7 @@ export function Component() {
 
               {/* Optimizer Robustness Research */}
               <div
-                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 md:col-span-2"
+                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700"
               >
                 <div className="p-6 space-y-4">
                   <div className="aspect-video relative overflow-hidden rounded-xl mb-4">
@@ -546,8 +546,13 @@ export function Component() {
                 onClick={() => setOpenProject('pokemonclassifier')}
                 className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 cursor-pointer"
               >
-                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 flex items-center justify-center">
-                  <div className="text-8xl">🔍</div>
+                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20">
+                  <Image
+                    src="/sized-025pikachu.webp"
+                    alt="Pokemon Classifier via Resnet"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div className="p-6 space-y-4">
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
@@ -678,8 +683,13 @@ export function Component() {
                 onClick={() => setOpenProject('pacman')}
                 className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 cursor-pointer"
               >
-                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-yellow-50 to-blue-50 dark:from-yellow-900/20 dark:to-blue-900/20 flex items-center justify-center">
-                  <div className="text-8xl">👻</div>
+                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-yellow-50 to-blue-50 dark:from-yellow-900/20 dark:to-blue-900/20">
+                  <Image
+                    src="/cs188.jpeg"
+                    alt="Pacman AI"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div className="p-6 space-y-4">
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
@@ -705,13 +715,83 @@ export function Component() {
                 </div>
               </div>
 
+              {/* Pokemon Quiz */}
+              <div
+                onClick={() => setOpenProject('pokemon-quiz')}
+                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 cursor-pointer"
+              >
+                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-blue-900/20 dark:via-purple-900/20 dark:to-pink-900/20">
+                  <Image
+                    src="/pokemon-quiz-screenshot.png"
+                    alt="Pokemon Quiz Result"
+                    fill
+                    className="object-contain p-4"
+                  />
+                </div>
+                <div className="p-6 space-y-4">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                    Pokemon Personality Quiz
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                    Find your Pokemon match through 10 fun scenario-based questions. Uses cosine similarity across 24-trait vectors to match you with one of 16 Pokemon personas, complete with personalized results and shareable OG images.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Next.js 15
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      TypeScript
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Tailwind CSS
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Zustand
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Framer Motion
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Vercel Analytics
+                    </Badge>
+                  </div>
+                  <div className="flex gap-3">
+                    <Button
+                      asChild
+                      size="sm"
+                      className="bg-green-600 hover:bg-green-700 text-white"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <a href="https://pokemon-quiz-gamma.vercel.app" target="_blank" rel="noopener noreferrer">
+                        Try Quiz
+                      </a>
+                    </Button>
+                    <Button
+                      asChild
+                      size="sm"
+                      variant="outline"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <a href="https://github.com/yeungjosh/pokemon-quiz" target="_blank" rel="noopener noreferrer">
+                        GitHub
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
               {/* EECS 127 Crash Course */}
               <div
                 onClick={() => setOpenProject('eecs127')}
-                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 md:col-span-2 cursor-pointer"
+                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 cursor-pointer"
               >
-                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-blue-900/20 dark:via-purple-900/20 dark:to-pink-900/20 flex items-center justify-center">
-                  <div className="text-8xl">📊</div>
+                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-blue-900/20 dark:via-purple-900/20 dark:to-pink-900/20">
+                  <Image
+                    src="/EECS127SparseGraphSenators.png"
+                    alt="EECS 127 Crash Course"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div className="p-6 space-y-4">
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
@@ -1833,6 +1913,176 @@ export function Component() {
 
               <p className="text-sm text-slate-600 dark:text-slate-400">
                 <strong>Academic Project:</strong> Completed as part of UC Berkeley&apos;s Introduction to Artificial Intelligence course (CS188)
+              </p>
+            </div>
+          </DialogContent>
+        </Dialog>
+
+        {/* Pokemon Quiz Modal */}
+        <Dialog open={openProject === 'pokemon-quiz'} onOpenChange={() => setOpenProject(null)}>
+          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="text-3xl font-bold gradient-text">Pokemon Personality Quiz</DialogTitle>
+              <DialogDescription className="text-lg">
+                Discover your Pokemon match through fun scenario-based questions
+              </DialogDescription>
+            </DialogHeader>
+
+            <div className="space-y-6 text-slate-900 dark:text-slate-100">
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Overview</h3>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  An interactive personality quiz that matches you with one of 16 Pokemon based on your responses to 10 fun, scenario-based questions. Built with Next.js 15 and uses cosine similarity across 24-dimensional trait vectors for accurate matching.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Key Features</h3>
+                <div className="grid gap-4">
+                  <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800">
+                    <h4 className="font-semibold mb-2">⚡ Trait Vector Matching</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      Uses cosine similarity across 24 traits (types, stats, personality) to find your perfect Pokemon match. Deterministic tie-breaking ensures consistent results.
+                    </p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800">
+                    <h4 className="font-semibold mb-2">🎮 Fun Scenario Questions</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      10 engaging questions like "Free pizza appears. There's only one slice left. What do you do?" Each answer contributes to your trait profile.
+                    </p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800">
+                    <h4 className="font-semibold mb-2">🎨 Dynamic OG Images</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      Shareable result cards with personalized taglines and OG images generated on-the-fly using Vercel Edge Functions.
+                    </p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800">
+                    <h4 className="font-semibold mb-2">📊 Personalized Results</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      Rule-based copy generation creates unique explanations for why each Pokemon matches your personality, with top 3 matches shown.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">16 Pokemon Personas</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Pikachu</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Charizard</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Blastoise</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Venusaur</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Gengar</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Dragonite</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Alakazam</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Gyarados</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Lapras</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Jolteon</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Umbreon</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Snorlax</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Machamp</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Articuno</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Mewtwo</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span className="text-sm">Sylveon</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Technical Implementation</h3>
+                <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                  <li>• <strong>Scoring Algorithm:</strong> Cosine similarity with L2 normalization for fair trait comparison</li>
+                  <li>• <strong>State Management:</strong> Zustand store with localStorage persistence</li>
+                  <li>• <strong>Animations:</strong> Framer Motion for smooth transitions and reveals</li>
+                  <li>• <strong>Analytics:</strong> Vercel Analytics integration for user insights</li>
+                  <li>• <strong>Zero Backend:</strong> All computation happens client-side</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Tech Stack</h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge>Next.js 15</Badge>
+                  <Badge>TypeScript</Badge>
+                  <Badge>Tailwind CSS</Badge>
+                  <Badge>Zustand</Badge>
+                  <Badge>Framer Motion</Badge>
+                  <Badge>Vercel Analytics</Badge>
+                  <Badge>@vercel/og</Badge>
+                </div>
+              </div>
+
+              <div className="flex gap-3">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-green-600 hover:bg-green-700 text-white"
+                >
+                  <Link href="https://pokemon-quiz-gamma.vercel.app" target="_blank">
+                    Try Quiz
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                >
+                  <Link href="https://github.com/yeungjosh/pokemon-quiz" target="_blank">
+                    View on GitHub
+                  </Link>
+                </Button>
+              </div>
+
+              <p className="text-sm text-slate-600 dark:text-slate-400">
+                <strong>Fun Project:</strong> Interactive personality quiz using modern web technologies and mathematical matching algorithms.
               </p>
             </div>
           </DialogContent>
