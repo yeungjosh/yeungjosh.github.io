@@ -1948,7 +1948,7 @@ export function Component() {
                   <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800">
                     <h4 className="font-semibold mb-2">🎮 Fun Scenario Questions</h4>
                     <p className="text-sm text-slate-600 dark:text-slate-400">
-                      10 engaging questions like "Free pizza appears. There's only one slice left. What do you do?" Each answer contributes to your trait profile.
+                      10 engaging questions like &ldquo;Free pizza appears. There&rsquo;s only one slice left. What do you do?&rdquo; Each answer contributes to your trait profile.
                     </p>
                   </div>
                   <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800">
