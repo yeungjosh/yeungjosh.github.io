@@ -410,7 +410,7 @@ export function Component() {
                     Gen1 RBY Battle AI (PokéChamp Extension)
                   </h3>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                    Pokemon battle AI built on PokéChamp (ICML 2025) achieving 90% win rate vs baselines. Features exact Gen1 damage calculator, position evaluation (7+ factors), and strategic switch logic for competitive Gen1 RBY OU battles.
+                    Pokemon battle AI built on PokéChamp (ICML 2025) achieving 90% win rate vs baselines. Features exact Gen1 damage calculator, position evaluation (7+ factors), Bayesian prediction system, and strategic switch logic for competitive Gen1 RBY OU battles.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
