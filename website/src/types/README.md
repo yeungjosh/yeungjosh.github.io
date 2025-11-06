@@ -6,7 +6,6 @@ This directory contains TypeScript type definitions and validation schemas for t
 
 - **`index.ts`** - Centralized TypeScript interfaces and types
 - **`validation.ts`** - Zod schemas for runtime data validation
-- **`vanta.d.ts`** - Type declarations for third-party libraries
 
 ## Usage
 

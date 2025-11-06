@@ -3,6 +3,8 @@
  * This file provides type safety across all data structures
  */
 
+import type React from 'react';
+
 // ============================================================================
 // Place Types
 // ============================================================================

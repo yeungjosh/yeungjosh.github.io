@@ -1,11 +1,10 @@
 import React from "react";
 import TravelGlobe from "@/components/TravelGlobe";
 import placesData from "@/data/places.json";
-import { Place } from "@/types";
-import { validateData, PlacesArraySchema } from "@/types/validation";
+import { loadPlacesData } from "@/lib/data-loader";
 
 // Validate places data at runtime
-const places = validateData(PlacesArraySchema, placesData, 'places.json');
+const places = loadPlacesData(placesData);
 
 export default function PlacesGlobeSection() {
   return (

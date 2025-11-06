@@ -15,7 +15,7 @@ import { PlacesArraySchema, validateData } from '@/types/validation';
  * @throws Error if validation fails
  */
 export function loadPlacesData(data: unknown): Place[] {
-  return validateData(PlacesArraySchema, data, 'places data');
+  return validateData(PlacesArraySchema, data, 'places.json');
 }
 
 /**

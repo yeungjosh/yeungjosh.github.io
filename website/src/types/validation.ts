@@ -162,7 +162,7 @@ export function validateData<T>(
 
   if (!result.success) {
     const errorMessages = result.error.issues.map(
-      (err: z.ZodIssue) => `  - ${err.path.join('.')}: ${err.message}`
+      (err: z.ZodIssue) => `  - ${err.path.map(p => (typeof p === 'number' ? `[${p}]` : p)).join('.').replace(/\.\[/g, '[')}: ${err.message}`
     ).join('\n');
 
     throw new Error(
@@ -187,7 +187,7 @@ export function validateDataSafe<T>(
 
   if (!result.success) {
     const errors = result.error.issues.map(
-      (err: z.ZodIssue) => `${err.path.join('.')}: ${err.message}`
+      (err: z.ZodIssue) => `${err.path.map(p => (typeof p === 'number' ? `[${p}]` : p)).join('.').replace(/\.\[/g, '[')}: ${err.message}`
     );
     return { success: false, errors };
   }
