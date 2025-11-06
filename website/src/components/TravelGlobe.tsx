@@ -2,13 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-
-type Place = {
-  name: string;
-  coords: [number, number]; // [lat, lon]
-  notes?: string;
-  photos?: string[];
-};
+import { Place } from "@/types";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || "";
 
