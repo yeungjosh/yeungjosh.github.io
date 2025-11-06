@@ -393,6 +393,89 @@ export function Component() {
                   </div>
               </div>
 
+              {/* Gen1 Battle AI */}
+              <div
+                onClick={() => setOpenProject('gen1-battle-ai')}
+                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 md:col-span-2 cursor-pointer"
+              >
+                <div className="p-6 space-y-4">
+                  <div className="aspect-video relative overflow-hidden rounded-xl mb-4">
+                    <img
+                      src="/placeholder.svg"
+                      alt="Gen1 Battle AI Architecture"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                    Gen1 RBY Battle AI (PokéChamp Extension)
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                    Heuristic battle AI built on PokéChamp (ICML 2025) achieving 90% win rate vs baselines. Features exact Gen1 damage calculator, position evaluation (7+ factors), and strategic switch logic. 730 lines Python, 2000+ lines documentation.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Python
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      poke-env
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      PokéChamp
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Gen1 RBY
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Battle AI
+                    </Badge>
+                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      Heuristics
+                    </Badge>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-sm font-semibold text-slate-700 dark:text-slate-300">Performance Metrics:</p>
+                    <div className="grid grid-cols-3 gap-2 text-center mb-3">
+                      <div className="p-2 bg-green-50 dark:bg-green-900/20 rounded">
+                        <div className="text-2xl font-bold text-green-600 dark:text-green-400">100%</div>
+                        <div className="text-xs text-slate-600 dark:text-slate-400">vs max_power</div>
+                      </div>
+                      <div className="p-2 bg-green-50 dark:bg-green-900/20 rounded">
+                        <div className="text-2xl font-bold text-green-600 dark:text-green-400">80%</div>
+                        <div className="text-xs text-slate-600 dark:text-slate-400">vs abyssal</div>
+                      </div>
+                      <div className="p-2 bg-green-50 dark:bg-green-900/20 rounded">
+                        <div className="text-2xl font-bold text-green-600 dark:text-green-400">~20s</div>
+                        <div className="text-xs text-slate-600 dark:text-slate-400">per battle</div>
+                      </div>
+                    </div>
+                    <p className="text-sm font-semibold text-slate-700 dark:text-slate-300">Technical Highlights:</p>
+                    <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-1 list-disc list-inside">
+                      <li>Exact Gen1 damage formulas (speed-based crits, 1/256 miss)</li>
+                      <li>Position evaluator with material tracking & status modifiers</li>
+                      <li>Advanced switch logic with type matchup analysis</li>
+                      <li>3 custom Gen1OU teams tested</li>
+                    </ul>
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      <Button asChild size="sm" className="bg-green-600 hover:bg-green-700 text-white">
+                        <Link href="https://github.com/yeungjosh/pokechamp" target="_blank">
+                          View on GitHub
+                        </Link>
+                      </Button>
+                      <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300 bg-white dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700">
+                        <Link href="https://github.com/yeungjosh/pokechamp/blob/main/PORTFOLIO_README.md" target="_blank">
+                          Portfolio Docs
+                        </Link>
+                      </Button>
+                      <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300 bg-white dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700">
+                        <Link href="https://github.com/yeungjosh/pokechamp/blob/main/GEN1_AGENT_DOCUMENTATION.md" target="_blank">
+                          Technical Docs
+                        </Link>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* Optimizer Robustness Research */}
               <div
                 className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700"
