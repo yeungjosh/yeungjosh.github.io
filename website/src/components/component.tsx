@@ -394,9 +394,9 @@ export function Component() {
               </div>
 
               {/* Gen1 Battle AI */}
-              <div
+              <button
                 onClick={() => setOpenProject('gen1-battle-ai')}
-                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 cursor-pointer"
+                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 cursor-pointer text-left"
               >
                 <div className="p-6 space-y-4">
                   <div className="aspect-video relative overflow-hidden rounded-xl mb-4">
@@ -413,24 +413,11 @@ export function Component() {
                     Pokemon battle AI built on PokéChamp (ICML 2025) achieving 90% win rate vs baselines. Features exact Gen1 damage calculator, position evaluation (7+ factors), Bayesian prediction system, and strategic switch logic for competitive Gen1 RBY OU battles.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      Python
-                    </Badge>
-                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      poke-env
-                    </Badge>
-                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      PokéChamp
-                    </Badge>
-                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      Gen1 RBY
-                    </Badge>
-                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      Battle AI
-                    </Badge>
-                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      Heuristics
-                    </Badge>
+                    {['Python', 'poke-env', 'PokéChamp', 'Gen1 RBY', 'Battle AI', 'Heuristics'].map((tech) => (
+                      <Badge key={tech} variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                        {tech}
+                      </Badge>
+                    ))}
                   </div>
                   <div className="space-y-2">
                     <p className="text-sm font-semibold text-slate-700 dark:text-slate-300">Performance Metrics:</p>
@@ -457,24 +444,24 @@ export function Component() {
                     </ul>
                     <div className="flex flex-wrap gap-2 mt-3">
                       <Button asChild size="sm" className="bg-green-600 hover:bg-green-700 text-white">
-                        <Link href="https://github.com/yeungjosh/pokechamp" target="_blank">
+                        <Link href="https://github.com/yeungjosh/pokechamp" target="_blank" rel="noopener noreferrer">
                           View on GitHub
                         </Link>
                       </Button>
                       <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300 bg-white dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700">
-                        <Link href="https://github.com/yeungjosh/pokechamp/blob/main/PORTFOLIO_README.md" target="_blank">
+                        <Link href="https://github.com/yeungjosh/pokechamp/blob/main/PORTFOLIO_README.md" target="_blank" rel="noopener noreferrer">
                           Portfolio Docs
                         </Link>
                       </Button>
                       <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300 bg-white dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700">
-                        <Link href="https://github.com/yeungjosh/pokechamp/blob/main/GEN1_AGENT_DOCUMENTATION.md" target="_blank">
+                        <Link href="https://github.com/yeungjosh/pokechamp/blob/main/GEN1_AGENT_DOCUMENTATION.md" target="_blank" rel="noopener noreferrer">
                           Technical Docs
                         </Link>
                       </Button>
                     </div>
                   </div>
                 </div>
-              </div>
+              </button>
 
               {/* Optimizer Robustness Research */}
               <div
