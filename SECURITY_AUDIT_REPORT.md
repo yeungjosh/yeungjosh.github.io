@@ -67,9 +67,11 @@ A comprehensive security audit was performed on the portfolio website. **Critica
   'X-Content-Type-Options': 'nosniff',                    // Prevent MIME sniffing
   'Referrer-Policy': 'strict-origin-when-cross-origin',   // Control referrer info
   'Permissions-Policy': 'geolocation=(), microphone=(), camera=()',  // Restrict APIs
-  'X-XSS-Protection': '1; mode=block',                    // Legacy XSS protection
+  'Strict-Transport-Security': 'max-age=63072000; includeSubDomains; preload',  // HSTS for HTTPS enforcement
 }
 ```
+
+**Note:** The deprecated `X-XSS-Protection` header has been removed. Modern browsers have disabled this header due to security vulnerabilities it can introduce. Instead, rely on a strong Content Security Policy (CSP) for XSS protection (see Future Improvements section).
 
 **⚠️ Important Note:** These headers are configured in `next.config.mjs` but **may not apply** to the GitHub Pages static export. To fully implement these headers:
 
