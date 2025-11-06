@@ -1,0 +1,287 @@
+[
+  {
+    "id": "pokemon",
+    "title": "Pokemon Team Recommender",
+    "description": "ML-powered competitive team builder using LightGBM. Trained on 10K synthetic teams with 93% code coverage. Includes validation study comparing synthetic vs. real battle data.",
+    "image": "/pokemon_team_recommender.png",
+    "tags": ["Python", "LightGBM", "Gradio", "ML"],
+    "featured": true,
+    "hasModal": true,
+    "links": [
+      {
+        "label": "ML-Hybrid Demo",
+        "url": "https://huggingface.co/spaces/joshuajoshy/pokemon-team-recommender",
+        "variant": "default"
+      },
+      {
+        "label": "Collaborative Filtering Demo",
+        "url": "https://huggingface.co/spaces/joshuajoshy/pokemon-cf-recommender",
+        "variant": "default"
+      },
+      {
+        "label": "Research Report",
+        "url": "https://github.com/yeungjosh/pokemon-real-data-experiment/blob/main/REPORT.md",
+        "variant": "outline"
+      },
+      {
+        "label": "ML-Hybrid GitHub",
+        "url": "https://github.com/yeungjosh/pokemon-team-recommender",
+        "variant": "outline"
+      },
+      {
+        "label": "CF GitHub",
+        "url": "https://github.com/yeungjosh/pokemon-cf-recommender",
+        "variant": "outline"
+      },
+      {
+        "label": "Experiment GitHub",
+        "url": "https://github.com/yeungjosh/pokemon-real-data-experiment",
+        "variant": "outline"
+      }
+    ],
+    "details": {
+      "overview": "An ML-driven recommender system that completes competitive Pokemon teams using Gradient Boosting to learn optimal feature weights. Includes comprehensive validation studies comparing synthetic training data vs. real battle outcomes.",
+      "features": [
+        "LightGBM Gradient Boosting Regressor (100 trees, 76KB model)",
+        "7 domain-specific features (type coverage, meta matchup, role diversity)",
+        "Trained on 10K synthetic teams with weak supervision",
+        "Inference time: <1.5s for 12-candidate search",
+        "28 unit tests with 93% code coverage",
+        "Model Performance: Training R²: 0.685, Validation R²: 0.642"
+      ],
+      "additionalInfo": "Compared synthetic training data against real Pokemon Showdown battle outcomes. Key finding: Synthetic model overestimated meta importance by 38%! Real battles prioritize raw stats (bulk + speed = 62%) over strategic factors.",
+      "techStack": ["Python", "LightGBM", "Gradio", "NumPy", "Pandas", "scikit-learn"]
+    }
+  },
+  {
+    "id": "optimizer-robustness",
+    "title": "Neural Network Optimizer Robustness Analysis",
+    "description": "Research at UC Berkeley RISELab investigating how optimizer choice (SGD, Adam, AdaHessian) affects model robustness to input perturbations. Adam-trained models showed 2-3x better accuracy under realistic noise compared to SGD.",
+    "image": "/optimizer-robustness.png",
+    "tags": ["PyTorch", "ResNet", "Research", "ML Robustness"],
+    "featured": false,
+    "hasModal": false,
+    "blogUrl": "/blog/optimizer-robustness",
+    "githubUrl": "https://github.com/yeungjosh/riselab"
+  },
+  {
+    "id": "bible",
+    "title": "Bible Study App",
+    "description": "AI-powered cross-platform scripture study app with verse highlighting, note-taking, and chat history management. Built with Capacitor for iOS/Android.",
+    "emoji": "📖",
+    "tags": ["React", "TypeScript", "Capacitor", "AI"],
+    "featured": false,
+    "hasModal": true,
+    "details": {
+      "overview": "A cross-platform Bible reading and study application with AI-powered assistance, verse highlighting, note-taking, and chat history management.",
+      "features": [
+        "Interactive Bible reader with verse selection and highlighting",
+        "AI chat assistant with verse context awareness",
+        "Multi-session chat history management",
+        "Verse highlighting with color coding",
+        "Note-taking system attached to verse ranges",
+        "Customizable reading settings (density, font scale, verse numbers)",
+        "Dark mode support"
+      ],
+      "additionalInfo": "Centralized state management via Context API + useReducer. BibleProvider wraps main app with global Bible study state. Component-driven architecture following shadcn/ui patterns. localStorage-based authentication system.",
+      "techStack": ["React 18", "TypeScript", "Vite", "Capacitor 7", "shadcn/ui", "Tailwind CSS", "TanStack Query", "React Router v6"]
+    }
+  },
+  {
+    "id": "systemdesign",
+    "title": "System Design Trainer",
+    "description": "Duolingo-style iOS app for practicing system design interviews. Multiple-choice drills with curated explanations and progress tracking.",
+    "emoji": "🎯",
+    "tags": ["Swift", "SwiftUI", "StoreKit 2", "iOS"],
+    "featured": false,
+    "hasModal": true,
+    "details": {
+      "overview": "A SwiftUI iOS application for practicing system design interview concepts through multiple-choice questions with curated explanations.",
+      "features": [
+        "Scenario-based question packs (URL Shortener, Twitter Feed, Ride-Share, etc.)",
+        "Multiple-choice drills with immediate feedback",
+        "Detailed explanations for correct and incorrect answers",
+        "Free starter pack + Pro unlock (one-time IAP)",
+        "Progress tracking: accuracy, streaks, weak topics",
+        "Native accessibility support"
+      ],
+      "additionalInfo": "Multi-module SPM structure (SystemDesignContent + SystemDesignTrainerApp). Actor-based ContentRepository with SHA256 checksum validation. Protocol-oriented IAP design (StoreClient protocol, PurchaseManager). Composite EntitlementCache (Keychain + UserDefaults sync). Spec-driven development with TDD.",
+      "techStack": ["Swift 5.9+", "SwiftUI", "StoreKit 2", "SPM", "iOS 17+"]
+    }
+  },
+  {
+    "id": "restaurant",
+    "title": "Personalized Restaurant Recommender System",
+    "description": "Conversational AI for Google Assistant providing personalized restaurant recommendations based on cuisine preferences, dietary restrictions, and location.",
+    "emoji": "🍽️",
+    "tags": ["Bard/Gemini", "Google Cloud Platform", "Conversational AI", "Google Assistant"],
+    "featured": false,
+    "hasModal": true,
+    "details": {
+      "overview": "Conversational AI for Google Assistant providing personalized restaurant recommendations.",
+      "features": [
+        "Powered by Google Bard/Gemini for natural language processing",
+        "Deployed on Google Cloud Platform for scalability",
+        "Integrated with Google Assistant Actions",
+        "Real-time preference analysis and filtering",
+        "Custom dialog flows for natural conversation"
+      ],
+      "additionalInfo": "Transformed generic restaurant listings into personalized, spoken recommendations tailored to individual preferences.",
+      "techStack": ["Bard/Gemini", "Google Cloud Platform", "Google Assistant", "Dialogflow", "NLP"]
+    }
+  },
+  {
+    "id": "pokemonclassifier",
+    "title": "Pokemon Classifier via Resnet",
+    "description": "Fine-tuned Resnet34 for Pokemon identification achieving 94% accuracy. Deployed as a public web application on AWS Elastic Beanstalk.",
+    "image": "/sized-025pikachu.webp",
+    "tags": ["PyTorch", "ResNet34", "AWS Elastic Beanstalk", "Computer Vision"],
+    "featured": false,
+    "hasModal": true,
+    "details": {
+      "overview": "Fine-tuned a pre-trained ResNet34 convolutional neural network to identify Pokemon characters with 94% accuracy. The trained model was deployed as a publicly accessible web application on AWS Elastic Beanstalk.",
+      "features": [
+        "94% Classification Accuracy - High precision Pokemon identification",
+        "Transfer Learning - Leveraged pre-trained ResNet34 architecture",
+        "Fine-tuning - Adapted model for Pokemon-specific features",
+        "Production Deployment - Publicly accessible web application",
+        "Cloud Infrastructure - Scalable hosting on AWS Elastic Beanstalk"
+      ],
+      "additionalInfo": "Built with PyTorch deep learning framework. Transfer learning from ImageNet pre-trained ResNet34. Custom dataset preparation and augmentation. Model optimization and hyperparameter tuning. Flask/FastAPI web service for inference. AWS Elastic Beanstalk deployment pipeline.",
+      "techStack": ["PyTorch", "ResNet34", "AWS Elastic Beanstalk", "Computer Vision", "Transfer Learning"]
+    }
+  },
+  {
+    "id": "brickstyle",
+    "title": "BrickStyle-Gen",
+    "description": "Text-to-LEGO-style image generator using Stable Diffusion XL with custom LoRA fine-tuning. 10+ curated style presets and adjustable parameters.",
+    "image": "/lego.jpg",
+    "tags": ["Python", "Gradio", "SDXL", "PyTorch"],
+    "featured": false,
+    "hasModal": true,
+    "links": [
+      {
+        "label": "Live Demo",
+        "url": "https://huggingface.co/spaces/joshuajoshy/brickstyle-gen",
+        "variant": "default"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/yeungjosh/brickstyle-gen",
+        "variant": "outline"
+      }
+    ],
+    "details": {
+      "overview": "A Gradio-based web application that generates LEGO-style images from text prompts using Stable Diffusion XL with custom LoRA fine-tuning.",
+      "features": [
+        "Text-to-brick-style image generation using SDXL + LEGO LoRA",
+        "10+ curated style presets (Minifig Portrait, Micro-City, BrickHeadz, etc.)",
+        "Adjustable parameters (steps, CFG scale, LoRA intensity, batch size)",
+        "CPU/GPU/MPS support for cross-platform compatibility",
+        "Research foundation based on Image2Lego (2021) paper for future 2D→3D conversion"
+      ],
+      "additionalInfo": "Production-ready Gradio web interface with 4 tabs. Configurable via environment variables (model IDs, safety filters). Optional ControlNet (sketch-to-brick) and IP-Adapter (reference styling) support. Complete project structure with modular pipeline architecture.",
+      "techStack": ["Python", "Gradio 4.0", "PyTorch", "Stable Diffusion XL", "LEGO LoRA", "HuggingFace Spaces"]
+    }
+  },
+  {
+    "id": "experimental-bytes",
+    "title": "Experimental Bytes",
+    "description": "Follow @experimentalbytes where culinary art meets food science! Showcasing creative cooking experiments and delicious recipes.",
+    "image": "/elevate-your-food-instagram-pic.png",
+    "tags": ["Food Science", "Photography"],
+    "featured": false,
+    "hasModal": false,
+    "links": [
+      {
+        "label": "View on Instagram",
+        "url": "https://instagram.com/experimentalbytes",
+        "variant": "default"
+      }
+    ]
+  },
+  {
+    "id": "pacman",
+    "title": "Pacman AI",
+    "description": "UC Berkeley CS188 project implementing search algorithms, multi-agent systems, reinforcement learning, and probabilistic inference in the Pacman domain.",
+    "image": "/cs188.jpeg",
+    "tags": ["Python", "AI", "Machine Learning", "UC Berkeley"],
+    "featured": false,
+    "hasModal": true,
+    "details": {
+      "overview": "A comprehensive series of AI projects from UC Berkeley's CS188 course, implementing core artificial intelligence techniques in the classic Pacman game domain. The projects cover the entire spectrum of AI fundamentals, from basic search to advanced machine learning.",
+      "projectsIncluded": [
+        "Search Algorithms - DFS, BFS, UCS, A* Search with custom heuristics",
+        "Multi-Agent Search - Minimax, Alpha-Beta pruning, Expectimax",
+        "Reinforcement Learning - Value Iteration, Q-Learning, Approximate Q-Learning",
+        "Probabilistic Inference - Bayes Nets, HMM, Particle Filtering",
+        "Machine Learning - Perceptron, Neural Networks, Digit Classification"
+      ],
+      "additionalInfo": "Understanding trade-offs between optimality, completeness, and computational efficiency. Designing effective heuristics for informed search algorithms. Modeling uncertainty and making decisions under incomplete information. Balancing exploration vs. exploitation in reinforcement learning. Feature engineering for approximate learning methods.",
+      "techStack": ["Python", "AI", "Machine Learning", "Reinforcement Learning", "Probabilistic Reasoning"]
+    }
+  },
+  {
+    "id": "pokemon-quiz",
+    "title": "Pokemon Personality Quiz",
+    "description": "Find your Pokemon match through 10 fun scenario-based questions. Uses cosine similarity across 24-trait vectors to match you with one of 16 Pokemon personas, complete with personalized results and shareable OG images.",
+    "image": "/pokemon-quiz-screenshot.png",
+    "tags": ["Next.js 15", "TypeScript", "Tailwind CSS", "Zustand", "Framer Motion", "Vercel Analytics"],
+    "featured": false,
+    "hasModal": true,
+    "links": [
+      {
+        "label": "Try Quiz",
+        "url": "https://pokemon-quiz-gamma.vercel.app",
+        "variant": "default"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/yeungjosh/pokemon-quiz",
+        "variant": "outline"
+      }
+    ],
+    "details": {
+      "overview": "An interactive personality quiz that matches you with one of 16 Pokemon based on your responses to 10 fun, scenario-based questions. Built with Next.js 15 and uses cosine similarity across 24-dimensional trait vectors for accurate matching.",
+      "features": [
+        "Trait Vector Matching - Uses cosine similarity across 24 traits (types, stats, personality)",
+        "Fun Scenario Questions - 10 engaging questions with personality-driven answers",
+        "Dynamic OG Images - Shareable result cards with personalized taglines",
+        "Personalized Results - Rule-based copy generation with top 3 matches",
+        "16 Pokemon Personas - Including Pikachu, Charizard, Gengar, Mewtwo, and more"
+      ],
+      "additionalInfo": "Scoring Algorithm: Cosine similarity with L2 normalization. State Management: Zustand store with localStorage persistence. Animations: Framer Motion for smooth transitions. Analytics: Vercel Analytics integration. Zero Backend: All computation happens client-side.",
+      "techStack": ["Next.js 15", "TypeScript", "Tailwind CSS", "Zustand", "Framer Motion", "Vercel Analytics", "@vercel/og"]
+    }
+  },
+  {
+    "id": "eecs127",
+    "title": "EECS 127 Crash Course for ML/SWE",
+    "description": "Comprehensive hands-on crash course covering optimization fundamentals from UC Berkeley's EECS 127. Seven Jupyter notebooks with implementations of SVD, PCA, recommender systems, LASSO, logistic regression, portfolio optimization, and compressed sensing.",
+    "image": "/EECS127SparseGraphSenators.png",
+    "tags": ["Python", "NumPy", "CVXPy", "Optimization", "Machine Learning", "UC Berkeley"],
+    "featured": false,
+    "hasModal": true,
+    "links": [
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/yeungjosh/eecs127-crash-course",
+        "variant": "default"
+      }
+    ],
+    "details": {
+      "overview": "A comprehensive crash course covering key optimization concepts from UC Berkeley's EECS 127, tailored specifically for Machine Learning Engineers and Software Engineers. Features 7 hands-on Jupyter notebooks with from-scratch implementations, visualizations, and connections to modern ML applications.",
+      "projectsIncluded": [
+        "Image Compression with SVD",
+        "Principal Component Analysis (PCA)",
+        "Recommender Systems (Netflix-style collaborative filtering)",
+        "LASSO Regression (L1-regularized least squares)",
+        "Logistic Regression",
+        "Portfolio Optimization",
+        "Compressed Sensing"
+      ],
+      "realWorldApplications": "Each project connects theory to practice: Netflix-style recommender systems, medical imaging (MRI acceleration), portfolio optimization, neural network training foundations, feature selection for high-dimensional data, and signal processing. Perfect for ML engineers wanting to understand the optimization behind their models.",
+      "techStack": ["Python", "NumPy", "Matplotlib", "CVXPy", "scikit-learn", "Jupyter", "Pandas", "SciPy"]
+    }
+  }
+]

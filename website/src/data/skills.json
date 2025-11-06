@@ -1,0 +1,102 @@
+[
+  {
+    "title": "Languages",
+    "emoji": "💻",
+    "skills": [
+      "Python",
+      "Java",
+      "Kotlin",
+      "Go",
+      "C++",
+      "C",
+      "Dart",
+      "JavaScript",
+      "TypeScript",
+      "SQL",
+      "Bash"
+    ]
+  },
+  {
+    "title": "Frontend",
+    "emoji": "🎨",
+    "skills": [
+      "React",
+      "Next.js",
+      "SwiftUI",
+      "Tailwind CSS",
+      "Vite",
+      "Framer Motion"
+    ]
+  },
+  {
+    "title": "Backend & Databases",
+    "emoji": "⚙️",
+    "skills": [
+      "Node.js",
+      "Flask",
+      "Spring Boot",
+      "REST APIs",
+      "GraphQL",
+      "gRPC",
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Bigtable"
+    ]
+  },
+  {
+    "title": "ML & AI",
+    "emoji": "🤖",
+    "skills": [
+      "PyTorch",
+      "TensorFlow",
+      "LLMs",
+      "Generative AI",
+      "Prompt Engineering",
+      "NLP",
+      "LightGBM",
+      "scikit-learn",
+      "Pandas",
+      "NumPy"
+    ]
+  },
+  {
+    "title": "Mobile",
+    "emoji": "📱",
+    "skills": [
+      "iOS",
+      "Capacitor",
+      "StoreKit 2",
+      "SPM"
+    ]
+  },
+  {
+    "title": "Cloud & DevOps",
+    "emoji": "☁️",
+    "skills": [
+      "AWS",
+      "GCP",
+      "Docker",
+      "Kubernetes",
+      "Linux",
+      "Unix",
+      "Git",
+      "Mercurial",
+      "S3",
+      "MapReduce"
+    ]
+  },
+  {
+    "title": "Core Skills",
+    "emoji": "⚡",
+    "skills": [
+      "Object-Oriented Design",
+      "Data Structures",
+      "Algorithms",
+      "Operating Systems",
+      "DevOps",
+      "TDD",
+      "CI/CD"
+    ]
+  }
+]
