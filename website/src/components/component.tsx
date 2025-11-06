@@ -322,7 +322,7 @@ export function Component() {
               {/* Pokemon Team Recommender */}
               <div
                 onClick={() => setOpenProject('pokemon')}
-                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 md:col-span-2 cursor-pointer"
+                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 cursor-pointer"
               >
                 <div className="p-6 space-y-4">
                   <div className="aspect-video relative overflow-hidden rounded-xl mb-4">
@@ -396,13 +396,13 @@ export function Component() {
               {/* Gen1 Battle AI */}
               <div
                 onClick={() => setOpenProject('gen1-battle-ai')}
-                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 md:col-span-2 cursor-pointer"
+                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 cursor-pointer"
               >
                 <div className="p-6 space-y-4">
                   <div className="aspect-video relative overflow-hidden rounded-xl mb-4">
                     <img
-                      src="/placeholder.svg"
-                      alt="Gen1 Battle AI Architecture"
+                      src="/gen1-battle-ai.png"
+                      alt="Gen1 Battle AI - Pokemon Showdown Battle"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -410,7 +410,7 @@ export function Component() {
                     Gen1 RBY Battle AI (PokéChamp Extension)
                   </h3>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                    Heuristic battle AI built on PokéChamp (ICML 2025) achieving 90% win rate vs baselines. Features exact Gen1 damage calculator, position evaluation (7+ factors), and strategic switch logic. 730 lines Python, 2000+ lines documentation.
+                    Pokemon battle AI built on PokéChamp (ICML 2025) achieving 90% win rate vs baselines. Features exact Gen1 damage calculator, position evaluation (7+ factors), and strategic switch logic for competitive Gen1 RBY OU battles.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
