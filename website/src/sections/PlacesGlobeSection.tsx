@@ -1,13 +1,10 @@
 import React from "react";
 import TravelGlobe from "@/components/TravelGlobe";
-import places from "@/data/places.json";
+import placesData from "@/data/places.json";
+import { loadPlacesData } from "@/lib/data-loader";
 
-type Place = {
-  name: string;
-  coords: [number, number];
-  notes?: string;
-  photos?: string[];
-};
+// Validate places data at runtime
+const places = loadPlacesData(placesData);
 
 export default function PlacesGlobeSection() {
   return (
@@ -28,14 +25,14 @@ export default function PlacesGlobeSection() {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <TravelGlobe places={places as Place[]} />
+          <TravelGlobe places={places} />
         </div>
 
         {/* Accessible fallback list */}
         <div className="max-w-6xl mx-auto mt-12">
           <h3 className="text-xl font-semibold text-white mb-6 text-center">Cities</h3>
           <ul className="grid gap-4 text-slate-300 sm:grid-cols-2 lg:grid-cols-3">
-            {(places as Place[]).map((p) => (
+            {places.map((p) => (
               <li key={p.name} className="flex items-start gap-3 bg-white/5 rounded-xl p-4 hover:bg-white/10 transition-colors">
                 <span className="inline-block w-2.5 h-2.5 rounded-full bg-blue-400 mt-2 flex-shrink-0" />
                 <div>
