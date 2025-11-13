@@ -1,0 +1,41 @@
+[
+  {
+    "company": "Amazon",
+    "role": "Software Development Engineer II & Machine Learning Engineer",
+    "team": "Amazon Ads, Prime Video",
+    "period": "Aug 2024 - Present",
+    "location": "Seattle, WA",
+    "description": [
+      "Designed and implemented an optimized caching architecture for search query understanding, reducing unnecessary ad sourcing queries with low shopping intent. Resulted in a 16.24% increase in Return on Ad Spend (RoAS).",
+      "Architected and led end-to-end redesign of visual sourcing multimodal embeddings pipeline, cutting storage costs by 75% and reducing image processing volume by 85.27% (5M to 750K daily), saving $6,600+ monthly.",
+      "Developed and deployed internal AI assistant based on secure RAG-powered knowledge base leveraging multiple LLMs via Amazon Bedrock, streamlining team workflows."
+    ]
+  },
+  {
+    "company": "Google",
+    "role": "Software Engineer",
+    "team": "Google Assistant",
+    "period": "Sep 2022 - Apr 2024",
+    "location": "Seattle, WA",
+    "description": [
+      "Designed and launched fallbacks for home/work journeys on Google Assistant (~80M daily users), improving query reliability for 8M users and increasing successful directions queries by 22.68%.",
+      "Built personalized restaurant recommender using Bard/Gemini, enhancing conversational AI experiences.",
+      "Developed suggestion buttons for new Google Assistant on mobile, driving 40M daily impressions and 3M DAUs.",
+      "Integrated 10+ local search features (e.g., \"Starbucks hours,\" \"Seattle traffic\"), improving navigation capabilities.",
+      "Designed and implemented \"Search Along Route\" prototype for Google Assistant (1.5M DAUs).",
+      "Increased test coverage for local journeys by 400% through automated parameterized regression tests."
+    ],
+    "tags": ["LLM", "Conversational AI", "Google Assistant"]
+  },
+  {
+    "company": "Qualtrics",
+    "role": "Research Engineer Intern",
+    "team": "Qualtrics IQ",
+    "period": "May 2021 - Aug 2021",
+    "location": "Seattle, WA",
+    "description": [
+      "Improved Qualtrics IQ's text analysis capabilities using NLP, leading to more reliable experimental results.",
+      "Optimized NLP model deployment on AWS SageMaker and internal platform. Achieved 80% data reduction for Qualtrics dataset inference while maintaining high accuracy (58% F1 score) in aspect opinion tagging."
+    ]
+  }
+]

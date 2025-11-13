@@ -17,6 +17,17 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import VantaNet from "@/components/vanta-net";
 import PlacesGlobeSection from "@/sections/PlacesGlobeSection";
 
+// Data imports
+import navigationData from "@/data/navigation.json";
+import experienceData from "@/data/experience.json";
+import educationData from "@/data/education.json";
+import projectsData from "@/data/projects.json";
+import skillsData from "@/data/skills.json";
+import hobbiesData from "@/data/hobbies.json";
+
+// Type imports
+import type { NavigationLink, ExperienceItem, Education, Project, SkillCategory, Hobby } from "@/types/portfolio";
+
 export function Component() {
   const [scrolled, setScrolled] = useState(false);
   const [openProject, setOpenProject] = useState<string | null>(null);
@@ -42,30 +53,15 @@ export function Component() {
           <span className="sr-only">Josh Yeung</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6 items-center">
-          <Link className="text-sm font-semibold hover:text-green-600 dark:hover:text-violet-400 transition-colors" href="#about">
-            About
-          </Link>
-          <Link className="text-sm font-semibold hover:text-green-600 dark:hover:text-violet-400 transition-colors" href="#work">
-            Experience
-          </Link>
-          <Link className="text-sm font-semibold hover:text-green-600 dark:hover:text-violet-400 transition-colors" href="#education">
-            Education
-          </Link>
-          <Link className="text-sm font-semibold hover:text-green-600 dark:hover:text-violet-400 transition-colors" href="#projects">
-            Projects
-          </Link>
-          <Link className="text-sm font-semibold hover:text-green-600 dark:hover:text-violet-400 transition-colors" href="#skills">
-            Skills
-          </Link>
-          <Link className="text-sm font-semibold hover:text-green-600 dark:hover:text-violet-400 transition-colors" href="#hobbies">
-            Hobbies
-          </Link>
-          <Link className="text-sm font-semibold hover:text-green-600 dark:hover:text-violet-400 transition-colors" href="#places">
-            Places
-          </Link>
-          <Link className="text-sm font-semibold hover:text-green-600 dark:hover:text-violet-400 transition-colors" href="#blog">
-            Blog
-          </Link>
+          {(navigationData as NavigationLink[]).map((link) => (
+            <Link
+              key={link.href}
+              className="text-sm font-semibold hover:text-green-600 dark:hover:text-violet-400 transition-colors"
+              href={link.href}
+            >
+              {link.label}
+            </Link>
+          ))}
           <ThemeToggle />
         </nav>
       </header>
@@ -152,87 +148,46 @@ export function Component() {
             </div>
 
             <div className="max-w-5xl mx-auto space-y-6">
-              {/* Amazon */}
-              <div className="group relative bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-800/50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="relative">
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-1">Amazon</h3>
-                      <p className="text-lg font-semibold text-green-600 dark:text-green-400">Software Development Engineer II & Machine Learning Engineer</p>
-                      <p className="text-slate-600 dark:text-slate-400">Amazon Ads, Prime Video</p>
+              {(experienceData as ExperienceItem[]).map((experience, index) => (
+                <div
+                  key={index}
+                  className="group relative bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-800/50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative">
+                    <div className="flex items-start justify-between mb-4">
+                      <div>
+                        <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-1">{experience.company}</h3>
+                        <p className="text-lg font-semibold text-green-600 dark:text-green-400">{experience.role}</p>
+                        {experience.team && (
+                          <p className="text-slate-600 dark:text-slate-400">{experience.team}</p>
+                        )}
+                      </div>
+                      <div className="text-right">
+                        <p className="text-sm font-medium text-slate-500 dark:text-slate-400">{experience.period}</p>
+                        <p className="text-xs text-slate-400 dark:text-slate-500">{experience.location}</p>
+                      </div>
                     </div>
-                    <div className="text-right">
-                      <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Aug 2024 - Present</p>
-                      <p className="text-xs text-slate-400 dark:text-slate-500">Seattle, WA</p>
-                    </div>
-                  </div>
-                  <ul className="space-y-2 text-slate-700 dark:text-slate-300 leading-relaxed">
-                    <li>• Designed and implemented an optimized caching architecture for search query understanding, reducing unnecessary ad sourcing queries with low shopping intent. Resulted in a 16.24% increase in Return on Ad Spend (RoAS).</li>
-                    <li>• Architected and led end-to-end redesign of visual sourcing multimodal embeddings pipeline, cutting storage costs by 75% and reducing image processing volume by 85.27% (5M to 750K daily), saving $6,600+ monthly.</li>
-                    <li>• Developed and deployed internal AI assistant based on secure RAG-powered knowledge base leveraging multiple LLMs via Amazon Bedrock, streamlining team workflows.</li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Google */}
-              <div className="group relative bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-800/50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="relative">
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-1">Google</h3>
-                      <p className="text-lg font-semibold text-green-600 dark:text-green-400">Software Engineer</p>
-                      <p className="text-slate-600 dark:text-slate-400">Google Assistant</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Sep 2022 - Apr 2024</p>
-                      <p className="text-xs text-slate-400 dark:text-slate-500">Seattle, WA</p>
-                    </div>
-                  </div>
-                  <ul className="space-y-2 text-slate-700 dark:text-slate-300 leading-relaxed mb-3">
-                    <li>• Designed and launched fallbacks for home/work journeys on Google Assistant (~80M daily users), improving query reliability for 8M users and increasing successful directions queries by 22.68%.</li>
-                    <li>• Built personalized restaurant recommender using Bard/Gemini, enhancing conversational AI experiences.</li>
-                    <li>• Developed suggestion buttons for new Google Assistant on mobile, driving 40M daily impressions and 3M DAUs.</li>
-                    <li>• Integrated 10+ local search features (e.g., &quot;Starbucks hours,&quot; &quot;Seattle traffic&quot;), improving navigation capabilities.</li>
-                    <li>• Designed and implemented &quot;Search Along Route&quot; prototype for Google Assistant (1.5M DAUs).</li>
-                    <li>• Increased test coverage for local journeys by 400% through automated parameterized regression tests.</li>
-                  </ul>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300 hover:bg-green-200 dark:hover:bg-green-900/50">
-                      LLM
-                    </Badge>
-                    <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300 hover:bg-green-200 dark:hover:bg-green-900/50">
-                      Conversational AI
-                    </Badge>
-                    <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300 hover:bg-green-200 dark:hover:bg-green-900/50">
-                      Google Assistant
-                    </Badge>
+                    <ul className={`space-y-2 text-slate-700 dark:text-slate-300 leading-relaxed ${experience.tags ? 'mb-3' : ''}`}>
+                      {experience.description.map((item, i) => (
+                        <li key={i}>• {item}</li>
+                      ))}
+                    </ul>
+                    {experience.tags && experience.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-2">
+                        {experience.tags.map((tag, i) => (
+                          <Badge
+                            key={i}
+                            className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300 hover:bg-green-200 dark:hover:bg-green-900/50"
+                          >
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
-              </div>
-
-              {/* Qualtrics - Research */}
-              <div className="group relative bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-800/50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="relative">
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-1">Qualtrics</h3>
-                      <p className="text-lg font-semibold text-green-600 dark:text-green-400">Research Engineer Intern</p>
-                      <p className="text-slate-600 dark:text-slate-400">Qualtrics IQ</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-sm font-medium text-slate-500 dark:text-slate-400">May 2021 - Aug 2021</p>
-                      <p className="text-xs text-slate-400 dark:text-slate-500">Seattle, WA</p>
-                    </div>
-                  </div>
-                  <ul className="space-y-2 text-slate-700 dark:text-slate-300 leading-relaxed">
-                    <li>• Improved Qualtrics IQ&apos;s text analysis capabilities using NLP, leading to more reliable experimental results.</li>
-                    <li>• Optimized NLP model deployment on AWS SageMaker and internal platform. Achieved 80% data reduction for Qualtrics dataset inference while maintaining high accuracy (58% F1 score) in aspect opinion tagging.</li>
-                  </ul>
-                </div>
-              </div>
+              ))}
             </div>
 
             {/* Bay view image */}
@@ -265,38 +220,47 @@ export function Component() {
             </div>
 
             <div className="max-w-4xl mx-auto">
-              <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center text-white font-bold text-2xl flex-shrink-0">
-                    UC
-                  </div>
-                  <div className="flex-1 space-y-3">
-                    <div>
-                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
-                        University of California, Berkeley
-                      </h3>
-                      <p className="text-lg text-slate-600 dark:text-slate-400 mt-1">
-                        Bachelor&apos;s degree, Computer Science
-                      </p>
+              {(educationData as Education[]).map((education, index) => (
+                <div
+                  key={index}
+                  className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                >
+                  <div className="flex items-start gap-6">
+                    <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center text-white font-bold text-2xl flex-shrink-0">
+                      {education.abbreviation}
                     </div>
-                    <div className="flex flex-wrap gap-4 text-sm">
-                      <div className="flex items-center gap-2">
-                        <span className="text-slate-600 dark:text-slate-400">GPA:</span>
-                        <span className="font-semibold text-green-600 dark:text-green-400">3.70</span>
+                    <div className="flex-1 space-y-3">
+                      <div>
+                        <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                          {education.institution}
+                        </h3>
+                        <p className="text-lg text-slate-600 dark:text-slate-400 mt-1">
+                          {education.degree}
+                        </p>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-slate-600 dark:text-slate-400">Years:</span>
-                        <span className="font-semibold text-slate-900 dark:text-white">2017 - 2021</span>
+                      <div className="flex flex-wrap gap-4 text-sm">
+                        {education.gpa && (
+                          <div className="flex items-center gap-2">
+                            <span className="text-slate-600 dark:text-slate-400">GPA:</span>
+                            <span className="font-semibold text-green-600 dark:text-green-400">{education.gpa}</span>
+                          </div>
+                        )}
+                        <div className="flex items-center gap-2">
+                          <span className="text-slate-600 dark:text-slate-400">Years:</span>
+                          <span className="font-semibold text-slate-900 dark:text-white">{education.years}</span>
+                        </div>
                       </div>
-                    </div>
-                    <div className="pt-2">
-                      <p className="text-sm text-slate-600 dark:text-slate-400">
-                        <span className="font-semibold">Activities and societies:</span> Upsilon Pi Epsilon (UPE)
-                      </p>
+                      {education.activities && (
+                        <div className="pt-2">
+                          <p className="text-sm text-slate-600 dark:text-slate-400">
+                            <span className="font-semibold">Activities and societies:</span> {education.activities}
+                          </p>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -894,242 +858,23 @@ export function Component() {
             </div>
 
             <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {/* Languages */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <span className="text-2xl">💻</span> Languages
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Python
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Java
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Kotlin
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Go
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    C++
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    C
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Dart
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    JavaScript
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    TypeScript
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    SQL
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Bash
-                  </Badge>
+              {(skillsData as SkillCategory[]).map((category, index) => (
+                <div key={index} className="space-y-4">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <span className="text-2xl">{category.emoji}</span> {category.title}
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill, i) => (
+                      <Badge
+                        key={i}
+                        className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300"
+                      >
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
-              </div>
-
-              {/* Frontend */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <span className="text-2xl">🎨</span> Frontend
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    React
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Next.js
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    SwiftUI
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Tailwind CSS
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Vite
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Framer Motion
-                  </Badge>
-                </div>
-              </div>
-
-              {/* Backend & Databases */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <span className="text-2xl">⚙️</span> Backend & Databases
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Node.js
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Flask
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Spring Boot
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    REST APIs
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    GraphQL
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    gRPC
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    MySQL
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    PostgreSQL
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    MongoDB
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Bigtable
-                  </Badge>
-                </div>
-              </div>
-
-              {/* ML & AI */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <span className="text-2xl">🤖</span> ML & AI
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    PyTorch
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    TensorFlow
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    LLMs
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Generative AI
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Prompt Engineering
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    NLP
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    LightGBM
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    scikit-learn
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Pandas
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    NumPy
-                  </Badge>
-                </div>
-              </div>
-
-              {/* Mobile */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <span className="text-2xl">📱</span> Mobile
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    iOS
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Capacitor
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    StoreKit 2
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    SPM
-                  </Badge>
-                </div>
-              </div>
-
-              {/* Cloud & DevOps */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <span className="text-2xl">☁️</span> Cloud & DevOps
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    AWS
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    GCP
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Docker
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Kubernetes
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Linux
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Unix
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Git
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Mercurial
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    S3
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    MapReduce
-                  </Badge>
-                </div>
-              </div>
-
-              {/* Core Skills & Practices */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <span className="text-2xl">⚡</span> Core Skills
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Object-Oriented Design
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Data Structures
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Algorithms
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    Operating Systems
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    DevOps
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    TDD
-                  </Badge>
-                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">
-                    CI/CD
-                  </Badge>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -1152,73 +897,47 @@ export function Component() {
             </div>
 
             <div className="max-w-4xl mx-auto grid gap-6 md:grid-cols-2">
-              {/* Table Tennis */}
-              <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700">
-                <div className="text-5xl mb-4">🏓</div>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
-                  Table Tennis
-                </h3>
-                <p className="text-slate-600 dark:text-slate-400 mb-2">
-                  Fast-paced rallies and quick reflexes. Played with the Cal (UC Berkeley) table tennis club in college.
-                </p>
-                <p className="text-sm text-slate-500 dark:text-slate-500 italic">
-                  Nothing beats a competitive ping pong match!
-                </p>
-              </div>
-
-              {/* Tennis */}
-              <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700">
-                <div className="text-5xl mb-4">🎾</div>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
-                  Tennis
-                </h3>
-                <p className="text-slate-600 dark:text-slate-400 mb-2">
-                  Love the strategy and athleticism of tennis. Favorite racket: Head Radical Pro. Favorite player: Roger Federer.
-                </p>
-                <p className="text-sm text-slate-500 dark:text-slate-500 italic">
-                  Great way to stay active and competitive!
-                </p>
-              </div>
-
-              {/* Chess */}
-              <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700">
-                <div className="text-5xl mb-4">♟️</div>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
-                  Chess
-                </h3>
-                <p className="text-slate-600 dark:text-slate-400 mb-2">
-                  Strategy, tactics, and endless possibilities. Challenge me online!
-                </p>
-                <div className="inline-block px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-sm font-semibold mb-4">
-                  Online Blitz Rating: 1954
+              {(hobbiesData as Hobby[]).map((hobby, index) => (
+                <div
+                  key={index}
+                  className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700"
+                >
+                  <div className="text-5xl mb-4">{hobby.emoji}</div>
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                    {hobby.title}
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 mb-2">
+                    {hobby.description}
+                  </p>
+                  {hobby.rating && (
+                    <div className="inline-block px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-sm font-semibold mb-4">
+                      {hobby.rating}
+                    </div>
+                  )}
+                  {hobby.links && hobby.links.length > 0 && (
+                    <div className="flex flex-wrap gap-2">
+                      {hobby.links.map((link, i) => (
+                        <Button
+                          key={i}
+                          asChild
+                          size="sm"
+                          variant="outline"
+                          className="border-2 border-slate-900 dark:border-slate-300"
+                        >
+                          <Link href={link.url} target="_blank">
+                            {link.label}
+                          </Link>
+                        </Button>
+                      ))}
+                    </div>
+                  )}
+                  {hobby.additionalInfo && !hobby.links && (
+                    <p className="text-sm text-slate-500 dark:text-slate-500 italic">
+                      {hobby.additionalInfo}
+                    </p>
+                  )}
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300">
-                    <Link href="https://lichess.org/@/jushy" target="_blank">
-                      Lichess
-                    </Link>
-                  </Button>
-                  <Button asChild size="sm" variant="outline" className="border-2 border-slate-900 dark:border-slate-300">
-                    <Link href="https://www.chess.com/member/foodproduct" target="_blank">
-                      Chess.com
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-
-              {/* Board Games */}
-              <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700">
-                <div className="text-5xl mb-4">🎲</div>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
-                  Board Games
-                </h3>
-                <p className="text-slate-600 dark:text-slate-400 mb-2">
-                  From strategy games to party games, I enjoy the social aspect and creative gameplay.
-                </p>
-                <p className="text-sm text-slate-500 dark:text-slate-500 italic">
-                  Current favorites: Wingspan & Chameleon
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </section>
