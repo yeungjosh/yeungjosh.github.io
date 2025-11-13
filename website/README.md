@@ -92,7 +92,6 @@ website/
   - BrickStyle-Gen (Text-to-LEGO AI)
   - Pokemon Team Recommender (ML + LightGBM)
   - Bible Study App (React + Capacitor)
-  - System Design Trainer (SwiftUI iOS app)
 - **Skills** - Tech stack organized by category
 - **Blog** - Writing and thoughts
 - **Contact** - Social links

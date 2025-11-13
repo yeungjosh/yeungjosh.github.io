@@ -547,38 +547,6 @@ export function Component() {
                 </div>
               </div>
 
-              {/* System Design Trainer */}
-              <div
-                onClick={() => setOpenProject('systemdesign')}
-                className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 cursor-pointer"
-              >
-                <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-indigo-900/20 dark:to-blue-900/20 flex items-center justify-center">
-                  <div className="text-8xl">🎯</div>
-                </div>
-                <div className="p-6 space-y-4">
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
-                    System Design Trainer
-                  </h3>
-                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                    Duolingo-style iOS app for practicing system design interviews. Multiple-choice drills with curated explanations and progress tracking.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      Swift
-                    </Badge>
-                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      SwiftUI
-                    </Badge>
-                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      StoreKit 2
-                    </Badge>
-                    <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                      iOS
-                    </Badge>
-                  </div>
-                </div>
-              </div>
-
               {/* Restaurant Recommender */}
               <div
                 onClick={() => setOpenProject('restaurant')}
@@ -1655,78 +1623,6 @@ export function Component() {
 
               <p className="text-sm text-slate-600 dark:text-slate-400">
                 <strong>Platform:</strong> Web + iOS/Android via Capacitor
-              </p>
-            </div>
-          </DialogContent>
-        </Dialog>
-
-        {/* System Design Trainer Modal */}
-        <Dialog open={openProject === 'systemdesign'} onOpenChange={() => setOpenProject(null)}>
-          <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
-            <DialogHeader>
-              <DialogTitle className="text-3xl font-bold gradient-text">System Design Trainer</DialogTitle>
-              <DialogDescription className="text-lg">
-                Duolingo-Style Interview Practice for System Design
-              </DialogDescription>
-            </DialogHeader>
-            <div className="space-y-6">
-              <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-indigo-900/20 dark:to-blue-900/20 flex items-center justify-center rounded-xl">
-                <div className="text-9xl">🎯</div>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-semibold mb-3">Overview</h3>
-                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-                  A SwiftUI iOS application for practicing system design interview concepts through multiple-choice questions with curated explanations.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-semibold mb-3">Key Features</h3>
-                <ul className="space-y-2 text-slate-700 dark:text-slate-300">
-                  <li>• Scenario-based question packs (URL Shortener, Twitter Feed, Ride-Share, etc.)</li>
-                  <li>• Multiple-choice drills with immediate feedback</li>
-                  <li>• Detailed explanations for correct and incorrect answers</li>
-                  <li>• Free starter pack + Pro unlock (one-time IAP)</li>
-                  <li>• Progress tracking: accuracy, streaks, weak topics</li>
-                  <li>• Native accessibility support</li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-semibold mb-3">Architecture</h3>
-                <ul className="space-y-2 text-slate-700 dark:text-slate-300">
-                  <li>• Multi-module SPM structure (SystemDesignContent + SystemDesignTrainerApp)</li>
-                  <li>• Actor-based ContentRepository with SHA256 checksum validation</li>
-                  <li>• Protocol-oriented IAP design (StoreClient protocol, PurchaseManager)</li>
-                  <li>• Composite EntitlementCache (Keychain + UserDefaults sync)</li>
-                  <li>• Spec-driven development with TDD</li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-semibold mb-3">Content System</h3>
-                <ul className="space-y-2 text-slate-700 dark:text-slate-300">
-                  <li>• JSON-based question packs with manifest validation</li>
-                  <li>• SHA256 integrity checks on all content</li>
-                  <li>• Easy authoring workflow for new packs</li>
-                  <li>• Automatic content validation via unit tests</li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-semibold mb-3">Tech Stack</h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge>Swift 5.9+</Badge>
-                  <Badge>SwiftUI</Badge>
-                  <Badge>StoreKit 2</Badge>
-                  <Badge>SPM</Badge>
-                  <Badge>iOS 17+</Badge>
-                </div>
-              </div>
-
-              <p className="text-sm text-slate-600 dark:text-slate-400">
-                <strong>Status:</strong> Active development, MVP in progress
               </p>
             </div>
           </DialogContent>
